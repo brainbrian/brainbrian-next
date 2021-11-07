@@ -1,18 +1,18 @@
 import * as React from 'react';
-
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import cx from 'classnames';
 
 import * as Styles from './Header.module.scss';
 
 export const Header = (): any => {
     const router = useRouter();
     const navItems = [
-        { name: 'Projects', href: '/projects/' },
-        { name: 'Resume', href: '/resume/' },
-        { name: 'Posts', href: '/posts/' },
-        { name: 'Videos', href: '/videos/' },
-        { name: 'Gallery', href: '/gallery/' },
+        { name: 'Projects', href: '/projects' },
+        { name: 'Resume', href: '/resume' },
+        { name: 'Posts', href: '/posts' },
+        { name: 'Videos', href: '/videos' },
+        { name: 'Gallery', href: 'https://gallery.brainbrian.com' },
     ];
 
     return (
@@ -30,11 +30,10 @@ export const Header = (): any => {
                             <li className={Styles.NavListItem} key={index}>
                                 <Link href={href}>
                                     <a
-                                        className={
-                                            router.asPath == '/resume/'
-                                                ? Styles.NavLinkActive
-                                                : Styles.NavLink
-                                        }
+                                        className={cx(Styles.NavLink, {
+                                            [Styles.NavLinkActive]:
+                                                router.pathname === href,
+                                        })}
                                     >
                                         {name}
                                     </a>
