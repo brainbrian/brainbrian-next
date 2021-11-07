@@ -1,10 +1,11 @@
+import { format } from 'date-fns';
 import fs from 'fs';
+import matter from 'gray-matter';
 import path from 'path';
 import React from 'react';
-import matter from 'gray-matter';
-import { marked } from 'marked';
-// import remark from 'remark';
-// import html from 'remark-html';
+import { remark } from 'remark';
+import remarkHtml from 'remark-html';
+import remarkParse from 'remark-parse';
 
 import { Footer, Head, Header } from '../../components'; // Pagination
 
@@ -12,12 +13,17 @@ export interface PostProps {
     categories?: string[];
     content?: string;
     date: string;
+    dateFormatted: string;
     slug: string;
     tags?: string[];
     title: string;
 }
 
-const Post = ({ content, date, title }: PostProps): React.ReactNode => {
+const Post = ({
+    content,
+    dateFormatted,
+    title,
+}: PostProps): React.ReactNode => {
     return (
         <>
             <Head title={`${title} | Posts | Brian Behrens`} />
@@ -26,11 +32,11 @@ const Post = ({ content, date, title }: PostProps): React.ReactNode => {
                 <div className="post-container">
                     <article className="post">
                         <h1>{title}</h1>
-                        <h3>{date}</h3>
+                        <h3>{dateFormatted}</h3>
                         <div
                             className="post-content"
                             dangerouslySetInnerHTML={{
-                                __html: marked.parse(content),
+                                __html: content || '',
                             }}
                         />
                     </article>
@@ -66,9 +72,14 @@ export async function getStaticProps({
 
     return {
         props: {
-            slug,
             ...frontmatter,
-            content,
+            slug,
+            dateFormatted: format(new Date(frontmatter.date), 'MMMM dd, yyyy'),
+            content: await remark()
+                .use(remarkParse)
+                .use(remarkHtml)
+                .process(content || '')
+                .then((file) => String(file)),
         },
     };
 }

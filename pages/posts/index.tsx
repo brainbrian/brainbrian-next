@@ -1,7 +1,9 @@
+import { format } from 'date-fns';
 import fs from 'fs';
+import { orderBy } from 'lodash';
+import matter from 'gray-matter';
 import path from 'path';
 import React from 'react';
-import matter from 'gray-matter';
 // import remark from 'remark';
 // import html from 'remark-html';
 
@@ -10,21 +12,24 @@ import { Footer, Head, Header, PostLink } from '../../components'; // Pagination
 interface PostProps {
     categories?: string[];
     date: string;
+    dateFormatted: string;
     slug: string;
     tags?: string[];
     title: string;
 }
 
 const Posts = ({ posts }: { posts: PostProps[] }): React.ReactNode => {
-    const postsComponents = posts.map(({ date, slug, title }, index) => (
-        <PostLink
-            key={index}
-            date={date}
-            href={`/posts/${slug}`}
-            title={title}
-            excerpt="..."
-        />
-    ));
+    const postsComponents = posts.map(
+        ({ dateFormatted, slug, title }, index) => (
+            <PostLink
+                key={index}
+                date={dateFormatted}
+                href={`/posts/${slug}`}
+                title={title}
+                excerpt="..."
+            />
+        ),
+    );
     // const { currentPage, numPages } = pageContext;
 
     return (
@@ -48,25 +53,28 @@ const Posts = ({ posts }: { posts: PostProps[] }): React.ReactNode => {
 };
 
 export async function getStaticProps() {
-    // https://www.youtube.com/watch?v=MrjeefD8sac
-    const files = fs.readdirSync(path.join('posts'));
+    const files = fs.readdirSync(path.join('content/posts'));
 
     const posts = files.map((file) => {
         const slug = file;
 
         const { data: frontmatter } = matter(
-            fs.readFileSync(path.join(`posts/${slug}/`, 'index.md'), 'utf-8'),
+            fs.readFileSync(
+                path.join(`content/posts/${slug}/`, 'index.md'),
+                'utf-8',
+            ),
         );
 
         return {
-            slug,
             ...frontmatter,
+            dateFormatted: format(new Date(frontmatter.date), 'MMMM dd, yyyy'),
+            slug,
         };
     });
 
     return {
         props: {
-            posts,
+            posts: orderBy(posts, 'date').reverse(),
         },
     };
 }
