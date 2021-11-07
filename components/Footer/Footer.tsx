@@ -2,7 +2,7 @@ import * as React from 'react';
 
 // import { usePosts, useTweets } from '../../hooks';
 
-import * as Styles from './Footer.module.scss';
+import Styles from './Footer.module.scss';
 
 export const Footer = () => {
     // const posts = usePosts();

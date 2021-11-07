@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import * as Styles from './PostLink.module.scss';
+import Styles from './PostLink.module.scss';
 
 export const PostLink = ({
     date,

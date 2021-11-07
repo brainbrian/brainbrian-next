@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Image from 'next/image';
 
-import * as Styles from './ProfileHeader.module.scss';
+import Styles from './ProfileHeader.module.scss';
 
 export const ProfileHeader = ({ children }) => (
     <section className={Styles.ProfileHeader}>

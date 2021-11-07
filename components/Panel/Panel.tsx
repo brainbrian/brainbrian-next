@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import * as Styles from './Panel.module.scss';
+import Styles from './Panel.module.scss';
 
 interface PanelProps {
     children?: React.ReactNode;

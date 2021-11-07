@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 
-import * as Styles from './Header.module.scss';
+import Styles from './Header.module.scss';
 
 export const Header = (): any => {
     const router = useRouter();
