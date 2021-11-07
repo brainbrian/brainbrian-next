@@ -1,0 +1,77 @@
+@import '../../styles/Config.scss';
+
+.ProfileHeader {
+    margin: 0 auto;
+    max-width: var(--max-width-text);
+
+    @media screen and (min-width: $size-sm) {
+        display: flex;
+    }
+}
+
+.ProfileImage {
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    &::after {
+        background-image: url('/images/brian-behrens-profile-old.webp');
+        background-size: cover;
+        content: '';
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transition: opacity 500ms ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+.Aside {
+    max-width: 75%;
+    margin: 2rem auto;
+
+    @media screen and (min-width: $size-xxs) {
+        max-width: 50%;
+    }
+
+    @media screen and (min-width: $size-sm) {
+        margin: 0;
+        max-width: 14rem;
+        width: 30%;
+    }
+}
+
+.Biography {
+    margin-right: 2rem;
+    width: 100%;
+
+    p {
+        font-size: 1.125rem;
+        line-height: 1.5;
+        margin: 0;
+
+        @media screen and (min-width: $size-sm) {
+            font-size: 1.25rem;
+        }
+
+        @media screen and (min-width: $size-md) {
+            font-size: 1.5rem;
+        }
+    }
+}

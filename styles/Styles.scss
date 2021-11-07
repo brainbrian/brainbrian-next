@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import './Config.scss';
+
+:root {
+    --color-main: #{$color-main};
+    --color-light: #{$color-light};
+    --color-dark: #{$color-dark};
+    --color-darker: #{$color-darker};
+    --font-headline: #{$font-headline};
+    --font-body: #{$font-body};
+    --max-width: #{$max-width};
+    --max-width-text: #{$max-width-text};
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-family: var(--font-body);
+    margin: 0;
+    min-width: 20rem;
+    padding: 0;
+
+    @media screen and (min-width: $size-md) {
+        padding-top: 6rem;
+    }
+}
+
+h1,
+h2 {
+    color: var(--color-main);
+    font-family: var(--font-headline);
+}
+
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-light);
+    font-family: var(--font-headline);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2rem;
+
+    @media screen and (min-width: $size-md) {
+        font-size: 2.25rem;
+    }
+}
+
+h2 {
+    font-size: 1.5rem;
+
+    @media screen and (min-width: $size-md) {
+        font-size: 1.75rem;
+    }
+}
+
+h3 {
+    font-size: 1.17rem;
+
+    @media screen and (min-width: $size-md) {
+        font-size: 1.25rem;
+    }
+}
+
+h4,
+h5,
+h6 {
+    font-size: 1rem;
+
+    @media screen and (min-width: $size-md) {
+        font-size: 1.125rem;
+    }
+}
+
+p {
+    color: var(--color-light);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+
+    @media screen and (min-width: $size-md) {
+        font-size: 1.25rem;
+        line-height: 1.8;
+    }
+}
+
+a {
+    color: var(--color-main);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+.header-bar {
+    background-color: var(--color-darker);
+    color: var(--color-light);
+    display: block;
+    font-family: var(--font-headline);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-transform: uppercase;
+
+    $parent: &;
+
+    &__text {
+        color: var(--color-light);
+        font-size: 1.25rem;
+        margin: 0;
+
+        @media screen and (min-width: $size-md) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+
+        #{$parent}__text {
+            color: var(--color-main);
+        }
+    }
+}
+
+.content {
+    margin: 2rem auto;
+    max-width: var(--max-width);
+    padding: 0 2rem;
+}
+
+.limit-text-width {
+    margin: 0 auto;
+    max-width: var(--max-width-text);
+}
+
+.bg-page {
+    background-color: var(--color-dark);
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.post-video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    @media screen and (min-width: $size-md) {
+        width: 120%;
+        padding-bottom: 67.5%;
+        margin: 0 auto 0 -10%;
+    }
+}
+
+.gatsby-resp-image-wrapper {
+    @media screen and (min-width: $size-md) {
+        margin-left: -15% !important;
+        max-width: 130% !important;
+        width: 130% !important;
+    }
+}
+
+.post-container {
+    margin: 0 auto;
+    max-width: var(--max-width-text);
+
+    video {
+        margin-left: -4.9% !important;
+        max-width: 109.8% !important;
+        width: 109.8% !important;
+
+        @media screen and (min-width: $size-md) {
+            margin-left: -10% !important;
+            max-width: 120% !important;
+            width: 120% !important;
+        }
+    }
+}
+
+.nostyle-list {
+    padding: 0;
+    list-style: none;
+
+    li {
+        margin-bottom: 3rem;
+
+        h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        h4 {
+            margin-top: 0.5rem;
+        }
+    }
+}

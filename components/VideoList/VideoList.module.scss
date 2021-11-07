@@ -1,0 +1,95 @@
+@import '../../styles/Config.scss';
+
+.VideoList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: $size-xs) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+@keyframes fade-in-and-up {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-0.25rem);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0rem);
+    }
+}
+
+.VideoListItem {
+    margin-bottom: 2rem;
+    animation: fade-in-and-up 500ms ease-in-out;
+
+    a {
+        display: block;
+
+        h2 {
+            background-color: var(--color-darker);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 0;
+            padding: 1rem;
+            text-transform: uppercase;
+            transition: background-color 200ms ease-in-out,
+                color 300ms ease-in-out;
+
+            @media screen and (min-width: $size-md) {
+                font-size: 1.5rem;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+
+            h2 {
+                background-color: var(--color-main);
+                color: var(--color-light);
+            }
+        }
+    }
+
+    @media screen and (min-width: $size-xs) {
+        width: 50%;
+
+        &:nth-child(odd) {
+            a {
+                padding-right: 1rem;
+            }
+        }
+
+        &:nth-child(even) {
+            a {
+                padding-left: 1rem;
+            }
+        }
+    }
+}
+
+.VideoListImage {
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.VideoListLink {
+    text-align: center;
+}
