@@ -1,11 +1,11 @@
 export * from './Footer/Footer';
 export * from './Head';
 export * from './Header/Header';
-// export * from './Loader/Loader';
+export * from './Loader/Loader';
 // export * from './Pagination/Pagination';
 export * from './Panel/Panel';
 export * from './PostLink/PostLink';
 export * from './ProfileHeader/ProfileHeader';
 // export * from './Project/Project';
 // export * from './ProjectsRecent/ProjectsRecent';
-// export * from './VideoList/VideoList';
+export * from './VideoList/VideoList';

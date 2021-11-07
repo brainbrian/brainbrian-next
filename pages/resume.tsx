@@ -12,6 +12,7 @@ const ResumePage = () => (
                 async
                 defer
                 src="https://buttons.github.io/buttons.js"
+                type="text/javascript"
             ></script>
         </Head>
         <Header />
