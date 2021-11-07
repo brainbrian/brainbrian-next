@@ -5,14 +5,13 @@ import {
     Head,
     Header,
     Panel,
-    // Header, Panel, ProjectsRecent
+    // ProjectsRecent
 } from '../components';
 
 const IndexPage = () => (
     <>
         <Head />
         <Header />
-
         <main>
             <Panel videoUrl="./videos/bg-hero.mp4">
                 <article className="content">

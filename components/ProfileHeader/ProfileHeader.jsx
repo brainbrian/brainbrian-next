@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Image from 'next/image';
 
 import * as Styles from './ProfileHeader.module.scss';
 
@@ -7,30 +8,33 @@ export const ProfileHeader = ({ children }) => (
         <div className={Styles.Biography}>{children}</div>
         <aside className={Styles.Aside}>
             <div className={Styles.ProfileImage} tabIndex={0}>
-                <img
-                    src="/images/brian-behrens-profile.webp"
+                <Image
                     alt="Portrait of Brian Behrens"
+                    height="1125"
+                    src="/images/brian-behrens-profile.webp"
+                    width="1125"
                 />
             </div>
             <p>
                 <a
                     className="github-button"
                     href="https://github.com/brainbrian"
-                    data-color-scheme="no-preference: light; light: light; dark: light;"
+                    data-color-scheme="no-preference: light; light: light; dark: dark;"
                     data-size="large"
+                    data-show-count="true"
                     aria-label="Follow @brainbrian on GitHub"
                 >
                     Follow @brainbrian
                 </a>
             </p>
             <p>
-                <a href="https://www.linkedin.com/in/brianbehrens">
-                    <img
+                <a href="https://www.linkedin.com/in/brianbehrens/">
+                    <Image
                         loading="lazy"
-                        src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x25.png"
+                        src="/images/linkedin.svg"
                         alt="View Brian Behrens's profile on LinkedIn"
-                        width="160"
-                        height="25"
+                        width="140"
+                        height="35"
                         border="0"
                     />
                 </a>

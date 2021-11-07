@@ -1,4 +1,3 @@
-import '../styles/globals.css';
 import '../styles/Styles.scss';
 
 import type { AppProps } from 'next/app';
