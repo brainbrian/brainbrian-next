@@ -3,9 +3,12 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import React from 'react';
-import { remark } from 'remark';
-import remarkHtml from 'remark-html';
+import rehypeParse from 'rehype-parse';
+import rehypeReact from 'rehype-react';
+import { unified } from 'unified';
+import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
 
 import { Footer, Head, Header } from '../../components'; // Pagination
 
@@ -22,8 +25,34 @@ export interface PostProps {
 const Post = ({
     content,
     dateFormatted,
+    slug,
     title,
 }: PostProps): React.ReactNode => {
+    const ResponsiveImage = (props: any) => {
+        return (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+                alt={props.alt}
+                {...props}
+                src={props.src.replaceAll('./', `/images/posts/${slug}/`)}
+            />
+        );
+    };
+
+    const processor = unified()
+        .use(rehypeParse)
+        .use(rehypeReact, {
+            createElement: React.createElement,
+            components: {
+                img: ResponsiveImage,
+            },
+        });
+
+    console.log(
+        'processor.processSync(content)',
+        processor.processSync(content),
+    );
+
     return (
         <>
             <Head title={`${title} | Posts | Brian Behrens`} />
@@ -33,12 +62,16 @@ const Post = ({
                     <article className="post">
                         <h1>{title}</h1>
                         <h3>{dateFormatted}</h3>
-                        <div
+                        <div className="post-content">
+                            {processor.processSync(content).result}
+                        </div>
+                        {/* <div
                             className="post-content"
                             dangerouslySetInnerHTML={{
-                                __html: content || '',
+                                __html:
+                                    processor.processSync(content).result || '',
                             }}
-                        />
+                        /> */}
                     </article>
                 </div>
             </main>
@@ -70,14 +103,20 @@ export async function getStaticProps({
         ),
     );
 
+    const processor = unified()
+        .use(remarkParse)
+        .use(remarkRehype, {
+            sanitize: false,
+            allowDangerousHTML: true,
+        } as any)
+        .use(rehypeStringify);
+
     return {
         props: {
             ...frontmatter,
             slug,
             dateFormatted: format(new Date(frontmatter.date), 'MMMM dd, yyyy'),
-            content: await remark()
-                .use(remarkParse)
-                .use(remarkHtml)
+            content: await processor
                 .process(content || '')
                 .then((file) => String(file)),
         },
