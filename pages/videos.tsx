@@ -6,16 +6,18 @@ const VideosPage = () => {
     const [videos, setVideos] = React.useState([]);
 
     const requestVideos = () => {
-        if (typeof gapi !== `undefined`) {
-            gapi.client.setApiKey(process.env.NEXT_PUBLIC_GOOGLE_API_KEY);
-            gapi.client.load('youtube', 'v3', () => {
-                gapi.client
+        if (typeof window?.gapi !== `undefined`) {
+            window?.gapi.client.setApiKey(
+                process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+            );
+            window?.gapi.client.load('youtube', 'v3', () => {
+                window?.gapi.client
                     .request({
                         path: 'https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=20&playlistId=UUnphFlefYslPtGlsRuRp5Kw',
                     })
-                    .then((response) =>
+                    .then((response: any) =>
                         setVideos(
-                            response.result.items.map((video) => ({
+                            response.result.items.map((video: any) => ({
                                 id: video.snippet.resourceId.videoId,
                                 date: video.snippet.publishedAt,
                                 image: video.snippet.thumbnails.maxres

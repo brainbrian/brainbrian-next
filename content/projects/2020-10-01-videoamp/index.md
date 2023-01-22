@@ -32,7 +32,7 @@ The [VideoAmp Platform](https://videoamp.com/platform/) enables advertisers to o
 I was hired on to the Design Ops team where we developed our [PreAmp Design System](https://preamp.design), developed shared tools and helped deliver on feature development. I now work primarily on our Measurement application allowing our users to monitor past and active investment initiatives.
 
 <video autoplay loop muted playsinline width="100%">
-  <source src="https://videoamp.com/wp-content/uploads/2020/05/engineering-clip.mp4" type="video/mp4">
+  <source src="/public/videos/videoamp-engineering.mp4" type="video/mp4">
 </video>
 
 Video from [VideoAmp.com](https://videoamp.com)
