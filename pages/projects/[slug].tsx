@@ -106,6 +106,10 @@ export async function getStaticProps({
         } as any)
         .use(rehypeStringify);
 
+    console.log(
+        await processor.process(content || '').then((file) => String(file)),
+    );
+
     return {
         props: {
             ...frontmatter,

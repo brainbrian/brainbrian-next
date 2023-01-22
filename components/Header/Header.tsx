@@ -18,8 +18,8 @@ export const Header = (): any => {
     return (
         <header className={Styles.Header}>
             <div className={Styles.HeaderContainer}>
-                <Link href="/">
-                    <a className={Styles.Logo}>Brain Brian</a>
+                <Link className={Styles.Logo} href="/">
+                    Brain Brian
                 </Link>
                 <p className={Styles.Tagline}>
                     software engineer living in Los Angeles, California.
@@ -28,15 +28,14 @@ export const Header = (): any => {
                     <ul className={Styles.NavList}>
                         {navItems.map(({ name, href }, index) => (
                             <li className={Styles.NavListItem} key={index}>
-                                <Link href={href}>
-                                    <a
-                                        className={cx(Styles.NavLink, {
-                                            [Styles.NavLinkActive]:
-                                                router.pathname === href,
-                                        })}
-                                    >
-                                        {name}
-                                    </a>
+                                <Link
+                                    className={cx(Styles.NavLink, {
+                                        [Styles.NavLinkActive]:
+                                            router.pathname === href,
+                                    })}
+                                    href={href}
+                                >
+                                    {name}
                                 </Link>
                             </li>
                         ))}

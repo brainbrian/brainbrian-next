@@ -13,6 +13,7 @@ export const ProfileHeader = ({ children }) => (
                     height="1125"
                     src="/images/brian-behrens-profile.webp"
                     width="1125"
+                    style={{ objectFit: 'fill' }}
                 />
             </div>
             <p>

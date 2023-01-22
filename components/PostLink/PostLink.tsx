@@ -16,8 +16,8 @@ export const PostLink = ({
 }): React.ReactElement<HTMLDivElement> => {
     return (
         <article className="limit-text-width">
-            <Link href={href}>
-                <a className={Styles.PostLink}>{title}</a>
+            <Link className={Styles.PostLink} href={href}>
+                {title}
             </Link>
             <p className={Styles.PostLinkDate}>{date}</p>
             <p>{excerpt}</p>
