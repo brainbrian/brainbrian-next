@@ -4,8 +4,6 @@ import { orderBy } from 'lodash';
 import matter from 'gray-matter';
 import path from 'path';
 import React from 'react';
-// import remark from 'remark';
-// import html from 'remark-html';
 
 import { Footer, Head, Header, PostLink } from '../../components'; // Pagination
 
@@ -13,6 +11,7 @@ interface PostProps {
     categories?: string[];
     date: string;
     dateFormatted: string;
+    excerpt?: string;
     slug: string;
     tags?: string[];
     title: string;
@@ -20,13 +19,13 @@ interface PostProps {
 
 const Posts = ({ posts }: { posts: PostProps[] }): React.ReactNode => {
     const postsComponents = posts.map(
-        ({ dateFormatted, slug, title }, index) => (
+        ({ dateFormatted, excerpt, slug, title }, index) => (
             <PostLink
-                key={index}
                 date={dateFormatted}
+                excerpt={excerpt}
                 href={`/posts/${slug}`}
+                key={index}
                 title={title}
-                excerpt="..."
             />
         ),
     );
@@ -58,7 +57,7 @@ export async function getStaticProps() {
     const posts = files.map((file) => {
         const slug = file;
 
-        const { data: frontmatter } = matter(
+        const { data } = matter(
             fs.readFileSync(
                 path.join(`content/posts/${slug}/`, 'index.md'),
                 'utf-8',
@@ -66,8 +65,8 @@ export async function getStaticProps() {
         );
 
         return {
-            ...frontmatter,
-            dateFormatted: format(new Date(frontmatter.date), 'MMMM dd, yyyy'),
+            ...data,
+            dateFormatted: format(new Date(data.date), 'MMMM dd, yyyy'),
             slug,
         };
     });

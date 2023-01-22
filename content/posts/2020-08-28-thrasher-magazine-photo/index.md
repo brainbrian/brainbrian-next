@@ -1,6 +1,7 @@
 ---
 title: 'Photo Published in Thrasher Magazine'
 date: '2020-08-28'
+excerpt: 'I was contacted by Thrasher earlier this year to use a photo of my of a HoHo Plant at Marginal Way during the Lords of Seatown event. It appears in the May 2020 issue.'
 categories:
     - 'personal'
     - 'photography'

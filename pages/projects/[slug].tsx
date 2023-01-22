@@ -12,7 +12,7 @@ import remarkRehype from 'remark-rehype';
 
 import { Footer, Head, Header } from '../../components'; // Pagination
 
-export interface PostProps {
+export interface ProjectProps {
     categories?: string[];
     content?: string;
     date: string;
@@ -22,12 +22,12 @@ export interface PostProps {
     title: string;
 }
 
-const Post = ({
+const Project = ({
     content,
     dateFormatted,
     slug,
     title,
-}: PostProps): React.ReactNode => {
+}: ProjectProps): React.ReactNode => {
     const ResponsiveImage = (props: any) => {
         return (
             // eslint-disable-next-line @next/next/no-img-element
@@ -48,14 +48,9 @@ const Post = ({
             },
         });
 
-    console.log(
-        'processor.processSync(content)',
-        processor.processSync(content),
-    );
-
     return (
         <>
-            <Head title={`${title} | Posts | Brian Behrens`} />
+            <Head title={`${title} | Projects | Brian Behrens`} />
             <Header />
             <main className="content">
                 <div className="post-container">
@@ -123,4 +118,4 @@ export async function getStaticProps({
     };
 }
 
-export default Post;
+export default Project;

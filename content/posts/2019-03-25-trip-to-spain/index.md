@@ -1,6 +1,7 @@
 ---
 title: 'Trip to Andalusia region of Spain'
 date: '2019-03-25'
+excerpt: 'A year before all this Covid craziness I took a trip (March 15th - 25th, 2019) to the Andalusia region with Amanda and two of our friends.'
 categories:
     - 'personal'
     - 'travel'

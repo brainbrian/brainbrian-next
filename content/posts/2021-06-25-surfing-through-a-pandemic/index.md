@@ -10,6 +10,7 @@ tags:
     - 'los-angeles'
     - 'surf'
     - 'surfing'
+excerpt: 'So much has happened in the past year. Going through a pandemic while living on the westside of LA has been a trip. The pandemic is littered with memories, unlike any others.'
 ---
 
 So much has happened in the past year. Going through a pandemic while living on the westside of LA has been a trip. The pandemic is littered with memories, unlike any others.

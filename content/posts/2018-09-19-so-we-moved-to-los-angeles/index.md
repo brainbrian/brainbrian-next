@@ -1,6 +1,7 @@
 ---
 title: 'So we moved to Los Angeles'
 date: '2018-09-19'
+excerpt: 'So back in June my wife accepted a job in Culver City. So, 3 months later I can say we are finally settled. I even accepted a new position last week at VideoAmp.'
 categories:
     - 'personal'
     - 'surfing'

@@ -48,11 +48,6 @@ const Post = ({
             },
         });
 
-    console.log(
-        'processor.processSync(content)',
-        processor.processSync(content),
-    );
-
     return (
         <>
             <Head title={`${title} | Posts | Brian Behrens`} />

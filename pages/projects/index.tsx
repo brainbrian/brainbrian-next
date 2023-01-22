@@ -18,13 +18,13 @@ interface PostProps {
     title: string;
 }
 
-const Posts = ({ posts }: { posts: PostProps[] }): React.ReactNode => {
-    const postsComponents = posts.map(
+const Projects = ({ projects }: { projects: PostProps[] }): React.ReactNode => {
+    const projectsComponents = projects.map(
         ({ dateFormatted, slug, title }, index) => (
             <PostLink
                 key={index}
                 date={dateFormatted}
-                href={`/posts/${slug}`}
+                href={`/projects/${slug}`}
                 title={title}
                 excerpt="..."
             />
@@ -35,14 +35,14 @@ const Posts = ({ posts }: { posts: PostProps[] }): React.ReactNode => {
     return (
         <>
             <Head
-                title="Posts | Brian Behrens | Los Angeles Software Engineer"
-                description="Posts (blogs) from Brian Behrens of my adventures and journey in coding."
+                title="Projects | Brian Behrens | Los Angeles Software Engineer"
+                description="Projects (blogs) from Brian Behrens of my adventures and journey in coding."
             />
             <Header />
             <main className="content">
-                {postsComponents}
+                {projectsComponents}
                 {/* <Pagination
-                    basePath="/posts/"
+                    basePath="/projects/"
                     currentPage={currentPage}
                     numPages={numPages}
                 /> */}
@@ -55,7 +55,7 @@ const Posts = ({ posts }: { posts: PostProps[] }): React.ReactNode => {
 export async function getStaticProps() {
     const files = fs.readdirSync(path.join('content/projects'));
 
-    const posts = files.map((file) => {
+    const projects = files.map((file) => {
         const slug = file;
 
         const { data: frontmatter } = matter(
@@ -74,9 +74,9 @@ export async function getStaticProps() {
 
     return {
         props: {
-            posts: orderBy(posts, 'date').reverse(),
+            projects: orderBy(projects, 'date').reverse(),
         },
     };
 }
 
-export default Posts;
+export default Projects;
