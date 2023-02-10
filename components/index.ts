@@ -6,6 +6,6 @@ export * from './Loader/Loader';
 export * from './Panel/Panel';
 export * from './PostLink/PostLink';
 export * from './ProfileHeader/ProfileHeader';
-// export * from './Project/Project';
+export * from './Project/Project';
 // export * from './ProjectsRecent/ProjectsRecent';
 export * from './VideoList/VideoList';

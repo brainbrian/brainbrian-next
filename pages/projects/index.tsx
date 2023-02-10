@@ -7,29 +7,28 @@ import React from 'react';
 // import remark from 'remark';
 // import html from 'remark-html';
 
-import { Footer, Head, Header, PostLink } from '../../components'; // Pagination
+import { Footer, Head, Header, Project } from '../../components'; // Pagination
 
-interface PostProps {
-    categories?: string[];
+interface Project {
     date: string;
     dateFormatted: string;
+    image: string;
     slug: string;
     tags?: string[];
     title: string;
+    url: string;
 }
 
-const Projects = ({ projects }: { projects: PostProps[] }): React.ReactNode => {
-    const projectsComponents = projects.map(
-        ({ dateFormatted, slug, title }, index) => (
-            <PostLink
-                key={index}
-                date={dateFormatted}
-                href={`/projects/${slug}`}
-                title={title}
-                excerpt="..."
-            />
-        ),
-    );
+const Projects = ({ projects }: { projects: Project[] }): React.ReactNode => {
+    const projectsComponents = projects.map(({ slug, title, image }, index) => (
+        <Project
+            key={index}
+            excerpt="..."
+            imageUrl={`/images/projects/${slug}/${image}`}
+            slug={`/projects/${slug}`}
+            title={title}
+        />
+    ));
     // const { currentPage, numPages } = pageContext;
 
     return (

@@ -20,7 +20,11 @@ export const PostLink = ({
                 {title}
             </Link>
             <p className={Styles.PostLinkDate}>{date}</p>
-            <p>{excerpt}</p>
+            {excerpt && (
+                <p>
+                    {excerpt} <Link href={href}>[read more]</Link>
+                </p>
+            )}
         </article>
     );
 };
