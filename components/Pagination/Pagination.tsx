@@ -17,8 +17,8 @@ export const Pagination = ({
     const prevPage =
         currentPage - 1 === 1
             ? '/'
-            : `${basePath}?page=${(currentPage - 1).toString()}`;
-    const nextPage = `${basePath}?page=${(currentPage + 1).toString()}`;
+            : `${basePath}/${(currentPage - 1).toString()}`;
+    const nextPage = `${basePath}/${(currentPage + 1).toString()}`;
 
     return (
         <nav className={styles.Pagination}>
@@ -35,7 +35,7 @@ export const Pagination = ({
             {Array.from({ length: numPages }, (_, i) => (
                 <Link
                     key={`pagination-number${i + 1}`}
-                    href={`${basePath}?page=${i === 0 ? '' : i + 1}`}
+                    href={`${basePath}/${i === 0 ? '' : i + 1}`}
                     className={styles.PaginationLink}
                     // activeClassName={styles.PaginationLinkActive}
                 >

@@ -10,9 +10,10 @@ import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 
-import { Footer, Head, Header } from '../../components'; // Pagination
+import { Footer, Head, Header } from '../../components';
+import { config } from '../../config';
 
-export interface ProjectProps {
+export interface PostProps {
     categories?: string[];
     content?: string;
     date: string;
@@ -22,19 +23,19 @@ export interface ProjectProps {
     title: string;
 }
 
-const Project = ({
+const Post = ({
     content,
     dateFormatted,
     slug,
     title,
-}: ProjectProps): React.ReactNode => {
+}: PostProps): React.ReactNode => {
     const ResponsiveImage = (props: any) => {
         return (
             // eslint-disable-next-line @next/next/no-img-element
             <img
                 alt={props.alt}
                 {...props}
-                src={props.src.replaceAll('./', `/images/projects/${slug}/`)}
+                src={props.src.replaceAll('./', `/images/posts/${slug}/`)}
             />
         );
     };
@@ -50,7 +51,7 @@ const Project = ({
 
     return (
         <>
-            <Head title={`${title} | Projects | Brian Behrens`} />
+            <Head title={`${title} | Posts | Brian Behrens`} />
             <Header />
             <main className="content">
                 <div className="post-container">
@@ -60,13 +61,6 @@ const Project = ({
                         <div className="post-content">
                             {processor.processSync(content).result}
                         </div>
-                        {/* <div
-                            className="post-content"
-                            dangerouslySetInnerHTML={{
-                                __html:
-                                    processor.processSync(content).result || '',
-                            }}
-                        /> */}
                     </article>
                 </div>
             </main>
@@ -76,7 +70,7 @@ const Project = ({
 };
 
 export async function getStaticPaths() {
-    const files = fs.readdirSync(path.join('content/projects'));
+    const files = fs.readdirSync(path.join(`${config.contentDirectory}/posts`));
 
     const paths = files.map((file) => ({ params: { slug: file } }));
 
@@ -93,7 +87,7 @@ export async function getStaticProps({
 }) {
     const { data: frontmatter, content } = matter(
         fs.readFileSync(
-            path.join(`content/projects/${slug}/`, 'index.md'),
+            path.join(`${config.contentDirectory}/posts/${slug}/`, 'index.md'),
             'utf-8',
         ),
     );
@@ -105,10 +99,6 @@ export async function getStaticProps({
             allowDangerousHTML: true,
         } as any)
         .use(rehypeStringify);
-
-    console.log(
-        await processor.process(content || '').then((file) => String(file)),
-    );
 
     return {
         props: {
@@ -122,4 +112,4 @@ export async function getStaticProps({
     };
 }
 
-export default Project;
+export default Post;

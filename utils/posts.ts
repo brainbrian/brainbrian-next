@@ -1,39 +1,27 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { format } from 'date-fns';
 import fs from 'fs';
 import { orderBy, slice } from 'lodash';
 import matter from 'gray-matter';
 import path from 'path';
-import type { Post } from '../../types';
-import { config } from '../../config';
+import type { Post } from '../types';
 
-interface PostsResponse {
-    posts: Post[];
-    totalCount: number;
-}
+export const getPostsTotalCount = () =>
+    fs.readdirSync(path.join(`./content/posts`)).length;
 
-export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<PostsResponse | { error: string }>,
-) {
-    const page = Number(req.query.page) || 1;
-    const size = Number(req.query.size) || 10;
-    const order = req.query.order === 'asc' ? 'asc' : 'desc';
-
+export const getPosts = (
+    page: number = 1,
+    size: number = 10,
+    order: 'asc' | 'desc' = 'desc',
+) => {
     try {
-        const files = fs.readdirSync(
-            path.join(`${config.contentDirectory}/posts`),
-        );
+        const files = fs.readdirSync(path.join(`./content/posts`));
 
         const posts = files.map((file) => {
             const slug = file;
 
             const { data: frontmatter } = matter(
                 fs.readFileSync(
-                    path.join(
-                        `${config.contentDirectory}/posts/${slug}/`,
-                        'index.md',
-                    ),
+                    path.join(`./content/posts/${slug}/`, 'index.md'),
                     'utf-8',
                 ),
             );
@@ -58,13 +46,14 @@ export default async function handler(
             endIndex,
         );
 
-        const response: PostsResponse = {
+        return {
             posts: slicedPosts,
             totalCount,
         };
-
-        res.status(200).json(response);
     } catch (error: any) {
-        res.status(500).json({ error: error?.message });
+        return {
+            posts: [],
+            totalCount: 0,
+        };
     }
-}
+};

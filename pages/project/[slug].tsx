@@ -11,8 +11,9 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 
 import { Footer, Head, Header } from '../../components';
+import { config } from '../../config';
 
-export interface PostProps {
+export interface ProjectProps {
     categories?: string[];
     content?: string;
     date: string;
@@ -22,19 +23,19 @@ export interface PostProps {
     title: string;
 }
 
-const Post = ({
+const Project = ({
     content,
     dateFormatted,
     slug,
     title,
-}: PostProps): React.ReactNode => {
+}: ProjectProps): React.ReactNode => {
     const ResponsiveImage = (props: any) => {
         return (
             // eslint-disable-next-line @next/next/no-img-element
             <img
                 alt={props.alt}
                 {...props}
-                src={props.src.replaceAll('./', `/images/posts/${slug}/`)}
+                src={props.src.replaceAll('./', `/images/projects/${slug}/`)}
             />
         );
     };
@@ -50,7 +51,7 @@ const Post = ({
 
     return (
         <>
-            <Head title={`${title} | Posts | Brian Behrens`} />
+            <Head title={`${title} | Projects | Brian Behrens`} />
             <Header />
             <main className="content">
                 <div className="post-container">
@@ -69,7 +70,9 @@ const Post = ({
 };
 
 export async function getStaticPaths() {
-    const files = fs.readdirSync(path.join('content/posts'));
+    const files = fs.readdirSync(
+        path.join(`${config.contentDirectory}/projects`),
+    );
 
     const paths = files.map((file) => ({ params: { slug: file } }));
 
@@ -86,7 +89,10 @@ export async function getStaticProps({
 }) {
     const { data: frontmatter, content } = matter(
         fs.readFileSync(
-            path.join(`content/posts/${slug}/`, 'index.md'),
+            path.join(
+                `${config.contentDirectory}/projects/${slug}/`,
+                'index.md',
+            ),
             'utf-8',
         ),
     );
@@ -111,4 +117,4 @@ export async function getStaticProps({
     };
 }
 
-export default Post;
+export default Project;

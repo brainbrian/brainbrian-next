@@ -5,6 +5,7 @@ import { orderBy, slice } from 'lodash';
 import matter from 'gray-matter';
 import path from 'path';
 import { Project } from '../../types';
+import { config } from '../../config';
 
 interface ProjectsResponse {
     projects: Project[];
@@ -20,14 +21,19 @@ export default async function handler(
     const order = req.query.order === 'asc' ? 'asc' : 'desc';
 
     try {
-        const files = fs.readdirSync(path.join('content/projects'));
+        const files = fs.readdirSync(
+            path.join(`${config.contentDirectory}/projects`),
+        );
 
         const projects = files.map((file) => {
             const slug = file;
 
             const { data: frontmatter } = matter(
                 fs.readFileSync(
-                    path.join(`content/projects/${slug}/`, 'index.md'),
+                    path.join(
+                        `${config.contentDirectory}/projects/${slug}/`,
+                        'index.md',
+                    ),
                     'utf-8',
                 ),
             );

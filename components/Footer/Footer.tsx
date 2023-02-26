@@ -36,7 +36,7 @@ export const Footer = () => {
                         <p>Error getting posts.</p>
                     ) : (
                         <ul className={Styles.List}>
-                            {posts?.posts.map(({ date, slug, title }) => (
+                            {posts?.posts?.map(({ date, slug, title }) => (
                                 <li key={slug} className={Styles.ListItemBrain}>
                                     <p>
                                         <Link href={`/posts/${slug}`}>

@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --pretty --noEmit && tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",

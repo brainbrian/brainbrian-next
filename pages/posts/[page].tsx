@@ -1,26 +1,22 @@
 import React from 'react';
-import { GetServerSideProps } from 'next';
-import { useRouter } from 'next/router';
+import { GetStaticProps } from 'next';
 import { NextPage } from 'next';
+
 import { Footer, Head, Header, Pagination, PostLink } from '../../components';
 import type { Post } from '../../types';
-
-interface PostsResponse {
-    posts: Post[];
-    totalCount: number;
-    error?: string;
-}
-
-interface Props {
-    posts: Post[];
-    totalCount: number;
-}
+import { getPosts, getPostsTotalCount } from '../../utils/posts';
 
 const PAGE_SIZE = 10;
+const PAGE_ORDER = 'desc';
 
-const Posts: NextPage<Props> = ({ posts, totalCount }) => {
-    const router = useRouter();
-    const page = Number(router.query.page) || 1;
+interface Props {
+    currentPage: number;
+    error?: string;
+    posts: Post[];
+    totalCount: number;
+}
+
+const Posts: NextPage<Props> = ({ currentPage, error, posts, totalCount }) => {
     const totalPages = Math.ceil(totalCount / PAGE_SIZE);
 
     const postsComponents = posts.map(
@@ -28,12 +24,14 @@ const Posts: NextPage<Props> = ({ posts, totalCount }) => {
             <PostLink
                 date={dateFormatted}
                 excerpt={excerpt}
-                href={`/posts/${slug}`}
+                href={`/post/${slug}`}
                 key={index}
                 title={title}
             />
         ),
     );
+
+    if (error) return <p>An error occurred: {error}</p>;
 
     return (
         <>
@@ -46,7 +44,7 @@ const Posts: NextPage<Props> = ({ posts, totalCount }) => {
                 {postsComponents}
                 <Pagination
                     basePath={'/posts'}
-                    currentPage={page}
+                    currentPage={currentPage}
                     numPages={totalPages}
                 />
             </main>
@@ -55,24 +53,37 @@ const Posts: NextPage<Props> = ({ posts, totalCount }) => {
     );
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async (
-    context,
-) => {
-    const page = Number(context.query.page) || 1;
-    const order = context.query.order === 'asc' ? 'asc' : 'desc';
-    const fetchURL = `${context.req.headers['x-forwarded-proto'] || 'http'}://${
-        context.req.headers.host
-    }/api/posts?page=${page}&size=${PAGE_SIZE}&order=${order}`;
+export async function getStaticPaths() {
+    const totalPages = Math.ceil((await getPostsTotalCount()) / PAGE_SIZE);
 
+    const paths = Array(totalPages)
+        .fill(0)
+        .map((_, index) => ({
+            params: { page: String(index + 1) },
+        }));
+
+    return {
+        paths,
+        fallback: false,
+    };
+}
+
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+    const currentPage = Number(context.params?.page) || 1;
     try {
-        const response = await fetch(fetchURL);
-        const { posts, totalCount }: PostsResponse = await response.json();
+        const postData = await getPosts(currentPage, PAGE_SIZE, PAGE_ORDER);
+        const { posts, totalCount } = postData;
         return {
-            props: { posts, totalCount },
+            props: { currentPage, posts, totalCount },
         };
     } catch (error: any) {
         return {
-            props: { posts: [], totalCount: 0, error: error?.message },
+            props: {
+                currentPage,
+                error: error?.message,
+                posts: [],
+                totalCount: 0,
+            },
         };
     }
 };
