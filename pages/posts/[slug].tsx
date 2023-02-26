@@ -10,7 +10,7 @@ import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 
-import { Footer, Head, Header } from '../../components'; // Pagination
+import { Footer, Head, Header } from '../../components';
 
 export interface PostProps {
     categories?: string[];
@@ -60,13 +60,6 @@ const Post = ({
                         <div className="post-content">
                             {processor.processSync(content).result}
                         </div>
-                        {/* <div
-                            className="post-content"
-                            dangerouslySetInnerHTML={{
-                                __html:
-                                    processor.processSync(content).result || '',
-                            }}
-                        /> */}
                     </article>
                 </div>
             </main>

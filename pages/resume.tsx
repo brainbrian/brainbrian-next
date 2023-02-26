@@ -7,14 +7,7 @@ const ResumePage = () => (
         <Head
             title="Resume | Brian Behrens | Los Angeles Software Engineer"
             description="The personal resume of Brian Behrens, Staff Software Engineer at Surfline."
-        >
-            <script
-                async
-                defer
-                src="https://buttons.github.io/buttons.js"
-                type="text/javascript"
-            ></script>
-        </Head>
+        />
         <Header />
         <main className="content">
             <ProfileHeader>
@@ -242,11 +235,12 @@ const ResumePage = () => (
             <h2 className="header-bar">Skills</h2>
             <div className="limit-text-width">
                 <p>
-                    HTML, CSS, JavaScript, TypeScript, Node.js, React, build
-                    webpack, Jenkins, Preprocessors, Babel, Vue.js, Angular,
-                    PHP, MySQL, NoSQL, Source Control (Git &amp; SVN),
-                    WordPress, JSON, XML, Social APIs, JS Libraries (Underscore,
-                    GreenSock, Jest, Cypress, jQuery), Agile Methodology, Adobe
+                    HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js,
+                    webpack, GitHub Actions, Jenkins, Preprocessors, Babel,
+                    Vue.js, Angular, MySQL, NoSQL, PHP, Source Control (Git
+                    &amp; SVN), WordPress, JSON, XML, Social APIs, NPM, JS
+                    Libraries (Lodash, MUI, GreenSock, Jest, React Testing
+                    Library, Cypress), Python, Go, AWS, Agile Methodology, Adobe
                     Creative Cloud, Project Estimation/Planning, Managing
                     Development Teams, Video Production and Photography
                 </p>

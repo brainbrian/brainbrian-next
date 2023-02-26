@@ -36,7 +36,7 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus-visible {
         &::after {
             opacity: 1;
         }

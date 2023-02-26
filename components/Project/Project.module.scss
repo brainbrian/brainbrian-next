@@ -44,7 +44,7 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus-visible {
         background-color: var(--color-main);
         text-decoration: none;
 
@@ -83,7 +83,7 @@
         line-height: 1.8;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             background-color: var(--color-light);
             color: var(--color-main);
         }

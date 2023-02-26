@@ -1,49 +1,57 @@
-import * as React from 'react';
-
-// import { usePosts, useTweets } from '../../hooks';
+import Link from 'next/link';
+import React from 'react';
+import useSWR from 'swr';
+import { TwitterTimeline } from '../TwitterTimeline/TwitterTimeline';
 
 import Styles from './Footer.module.scss';
 
+interface Post {
+    date: string;
+    slug: string;
+    title: string;
+}
+
+interface PostsResponse {
+    posts: Post[];
+}
+
 export const Footer = () => {
-    // const posts = usePosts();
-    // const tweets = useTweets();
+    const { data: posts, error: postsError } = useSWR<PostsResponse>(
+        `/api/posts?size=10`,
+        async (url) => {
+            const response = await fetch(url);
+            const data = await response.json();
+            return data;
+        },
+    );
 
     return (
         <div className="bg-page">
-            {/* <aside className={`content ${Styles.Aside}`}>
+            <aside className={`content ${Styles.Aside}`}>
                 <section>
-                    <a href="/posts" className="header-bar">
+                    <Link href="/posts" className="header-bar">
                         <h2 className="header-bar__text">From The Brain</h2>
-                    </a>
-                    <ul className={Styles.List}>
-                        {posts.map(({ date, id, slug, title }) => (
-                            <li key={id} className={Styles.ListItemBrain}>
-                                <p>
-                                    <a href={slug}>
-                                        {title} <span>{date}</span>
-                                    </a>
-                                </p>
-                            </li>
-                        ))}
-                    </ul>
+                    </Link>
+                    {postsError ? (
+                        <p>Error getting posts.</p>
+                    ) : (
+                        <ul className={Styles.List}>
+                            {posts?.posts.map(({ date, slug, title }) => (
+                                <li key={slug} className={Styles.ListItemBrain}>
+                                    <p>
+                                        <Link href={`/posts/${slug}`}>
+                                            {title} <span>{date}</span>
+                                        </Link>
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </section>
                 <section>
-                    <a
-                        href="https://twitter.com/brianbehrens"
-                        className="header-bar"
-                    >
-                        <h2 className="header-bar__text">Tweets</h2>
-                    </a>
-                    <ul className={Styles.List}>
-                        {tweets.map(({ date, text, url }, index) => (
-                            <li key={index} className={Styles.ListItemTweet}>
-                                <p>{text}</p>
-                                <a href={url}>{date}</a>
-                            </li>
-                        ))}
-                    </ul>
+                    <TwitterTimeline />
                 </section>
-            </aside> */}
+            </aside>
             <footer className={Styles.Footer}>
                 &copy; {new Date().getFullYear()} Brain Brian (Brian Behrens) –{' '}
                 Powered by coffee, froth, salt water and curiosity –{' '}
@@ -52,3 +60,5 @@ export const Footer = () => {
         </div>
     );
 };
+
+export default Footer;

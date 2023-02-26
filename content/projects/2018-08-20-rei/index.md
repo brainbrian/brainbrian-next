@@ -14,9 +14,10 @@ tags:
         'responsive design',
         'technical lead',
     ]
+excerpt: 'At REI I supported the Classes, Events and Adventures team. I led frontend software engineer for the team. We supported both applications. We were a team of engineers, a project manager, SDET and a product manager.'
 ---
 
-At [REI](https://www.rei.com) I supported the [Classes &amp; Events](https://www.rei.com/events) and [Adventures](https://www.rei.com/adventures) team. I led frontend software engineer for the team. We supported both applications. We were a team of engineers, a project manager, SDET and a product manager.
+At [REI](https://www.rei.com) I supported the [Classes, Events](https://www.rei.com/events) and [Adventures](https://www.rei.com/adventures) team. I led frontend software engineer for the team. We supported both applications. We were a team of engineers, a project manager, SDET and a product manager.
 
 ![REI 1](./rei-1.webp)
 

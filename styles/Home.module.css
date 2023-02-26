@@ -39,7 +39,7 @@
 }
 
 .title a:hover,
-.title a:focus,
+.title a:focus-visible,
 .title a:active {
   text-decoration: underline;
 }
@@ -91,7 +91,7 @@
 }
 
 .card:hover,
-.card:focus,
+.card:focus-visible,
 .card:active {
   color: #0070f3;
   border-color: #0070f3;

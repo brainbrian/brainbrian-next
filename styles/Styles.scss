@@ -13,6 +13,10 @@
     --max-width-text: #{$max-width-text};
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--color-dark);
     color: var(--color-light);
@@ -103,7 +107,7 @@ a {
     text-decoration: none;
 
     &:hover,
-    &:focus {
+    &:focus-visible {
         text-decoration: underline;
     }
 }
@@ -131,7 +135,7 @@ a {
     }
 
     &:hover,
-    &:focus {
+    &:focus-visible {
         text-decoration: none;
 
         #{$parent}__text {

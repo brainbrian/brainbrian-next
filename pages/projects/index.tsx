@@ -1,35 +1,75 @@
-import { format } from 'date-fns';
-import fs from 'fs';
-import { orderBy } from 'lodash';
-import matter from 'gray-matter';
-import path from 'path';
-import React from 'react';
-// import remark from 'remark';
-// import html from 'remark-html';
+import React, { useEffect, useState } from 'react';
+import type { GetServerSideProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
 
-import { Footer, Head, Header, Project } from '../../components'; // Pagination
+import {
+    Footer,
+    Head,
+    Header,
+    Loader,
+    Pagination,
+    Project,
+} from '../../components';
+import type { Project as ProjectType } from '../../types';
 
-interface Project {
-    date: string;
-    dateFormatted: string;
-    image: string;
-    slug: string;
-    tags?: string[];
-    title: string;
-    url: string;
+interface ProjectResponse {
+    projects: ProjectType[];
+    totalCount: number;
+    error?: string;
 }
 
-const Projects = ({ projects }: { projects: Project[] }): React.ReactNode => {
-    const projectsComponents = projects.map(({ slug, title, image }, index) => (
-        <Project
-            key={index}
-            excerpt="..."
-            imageUrl={`/images/projects/${slug}/${image}`}
-            slug={`/projects/${slug}`}
-            title={title}
-        />
-    ));
-    // const { currentPage, numPages } = pageContext;
+interface Props {
+    projects: ProjectType[];
+    totalCount: number;
+    error?: string;
+}
+
+const Projects: NextPage<Props> = ({ projects, totalCount, error }) => {
+    const router = useRouter();
+    const { page = '1', size = '10', order = 'desc' } = router.query;
+    const [isLoading, setIsLoading] = useState(true);
+    const [fetchedData, setFetchedData] = useState({
+        projects,
+        totalCount,
+        error,
+    });
+
+    useEffect(() => {
+        async function fetchData() {
+            const fetchURL = `${window?.location?.protocol}//${window?.location?.host}/api/projects?page=${page}&size=${size}&order=${order}`;
+
+            try {
+                const response = await fetch(fetchURL);
+                const { projects, totalCount }: ProjectResponse =
+                    await response.json();
+                setFetchedData({ projects, totalCount });
+            } catch (error: any) {
+                setFetchedData({
+                    projects: [],
+                    totalCount: 0,
+                    error: error?.message,
+                });
+            } finally {
+                setIsLoading(false);
+            }
+        }
+
+        fetchData();
+    }, [page, size, order]);
+
+    const totalPages = Math.ceil(fetchedData.totalCount / Number(size));
+
+    const projectsComponents = fetchedData.projects.map(
+        ({ excerpt, slug, title, image }) => (
+            <Project
+                key={slug}
+                excerpt={excerpt}
+                imageUrl={`/images/projects/${slug}/${image}`}
+                slug={`/projects/${slug}`}
+                title={title}
+            />
+        ),
+    );
 
     return (
         <>
@@ -39,43 +79,51 @@ const Projects = ({ projects }: { projects: Project[] }): React.ReactNode => {
             />
             <Header />
             <main className="content">
-                {projectsComponents}
-                {/* <Pagination
-                    basePath="/projects/"
-                    currentPage={currentPage}
-                    numPages={numPages}
-                /> */}
+                {isLoading ? (
+                    <Loader />
+                ) : (
+                    <>
+                        {error ? (
+                            <p>An error occurred: {error}</p>
+                        ) : (
+                            <>
+                                {projectsComponents}
+                                <Pagination
+                                    basePath={'/projects'}
+                                    currentPage={Number(page)}
+                                    numPages={totalPages}
+                                />
+                            </>
+                        )}
+                    </>
+                )}
             </main>
             <Footer />
         </>
     );
 };
 
-export async function getStaticProps() {
-    const files = fs.readdirSync(path.join('content/projects'));
+export const getServerSideProps: GetServerSideProps<Props> = async (
+    context,
+) => {
+    const page = Number(context.query.page) || 1;
+    const size = Number(context.query.size) || 10;
+    const order = context.query.order === 'asc' ? 'asc' : 'desc';
+    const fetchURL = `${context.req.headers['x-forwarded-proto'] || 'http'}://${
+        context.req.headers.host
+    }/api/projects?page=${page}&size=${size}&order=${order}`;
 
-    const projects = files.map((file) => {
-        const slug = file;
-
-        const { data: frontmatter } = matter(
-            fs.readFileSync(
-                path.join(`content/projects/${slug}/`, 'index.md'),
-                'utf-8',
-            ),
-        );
-
+    try {
+        const response = await fetch(fetchURL);
+        const { projects, totalCount }: ProjectResponse = await response.json();
         return {
-            ...frontmatter,
-            dateFormatted: format(new Date(frontmatter.date), 'MMMM dd, yyyy'),
-            slug,
+            props: { projects, totalCount },
         };
-    });
-
-    return {
-        props: {
-            projects: orderBy(projects, 'date').reverse(),
-        },
-    };
-}
+    } catch (error: any) {
+        return {
+            props: { projects: [], totalCount: 0, error: error?.message },
+        };
+    }
+};
 
 export default Projects;

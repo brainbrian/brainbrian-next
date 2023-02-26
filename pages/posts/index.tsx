@@ -1,23 +1,28 @@
-import { format } from 'date-fns';
-import fs from 'fs';
-import { orderBy } from 'lodash';
-import matter from 'gray-matter';
-import path from 'path';
 import React from 'react';
+import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
+import { NextPage } from 'next';
+import { Footer, Head, Header, Pagination, PostLink } from '../../components';
+import type { Post } from '../../types';
 
-import { Footer, Head, Header, PostLink } from '../../components'; // Pagination
-
-interface PostProps {
-    categories?: string[];
-    date: string;
-    dateFormatted: string;
-    excerpt?: string;
-    slug: string;
-    tags?: string[];
-    title: string;
+interface PostsResponse {
+    posts: Post[];
+    totalCount: number;
+    error?: string;
 }
 
-const Posts = ({ posts }: { posts: PostProps[] }): React.ReactNode => {
+interface Props {
+    posts: Post[];
+    totalCount: number;
+}
+
+const PAGE_SIZE = 10;
+
+const Posts: NextPage<Props> = ({ posts, totalCount }) => {
+    const router = useRouter();
+    const page = Number(router.query.page) || 1;
+    const totalPages = Math.ceil(totalCount / PAGE_SIZE);
+
     const postsComponents = posts.map(
         ({ dateFormatted, excerpt, slug, title }, index) => (
             <PostLink
@@ -29,7 +34,6 @@ const Posts = ({ posts }: { posts: PostProps[] }): React.ReactNode => {
             />
         ),
     );
-    // const { currentPage, numPages } = pageContext;
 
     return (
         <>
@@ -40,42 +44,37 @@ const Posts = ({ posts }: { posts: PostProps[] }): React.ReactNode => {
             <Header />
             <main className="content">
                 {postsComponents}
-                {/* <Pagination
-                    basePath="/posts/"
-                    currentPage={currentPage}
-                    numPages={numPages}
-                /> */}
+                <Pagination
+                    basePath={'/posts'}
+                    currentPage={page}
+                    numPages={totalPages}
+                />
             </main>
             <Footer />
         </>
     );
 };
 
-export async function getStaticProps() {
-    const files = fs.readdirSync(path.join('content/posts'));
+export const getServerSideProps: GetServerSideProps<Props> = async (
+    context,
+) => {
+    const page = Number(context.query.page) || 1;
+    const order = context.query.order === 'asc' ? 'asc' : 'desc';
+    const fetchURL = `${context.req.headers['x-forwarded-proto'] || 'http'}://${
+        context.req.headers.host
+    }/api/posts?page=${page}&size=${PAGE_SIZE}&order=${order}`;
 
-    const posts = files.map((file) => {
-        const slug = file;
-
-        const { data } = matter(
-            fs.readFileSync(
-                path.join(`content/posts/${slug}/`, 'index.md'),
-                'utf-8',
-            ),
-        );
-
+    try {
+        const response = await fetch(fetchURL);
+        const { posts, totalCount }: PostsResponse = await response.json();
         return {
-            ...data,
-            dateFormatted: format(new Date(data.date), 'MMMM dd, yyyy'),
-            slug,
+            props: { posts, totalCount },
         };
-    });
-
-    return {
-        props: {
-            posts: orderBy(posts, 'date').reverse(),
-        },
-    };
-}
+    } catch (error: any) {
+        return {
+            props: { posts: [], totalCount: 0, error: error?.message },
+        };
+    }
+};
 
 export default Posts;

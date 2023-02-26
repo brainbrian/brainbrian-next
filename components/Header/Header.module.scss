@@ -54,7 +54,7 @@ $height-border: 1rem;
     width: 100%;
 
     &:hover,
-    &:focus {
+    &:focus-visible {
         background-color: var(--color-dark);
         color: var(--color-main);
         text-decoration: none;
@@ -144,7 +144,7 @@ $height-border: 1rem;
     }
 
     &:hover,
-    &:focus {
+    &:focus-visible {
         background-color: var(--color-dark);
         text-decoration: none;
     }
