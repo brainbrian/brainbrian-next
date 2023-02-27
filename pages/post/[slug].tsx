@@ -12,6 +12,8 @@ import remarkRehype from 'remark-rehype';
 
 import { Footer, Head, Header } from '../../components';
 import { config } from '../../config';
+import { getPosts } from '../../utils/posts';
+import { Post } from '../../types';
 
 export interface PostProps {
     categories?: string[];
@@ -21,6 +23,7 @@ export interface PostProps {
     slug: string;
     tags?: string[];
     title: string;
+    recentPosts: Post[];
 }
 
 const Post = ({
@@ -28,6 +31,7 @@ const Post = ({
     dateFormatted,
     slug,
     title,
+    recentPosts,
 }: PostProps): React.ReactNode => {
     const ResponsiveImage = (props: any) => {
         return (
@@ -64,7 +68,7 @@ const Post = ({
                     </article>
                 </div>
             </main>
-            <Footer />
+            <Footer recentPosts={recentPosts} />
         </>
     );
 };
@@ -85,31 +89,52 @@ export async function getStaticProps({
 }: {
     params: { slug: string };
 }) {
-    const { data: frontmatter, content } = matter(
-        fs.readFileSync(
-            path.join(`${config.contentDirectory}/posts/${slug}/`, 'index.md'),
-            'utf-8',
-        ),
-    );
+    try {
+        const { data: frontmatter, content } = matter(
+            fs.readFileSync(
+                path.join(
+                    `${config.contentDirectory}/posts/${slug}/`,
+                    'index.md',
+                ),
+                'utf-8',
+            ),
+        );
 
-    const processor = unified()
-        .use(remarkParse)
-        .use(remarkRehype, {
-            sanitize: false,
-            allowDangerousHTML: true,
-        } as any)
-        .use(rehypeStringify);
+        const processor = unified()
+            .use(remarkParse)
+            .use(remarkRehype, {
+                sanitize: false,
+                allowDangerousHTML: true,
+            } as any)
+            .use(rehypeStringify);
 
-    return {
-        props: {
-            ...frontmatter,
-            slug,
-            dateFormatted: format(new Date(frontmatter.date), 'MMMM dd, yyyy'),
-            content: await processor
-                .process(content || '')
-                .then((file) => String(file)),
-        },
-    };
+        const recentPostData = await getPosts(1, 8, 'desc');
+        const { posts: recentPosts } = recentPostData;
+
+        return {
+            props: {
+                ...frontmatter,
+                slug,
+                dateFormatted: format(
+                    new Date(frontmatter.date),
+                    'MMMM dd, yyyy',
+                ),
+                content: await processor
+                    .process(content || '')
+                    .then((file) => String(file)),
+                recentPosts,
+            },
+        };
+    } catch (error: any) {
+        return {
+            props: {
+                slug,
+                dateFormatted: null,
+                content: null,
+                recentPosts: [],
+            },
+        };
+    }
 }
 
 export default Post;

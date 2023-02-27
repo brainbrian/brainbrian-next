@@ -2,8 +2,9 @@ import React from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 
 import { Footer, Head, Header, Pagination, Project } from '../../components';
-import type { Project as ProjectType } from '../../types';
+import type { Post, Project as ProjectType } from '../../types';
 import { getProjects, getProjectsTotalCount } from '../../utils/projects';
+import { getPosts } from '../../utils/posts';
 
 const PAGE_SIZE = 10;
 const PAGE_ORDER = 'desc';
@@ -13,13 +14,15 @@ interface Props {
     error?: string;
     projects: ProjectType[];
     totalCount: number;
+    recentPosts?: Post[];
 }
 
 const Projects: NextPage<Props> = ({
     currentPage,
-    projects,
-    totalCount,
     error,
+    projects,
+    recentPosts,
+    totalCount,
 }) => {
     const totalPages = Math.ceil(totalCount / PAGE_SIZE);
 
@@ -52,7 +55,7 @@ const Projects: NextPage<Props> = ({
                     numPages={totalPages}
                 />
             </main>
-            <Footer />
+            <Footer recentPosts={recentPosts} />
         </>
     );
 };
@@ -77,8 +80,10 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
     try {
         const postData = await getProjects(currentPage, PAGE_SIZE, PAGE_ORDER);
         const { projects, totalCount } = postData;
+        const recentPostData = await getPosts(1, 8, 'desc');
+        const { posts: recentPosts } = recentPostData;
         return {
-            props: { currentPage, projects, totalCount },
+            props: { currentPage, projects, recentPosts, totalCount },
         };
     } catch (error: any) {
         return {
@@ -86,6 +91,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
                 currentPage,
                 error: error?.message,
                 projects: [],
+                recentPosts: [],
                 totalCount: 0,
             },
         };

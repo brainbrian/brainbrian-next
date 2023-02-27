@@ -6,6 +6,20 @@ module.exports = {
     images: {
         domains: [],
     },
+    async redirects() {
+        return [
+            {
+                source: '/posts',
+                destination: '/posts/1',
+                permanent: true,
+            },
+            {
+                source: '/projects',
+                destination: '/projects/1',
+                permanent: true,
+            },
+        ];
+    },
     reactStrictMode: true,
     webpack: (config) => {
         config.plugins.push(

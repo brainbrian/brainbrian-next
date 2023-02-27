@@ -8,9 +8,9 @@ import Styles from './Header.module.scss';
 export const Header = (): any => {
     const router = useRouter();
     const navItems = [
-        { name: 'Projects', href: '/projects' },
+        { name: 'Projects', href: '/projects/1' },
         { name: 'Resume', href: '/resume' },
-        { name: 'Posts', href: '/posts' },
+        { name: 'Posts', href: '/posts/1' },
         { name: 'Videos', href: '/videos' },
         { name: 'Gallery', href: 'https://gallery.brainbrian.com' },
     ];
@@ -31,7 +31,7 @@ export const Header = (): any => {
                                 <Link
                                     className={cx(Styles.NavLink, {
                                         [Styles.NavLinkActive]:
-                                            router.pathname === href,
+                                            router.asPath === href,
                                     })}
                                     href={href}
                                 >

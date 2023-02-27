@@ -14,9 +14,16 @@ interface Props {
     error?: string;
     posts: Post[];
     totalCount: number;
+    recentPosts?: Post[];
 }
 
-const Posts: NextPage<Props> = ({ currentPage, error, posts, totalCount }) => {
+const Posts: NextPage<Props> = ({
+    currentPage,
+    error,
+    posts,
+    recentPosts,
+    totalCount,
+}) => {
     const totalPages = Math.ceil(totalCount / PAGE_SIZE);
 
     const postsComponents = posts.map(
@@ -48,7 +55,7 @@ const Posts: NextPage<Props> = ({ currentPage, error, posts, totalCount }) => {
                     numPages={totalPages}
                 />
             </main>
-            <Footer />
+            <Footer recentPosts={recentPosts} />
         </>
     );
 };
@@ -73,8 +80,10 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
     try {
         const postData = await getPosts(currentPage, PAGE_SIZE, PAGE_ORDER);
         const { posts, totalCount } = postData;
+        const recentPostData = await getPosts(1, 8, 'desc');
+        const { posts: recentPosts } = recentPostData;
         return {
-            props: { currentPage, posts, totalCount },
+            props: { currentPage, posts, totalCount, recentPosts },
         };
     } catch (error: any) {
         return {
@@ -83,6 +92,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
                 error: error?.message,
                 posts: [],
                 totalCount: 0,
+                recentPosts: [],
             },
         };
     }
