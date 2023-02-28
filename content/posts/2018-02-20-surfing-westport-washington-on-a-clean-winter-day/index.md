@@ -15,4 +15,4 @@ Shot with my GoPro Hero4 Black, iPhone X and DJI Mavic Pro.
 
 Edited in Adobe Premiere.
 
-`video: https://www.youtube.com/watch?v=JPOGfMQzMVY`
+https://www.youtube.com/watch?v=JPOGfMQzMVY

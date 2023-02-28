@@ -19,7 +19,7 @@ Throughout high school and college I played in a couple of bands. One of the ban
 
 ## "This Room Could Swallow Me" by The Autumn View
 
-`video: https://www.youtube.com/watch?v=8Cf3RWETlFM`
+https://www.youtube.com/watch?v=8Cf3RWETlFM
 
 This video is a collection of footage from our recording session in Chicago of our 2 song EP with [Matt Allison](<https://en.wikipedia.org/wiki/Matt_Allison_(record_producer)>) at [Atlas Studios](https://www.facebook.com/atlaschicago/).
 
@@ -33,7 +33,7 @@ In 2003 we released our first full-length record on our friend's label, Uniform 
 
 Below is footage from our CD Release show for the above album. This was the start of a tour we took to California and back.
 
-`video: https://www.youtube.com/watch?v=I64-BUpv-cM`
+https://www.youtube.com/watch?v=I64-BUpv-cM
 
 These are 2 of many t-shirt designs we came up with over the years. The one on the left was, I believe, the most popular design. The "TV Girl" on the right was one of my favorites.
 

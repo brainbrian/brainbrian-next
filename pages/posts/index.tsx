@@ -6,7 +6,7 @@ import { Footer, Head, Header, Pagination, PostLink } from '../../components';
 import type { Post } from '../../types';
 import { getPosts } from '../../utils/posts';
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 20;
 const PAGE_ORDER = 'desc';
 
 interface Props {

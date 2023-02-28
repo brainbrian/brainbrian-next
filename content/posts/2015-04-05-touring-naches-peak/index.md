@@ -21,7 +21,7 @@ Skin tracks were heavily traveled. As the day went on snow began to melt and fre
 
 Coverage all around is low, but we had next to no base damage on our gear, even after 5 laps with filled with airs and power turns. Throughout the day clouds kept trying to hold, but the sun would burn it off before visibility could become a problem.
 
-`video: https://www.youtube.com/watch?v=E4wB5MPsTws`
+https://www.youtube.com/watch?v=E4wB5MPsTws
 
 On the drive home we encountered some rain shortly after passing Crystal Mountain Resort.
 

@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
+    "@remark-embedder/core": "^3.0.1",
+    "@remark-embedder/transformer-oembed": "^3.0.0",
     "@vercel/analytics": "^0.1.10",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",

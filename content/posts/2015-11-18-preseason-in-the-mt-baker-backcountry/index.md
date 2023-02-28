@@ -13,6 +13,8 @@ We were pleasantly surprised to find the snow conditions highly favorable. There
 
 After a lap near chair 1 we headed out near Artist Point. Here the sun was starting to break through and produce some amazing light. Even with the breaks in light, dropping in just below Table Mountain the light was still very flat once you got dropped below the ridge line. Flat light and heavy snow were some of my biggest concerns for the day. Some small sluff slides had been set off in the area by others, but nothing too alarming. We will have to see what the future storms bring over the next couple weeks. Layers of rain could be a concern as we move into late November. Lets hope this great dump of snow stays around for a bit!
 
-https://vimeo.com/146156889/
+<div class="embed-video">
+    <iframe src="https://player.vimeo.com/video/146156889?h=ade86b24db&color=99cc33&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ![Featured on thepeakoftheweek.com](http://thepeakoftheweek.com/2015/11/2015-mt-baker-backcountry-opener/)

@@ -36,7 +36,9 @@ I also assited the current developer, previously the junior developer I hired on
 
 Enjoy this video with a bit of history about Mervin, Mike and Pete.
 
-`video: https://vimeo.com/236668189`
+<div class="embed-video">
+    <iframe src="https://player.vimeo.com/video/236668189?h=ade86b24db&color=99cc33&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 I sure do miss my Mervin Family!
 
@@ -44,4 +46,4 @@ I sure do miss my Mervin Family!
 
 I will forever miss that office in the Fremont neighborhood of Seattle, Washington.
 
-`video: https://www.youtube.com/watch?v=ZQWqYlQI-PA`
+https://www.youtube.com/watch?v=ZQWqYlQI-PA

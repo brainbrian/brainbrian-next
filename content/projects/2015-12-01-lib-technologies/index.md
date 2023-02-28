@@ -35,7 +35,9 @@ While at [Mervin Mfg.](https://www.mervin.com) we were tasked with building a [w
 
 The 2014/2015 winter season was the 20 year anniversary celebration of professional snowboarder Jamie Lynn’s pro line with Lib Technologies. In honor of his 20 years of pro-models with Lib Tech we planned a marketing campaign around his career history and products.
 
-`video: https://vimeo.com/112238604`
+<div class="embed-video">
+    <iframe src="https://player.vimeo.com/video/112238604?h=ade86b24db&color=99cc33&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 We built a [responsive, scrolling website](https://www.lib-tech.com/snowboarding/jamie-lynn-20-year-anniversary/) to showcase photos, products, notable quotes from industry pros and a featured 20 year video. The website uses complex scrolling techniques to preset a pleasing, focused look into Jamie’s career with Lib Technologies.
 

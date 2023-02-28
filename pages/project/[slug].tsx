@@ -6,6 +6,8 @@ import matter from 'gray-matter';
 import path from 'path';
 import rehypeParse from 'rehype-parse';
 import rehypeReact from 'rehype-react';
+import remarkEmbedder, { TransformerInfo } from '@remark-embedder/core';
+import oembedTransformer from '@remark-embedder/transformer-oembed';
 import rehypeStringify from 'rehype-stringify';
 import rehypeRaw from 'rehype-raw';
 import remarkParse from 'remark-parse';
@@ -105,8 +107,24 @@ export async function getStaticProps({
             ),
         );
 
+        const handleHTML = (html: string, info: TransformerInfo) => {
+            const { url, transformer } = info;
+            if (
+                transformer.name === '@remark-embedder/transformer-oembed' ||
+                url.includes('youtube.com') ||
+                url.includes('vimeo.com')
+            ) {
+                return `<div class="embed-video">${html}</div>` as any;
+            }
+            return html;
+        };
+
         const processor = unified()
             .use(remarkParse)
+            .use(remarkEmbedder, {
+                transformers: [oembedTransformer],
+                handleHTML,
+            } as any)
             .use(remarkRehype, {
                 allowDangerousHtml: true,
             })

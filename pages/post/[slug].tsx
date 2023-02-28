@@ -11,6 +11,8 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import rehypeRaw from 'rehype-raw';
 import { unified } from 'unified';
+import remarkEmbedder, { TransformerInfo } from '@remark-embedder/core';
+import oembedTransformer from '@remark-embedder/transformer-oembed';
 
 import { Footer, Head, Header } from '../../components';
 import { config } from '../../config';
@@ -105,8 +107,23 @@ export async function getStaticProps({
             ),
         );
 
+        const handleHTML = (html: string, info: TransformerInfo) => {
+            const { url, transformer } = info;
+            if (url.includes('youtube.com')) {
+                return `<div class="embed-video">${html}</div>` as any;
+            }
+            if (url.includes('flickr.com')) {
+                return `<div class="embed-image">${html}</div>` as any;
+            }
+            return html;
+        };
+
         const processor = unified()
             .use(remarkParse)
+            .use(remarkEmbedder, {
+                transformers: [oembedTransformer],
+                handleHTML,
+            } as any)
             .use(remarkRehype, {
                 allowDangerousHtml: true,
             })

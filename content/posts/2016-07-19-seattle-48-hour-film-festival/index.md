@@ -9,7 +9,9 @@ I spent this past weekend with a crew of 55 volunteers making a short film, 7 mi
 
 https://www.48hourfilm.com/en/seattle-wa/films/20656
 
-`video: https://vimeo.com/175171853`
+<div class="embed-video">
+    <iframe src="https://player.vimeo.com/video/175171853?h=ade86b24db&color=99cc33&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 https://www.flickr.com/photos/brianbehrens/28125884390/in/album-72157668358213254/
 
