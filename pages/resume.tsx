@@ -19,17 +19,22 @@ const ResumePage: NextPage<Props> = ({ recentPosts }) => (
         <main className="content">
             <ProfileHeader>
                 <p>
-                    I’m Brian Behrens, a developer living in Los Angeles, CA. I
-                    have been building interactive projects professionally since
-                    2003. The bulk of my career has been centered around
-                    websites, social campaigns, and web-based applications. I
-                    have focused heavily on interaction design, web standards,
-                    usability, animation, video, e-commerce, and application
-                    architecture. My passion for technology is ever-evolving and
-                    I enjoy new challenges. Behind it all, I’m a problem solver
-                    who likes telling stories. In my free time, you’ll find me
-                    surfing, taking photos, exploring code, and/or spending time
-                    with my wife and dogs.
+                    Hello, my name is Brian Behrens, and I am an experienced
+                    software developer based in Los Angeles. With over 20 years
+                    of experience, I specialize in developing interactive
+                    projects that engage users, drive business results, and tell
+                    compelling stories. My expertise in interaction design, web
+                    standards, usability, and application architecture has
+                    enabled me to create award-winning projects that meet
+                    business objectives. I have worked on a diverse range of
+                    projects, including e-commerce websites, social media
+                    campaigns, and web-based applications. As a problem solver,
+                    I enjoy collaborating with teams to create innovative
+                    solutions that push the boundaries of what is possible. I am
+                    passionate about technology and always seek out new
+                    challenges to keep up-to-date with the latest trends. In my
+                    free time, I enjoy surfing, taking photos, and spending
+                    quality time with my wife and dogs.
                 </p>
             </ProfileHeader>
             <h2 className="header-bar">Experience</h2>

@@ -20,7 +20,7 @@ export const TwitterTimeline = () => (
                     dnt: true,
                     showReplies: false,
                     theme: 'dark',
-                    tweetLimit: 5,
+                    tweetLimit: 4,
                 }}
             />
         </div>

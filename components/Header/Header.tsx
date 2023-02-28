@@ -8,9 +8,9 @@ import Styles from './Header.module.scss';
 export const Header = (): any => {
     const router = useRouter();
     const navItems = [
-        { name: 'Projects', href: '/projects/1' },
+        { name: 'Projects', href: '/projects' },
         { name: 'Resume', href: '/resume' },
-        { name: 'Posts', href: '/posts/1' },
+        { name: 'Posts', href: '/posts' },
         { name: 'Videos', href: '/videos' },
         { name: 'Gallery', href: 'https://gallery.brainbrian.com' },
     ];
