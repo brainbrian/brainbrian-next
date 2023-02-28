@@ -1,4 +1,5 @@
 import React, { createElement } from 'react';
+import type { NextPage } from 'next';
 import { format } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -7,9 +8,9 @@ import rehypeParse from 'rehype-parse';
 import rehypeReact from 'rehype-react';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
-import { unified } from 'unified';
 import rehypeStringify from 'rehype-stringify';
-import type { NextPage } from 'next';
+import rehypeRaw from 'rehype-raw';
+import { unified } from 'unified';
 
 import { Footer, Head, Header } from '../../components';
 import { config } from '../../config';
@@ -42,7 +43,7 @@ const Post: NextPage<Props> = ({
             <img
                 {...props}
                 alt={props.alt}
-                className={styles.image}
+                className="responsive-image"
                 src={props.src.replaceAll('./', `/images/posts/${slug}/`)}
             />
         );
@@ -107,9 +108,9 @@ export async function getStaticProps({
         const processor = unified()
             .use(remarkParse)
             .use(remarkRehype, {
-                sanitize: false,
-                allowDangerousHTML: true,
-            } as any)
+                allowDangerousHtml: true,
+            })
+            .use(rehypeRaw)
             .use(rehypeStringify);
 
         const recentPostData = await getPosts(1, 8, 'desc');

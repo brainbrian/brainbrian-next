@@ -1,20 +1,21 @@
+import React, { createElement } from 'react';
+import type { NextPage } from 'next';
 import { format } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import React, { createElement } from 'react';
 import rehypeParse from 'rehype-parse';
 import rehypeReact from 'rehype-react';
-import { unified } from 'unified';
 import rehypeStringify from 'rehype-stringify';
+import rehypeRaw from 'rehype-raw';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+import { unified } from 'unified';
 
 import { Footer, Head, Header } from '../../components';
 import { config } from '../../config';
 import { getPosts } from '../../utils/posts';
 import type { Post } from '../../types';
-import { NextPage } from 'next';
 
 interface Props {
     categories?: string[];
@@ -40,6 +41,7 @@ const Project: NextPage<Props> = ({
             <img
                 {...props}
                 alt={props.alt}
+                className="responsive-image"
                 src={props.src.replaceAll('./', `/images/projects/${slug}/`)}
             />
         );
@@ -106,9 +108,9 @@ export async function getStaticProps({
         const processor = unified()
             .use(remarkParse)
             .use(remarkRehype, {
-                sanitize: false,
-                allowDangerousHTML: true,
-            } as any)
+                allowDangerousHtml: true,
+            })
+            .use(rehypeRaw)
             .use(rehypeStringify);
 
         const recentPostData = await getPosts(1, 8, 'desc');

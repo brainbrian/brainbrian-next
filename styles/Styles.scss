@@ -189,11 +189,14 @@ a {
     }
 }
 
-.gatsby-resp-image-wrapper {
+.responsive-image {
+    margin: 1em 0;
+    width: 100%;
+
     @media screen and (min-width: $size-md) {
-        margin-left: -15% !important;
-        max-width: 130% !important;
-        width: 130% !important;
+        margin: 2em 0 2em -15%;
+        max-width: 130%;
+        width: 130%;
     }
 }
 

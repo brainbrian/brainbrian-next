@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import Link from 'next/link';
 
 import styles from './Pagination.module.scss';
@@ -16,7 +17,7 @@ export const Pagination = ({
     const isLast = currentPage === numPages;
     const prevPage =
         currentPage - 1 === 1
-            ? '/'
+            ? basePath
             : `${basePath}/${(currentPage - 1).toString()}`;
     const nextPage = `${basePath}/${(currentPage + 1).toString()}`;
 
@@ -27,7 +28,6 @@ export const Pagination = ({
                     href={prevPage}
                     rel="prev"
                     className={styles.PaginationLink}
-                    // activeClassName={styles.PaginationLinkActive}
                 >
                     ← <span className="sr-only">Previous Page</span>
                 </Link>
@@ -36,8 +36,9 @@ export const Pagination = ({
                 <Link
                     key={`pagination-number${i + 1}`}
                     href={`${basePath}/${i === 0 ? '' : i + 1}`}
-                    className={styles.PaginationLink}
-                    // activeClassName={styles.PaginationLinkActive}
+                    className={classNames(styles.PaginationLink, {
+                        [styles.PaginationLinkActive]: currentPage === i + 1,
+                    })}
                 >
                     {i + 1}
                 </Link>
@@ -47,7 +48,6 @@ export const Pagination = ({
                     href={nextPage}
                     rel="next"
                     className={styles.PaginationLink}
-                    // activeClassName={styles.PaginationLinkActive}
                 >
                     <span className="sr-only">Next Page</span> →
                 </Link>
