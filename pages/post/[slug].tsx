@@ -1,21 +1,24 @@
+import React, { createElement } from 'react';
 import { format } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import React from 'react';
 import rehypeParse from 'rehype-parse';
 import rehypeReact from 'rehype-react';
-import { unified } from 'unified';
-import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+import { unified } from 'unified';
+import rehypeStringify from 'rehype-stringify';
+import type { NextPage } from 'next';
 
 import { Footer, Head, Header } from '../../components';
 import { config } from '../../config';
 import { getPosts } from '../../utils/posts';
-import { Post } from '../../types';
+import type { Post } from '../../types';
 
-export interface PostProps {
+import styles from './Post.module.scss';
+
+interface Props {
     categories?: string[];
     content?: string;
     date: string;
@@ -26,28 +29,29 @@ export interface PostProps {
     recentPosts: Post[];
 }
 
-const Post = ({
+const Post: NextPage<Props> = ({
     content,
     dateFormatted,
     slug,
     title,
     recentPosts,
-}: PostProps): React.ReactNode => {
+}: Props) => {
     const ResponsiveImage = (props: any) => {
         return (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-                alt={props.alt}
                 {...props}
+                alt={props.alt}
+                className={styles.image}
                 src={props.src.replaceAll('./', `/images/posts/${slug}/`)}
             />
         );
     };
 
     const processor = unified()
-        .use(rehypeParse)
+        .use(rehypeParse, { fragment: true })
         .use(rehypeReact, {
-            createElement: React.createElement,
+            createElement,
             components: {
                 img: ResponsiveImage,
             },
@@ -68,7 +72,7 @@ const Post = ({
                     </article>
                 </div>
             </main>
-            <Footer recentPosts={recentPosts} />
+            <Footer posts={recentPosts} />
         </>
     );
 };

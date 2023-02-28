@@ -55,7 +55,7 @@ const Projects: NextPage<Props> = ({
                     numPages={totalPages}
                 />
             </main>
-            <Footer recentPosts={recentPosts} />
+            <Footer posts={recentPosts} />
         </>
     );
 };

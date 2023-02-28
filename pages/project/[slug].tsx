@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import React from 'react';
+import React, { createElement } from 'react';
 import rehypeParse from 'rehype-parse';
 import rehypeReact from 'rehype-react';
 import { unified } from 'unified';
@@ -13,38 +13,42 @@ import remarkRehype from 'remark-rehype';
 import { Footer, Head, Header } from '../../components';
 import { config } from '../../config';
 import { getPosts } from '../../utils/posts';
+import type { Post } from '../../types';
+import { NextPage } from 'next';
 
-export interface ProjectProps {
+interface Props {
     categories?: string[];
     content?: string;
     date: string;
     dateFormatted: string;
+    recentPosts?: Post[];
     slug: string;
     tags?: string[];
     title: string;
 }
 
-const Project = ({
+const Project: NextPage<Props> = ({
     content,
     dateFormatted,
+    recentPosts,
     slug,
     title,
-}: ProjectProps): React.ReactNode => {
+}) => {
     const ResponsiveImage = (props: any) => {
         return (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-                alt={props.alt}
                 {...props}
+                alt={props.alt}
                 src={props.src.replaceAll('./', `/images/projects/${slug}/`)}
             />
         );
     };
 
     const processor = unified()
-        .use(rehypeParse)
+        .use(rehypeParse, { fragment: true })
         .use(rehypeReact, {
-            createElement: React.createElement,
+            createElement,
             components: {
                 img: ResponsiveImage,
             },
@@ -65,7 +69,7 @@ const Project = ({
                     </article>
                 </div>
             </main>
-            <Footer />
+            <Footer posts={recentPosts} />
         </>
     );
 };

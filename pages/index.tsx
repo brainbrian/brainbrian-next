@@ -2,14 +2,16 @@ import { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 
 import { Footer, Head, Header, Panel, ProjectsRecent } from '../components';
-import { Post } from '../types';
+import type { Post, Project } from '../types';
 import { getPosts } from '../utils/posts';
+import { getProjects } from '../utils/projects';
 
 interface Props {
     recentPosts?: Post[];
+    recentProjects?: Project[];
 }
 
-const IndexPage: NextPage<Props> = ({ recentPosts }) => (
+const IndexPage: NextPage<Props> = ({ recentPosts, recentProjects }) => (
     <>
         <Head />
         <Header />
@@ -55,9 +57,9 @@ const IndexPage: NextPage<Props> = ({ recentPosts }) => (
                     </p>
                 </article>
             </Panel>
-            <ProjectsRecent />
+            <ProjectsRecent projects={recentProjects} />
         </main>
-        <Footer recentPosts={recentPosts} />
+        <Footer posts={recentPosts} />
     </>
 );
 
@@ -65,13 +67,16 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     try {
         const postData = await getPosts(1, 8, 'desc');
         const { posts } = postData;
+        const projectData = await getProjects(1, 3, 'desc');
+        const { projects } = projectData;
         return {
-            props: { recentPosts: posts },
+            props: { recentPosts: posts, recentProjects: projects },
         };
     } catch (error: any) {
         return {
             props: {
                 recentPosts: [],
+                recentProjects: [],
             },
         };
     }

@@ -31,7 +31,7 @@ const VideosPage: NextPage<Props> = ({ recentPosts }) => {
             <main className="content">
                 <VideoList isLoading={isLoading} videos={videos} />
             </main>
-            <Footer recentPosts={recentPosts} />
+            <Footer posts={recentPosts} />
         </>
     );
 };

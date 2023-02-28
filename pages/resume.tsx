@@ -253,7 +253,7 @@ const ResumePage: NextPage<Props> = ({ recentPosts }) => (
                 </p>
             </div>
         </main>
-        <Footer recentPosts={recentPosts} />
+        <Footer posts={recentPosts} />
     </>
 );
 

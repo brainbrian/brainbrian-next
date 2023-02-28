@@ -1,0 +1,10 @@
+@import '../../styles/Config.scss';
+
+.image {
+    width: 100%;
+
+    @media screen and (min-width: $size-md) {
+        width: 116%;
+        margin: 2em 0 2em -8%;
+    }
+}

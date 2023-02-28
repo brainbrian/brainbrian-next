@@ -8,10 +8,10 @@ import { TwitterTimeline } from '../TwitterTimeline/TwitterTimeline';
 import Styles from './Footer.module.scss';
 
 interface Props {
-    recentPosts?: Post[];
+    posts?: Post[];
 }
 
-export const Footer: NextPage<Props> = ({ recentPosts }) => {
+export const Footer: NextPage<Props> = ({ posts }) => {
     return (
         <div className="bg-page">
             <aside className={`content ${Styles.Aside}`}>
@@ -20,7 +20,7 @@ export const Footer: NextPage<Props> = ({ recentPosts }) => {
                         <h2 className="header-bar__text">From The Brain</h2>
                     </Link>
                     <ul className={Styles.List}>
-                        {recentPosts?.map(({ date, slug, title }) => (
+                        {posts?.map(({ date, slug, title }) => (
                             <li key={slug} className={Styles.ListItemBrain}>
                                 <p>
                                     <Link href={`/post/${slug}`}>
