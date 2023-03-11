@@ -13,7 +13,7 @@ export const ProjectsRecent = ({ projects }: { projects?: ProjectType[] }) => {
                     key={index}
                     excerpt={excerpt}
                     imageUrl={`/images/projects/${slug}/${image}`}
-                    slug={`/projects/${slug}`}
+                    slug={`/project/${slug}`}
                     title={title}
                 />
             )),
