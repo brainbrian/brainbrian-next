@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next';
 import * as React from 'react';
 
-import { Footer, Head, Header, ProfileHeader } from '../components';
+import { Head, Header, ProfileHeader } from '../components';
 import type { Post } from '../types';
 import { getPosts } from '../utils/posts';
 
@@ -9,7 +9,7 @@ interface Props {
     recentPosts?: Post[];
 }
 
-const ResumePage: NextPage<Props> = ({ recentPosts }) => (
+const ResumePage: NextPage<Props> = () => (
     <>
         <Head
             title="Resume | Brian Behrens | Los Angeles Software Engineer"
@@ -258,7 +258,6 @@ const ResumePage: NextPage<Props> = ({ recentPosts }) => (
                 </p>
             </div>
         </main>
-        <Footer posts={recentPosts} />
     </>
 );
 

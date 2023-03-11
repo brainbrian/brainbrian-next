@@ -14,7 +14,7 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 
-import { Footer, Head, Header } from '../../components';
+import { Head, Header } from '../../components';
 import { config } from '../../config';
 import { getPosts } from '../../utils/posts';
 import type { Post } from '../../types';
@@ -30,13 +30,7 @@ interface Props {
     title: string;
 }
 
-const Project: NextPage<Props> = ({
-    content,
-    dateFormatted,
-    recentPosts,
-    slug,
-    title,
-}) => {
+const Project: NextPage<Props> = ({ content, dateFormatted, slug, title }) => {
     const ResponsiveImage = (props: any) => {
         return (
             // eslint-disable-next-line @next/next/no-img-element
@@ -73,7 +67,6 @@ const Project: NextPage<Props> = ({
                     </article>
                 </div>
             </main>
-            <Footer posts={recentPosts} />
         </>
     );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 
-import { Footer, Head, Header, Pagination, Project } from '../../components';
+import { Head, Header, Pagination, Project } from '../../components';
 import type { Post, Project as ProjectType } from '../../types';
 import { getProjects, getProjectsTotalCount } from '../../utils/projects';
 import { getPosts } from '../../utils/posts';
@@ -21,7 +21,6 @@ const Projects: NextPage<Props> = ({
     currentPage,
     error,
     projects,
-    recentPosts,
     totalCount,
 }) => {
     const totalPages = Math.ceil(totalCount / PAGE_SIZE);
@@ -55,7 +54,6 @@ const Projects: NextPage<Props> = ({
                     numPages={totalPages}
                 />
             </main>
-            <Footer posts={recentPosts} />
         </>
     );
 };

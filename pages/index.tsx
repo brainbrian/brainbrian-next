@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 
-import { Footer, Head, Header, Panel, ProjectsRecent } from '../components';
+import { Head, Header, Panel, ProjectsRecent } from '../components';
 import type { Post, Project } from '../types';
 import { getPosts } from '../utils/posts';
 import { getProjects } from '../utils/projects';
@@ -11,7 +11,7 @@ interface Props {
     recentProjects?: Project[];
 }
 
-const IndexPage: NextPage<Props> = ({ recentPosts, recentProjects }) => (
+const IndexPage: NextPage<Props> = ({ recentProjects }) => (
     <>
         <Head />
         <Header />
@@ -59,7 +59,6 @@ const IndexPage: NextPage<Props> = ({ recentPosts, recentProjects }) => (
             </Panel>
             <ProjectsRecent projects={recentProjects} />
         </main>
-        <Footer posts={recentPosts} />
     </>
 );
 

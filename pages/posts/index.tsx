@@ -2,7 +2,7 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 import { NextPage } from 'next';
 
-import { Footer, Head, Header, Pagination, PostLink } from '../../components';
+import { Head, Header, Pagination, PostLink } from '../../components';
 import type { Post } from '../../types';
 import { getPosts } from '../../utils/posts';
 
@@ -17,13 +17,7 @@ interface Props {
     recentPosts?: Post[];
 }
 
-const Posts: NextPage<Props> = ({
-    currentPage,
-    error,
-    posts,
-    recentPosts,
-    totalCount,
-}) => {
+const Posts: NextPage<Props> = ({ currentPage, error, posts, totalCount }) => {
     const totalPages = Math.ceil(totalCount / PAGE_SIZE);
 
     const postsComponents = posts.map(
@@ -55,7 +49,6 @@ const Posts: NextPage<Props> = ({
                     numPages={totalPages}
                 />
             </main>
-            <Footer posts={recentPosts} />
         </>
     );
 };

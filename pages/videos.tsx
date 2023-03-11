@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import useSWR from 'swr';
-import { Footer, Head, Header, VideoList } from '../components';
+import { Head, Header, VideoList } from '../components';
 import type { Post } from '../types';
 import { getPosts } from '../utils/posts';
 
@@ -8,7 +8,7 @@ interface Props {
     recentPosts?: Post[];
 }
 
-const VideosPage: NextPage<Props> = ({ recentPosts }) => {
+const VideosPage: NextPage<Props> = () => {
     const {
         data: videos,
         isLoading,
@@ -31,7 +31,6 @@ const VideosPage: NextPage<Props> = ({ recentPosts }) => {
             <main className="content">
                 <VideoList isLoading={isLoading} videos={videos} />
             </main>
-            <Footer posts={recentPosts} />
         </>
     );
 };

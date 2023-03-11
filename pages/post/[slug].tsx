@@ -19,8 +19,6 @@ import { config } from '../../config';
 import { getPosts } from '../../utils/posts';
 import type { Post } from '../../types';
 
-import styles from './Post.module.scss';
-
 interface Props {
     categories?: string[];
     content?: string;
@@ -37,7 +35,6 @@ const Post: NextPage<Props> = ({
     dateFormatted,
     slug,
     title,
-    recentPosts,
 }: Props) => {
     const ResponsiveImage = (props: any) => {
         return (
@@ -75,7 +72,6 @@ const Post: NextPage<Props> = ({
                     </article>
                 </div>
             </main>
-            <Footer posts={recentPosts} />
         </>
     );
 };
