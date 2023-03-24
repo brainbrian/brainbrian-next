@@ -19,7 +19,7 @@ tags:
         'technical lead',
         'wordpress',
     ]
-excerpt: 'I have worked on several web development projects for Lib Technologies, including a snowboard finder application, a marketing campaign for Jamie Lynn's 20 year anniversary with the company, a DIY snowboard builder, a responsive e-commerce website, and a surfboard launch website. These projects involved using various web development technologies and techniques such as AngularJS, WordPress, Grunt.js, and responsive web design.'
+excerpt: 'I have worked on several web development projects for Lib Technologies, including a snowboard finder application, a marketing campaign for Jamie Lynn&apos;s 20 year anniversary with the company, a DIY snowboard builder, a responsive e-commerce website, and a surfboard launch website. These projects involved using various web development technologies and techniques such as AngularJS, WordPress, Grunt.js, and responsive web design.'
 ---
 
 ## Snowboard Finder

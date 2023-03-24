@@ -15,7 +15,7 @@ tags:
         'technical lead',
         'webpack',
     ]
-excerpt: "Hulu's The Handmaid's Tale is now airing. I built a single-page application on AWS using Lambda, S3, NodeJS, Webpack, React, Redux and Babel to support their social campaign."
+excerpt: "I built a single-page application on AWS for Hulu's The Handmaid's Tale social campaign, which allows users to enter a code, access a secret group, and invite friends. At POP, I partnered with a coworker to create a Facebook chat bot for Hulu's original show Chance using a serverless cloud-based architecture with Lambdas and natural language processing."
 ---
 
 ## Join Maidez - The Handmaid's Tale

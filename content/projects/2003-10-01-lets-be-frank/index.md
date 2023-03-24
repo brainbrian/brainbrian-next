@@ -13,7 +13,7 @@ tags:
         'video',
         'videography',
     ]
-excerpt: 'I produced, co-directed, and edited "Let's Be Frank," a 30-minute digital video for the Milwaukee Public Television Student Operations program, while in the Television and Video Production associates degree program at Milwaukee Area Technical College. Our team won the best director award, and the short film aired on Milwaukee Public Television.'
+excerpt: 'I produced, co-directed, and edited "Let&apos;s Be Frank," a 30-minute digital video for the Milwaukee Public Television Student Operations program, while in the Television and Video Production associates degree program at Milwaukee Area Technical College. Our team won the best director award, and the short film aired on Milwaukee Public Television.'
 ---
 
 Let's Be Frank is a 30-minute short digital video that I produced, edited and co-directed for the Milwaukee Public Television Student Operations program.

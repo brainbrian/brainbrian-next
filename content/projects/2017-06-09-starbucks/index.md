@@ -14,7 +14,7 @@ tags:
         'responsive design',
         'technical lead',
     ]
-excerpt: 'Over the years working at both POP and Blast Radius I often found myself working on projects with Starbucks as a client. We delivered on anything from simple digital banners to complex applications.'
+excerpt: 'I have extensive experience working with Starbucks as a client, having worked on projects ranging from digital banners to complex applications while at POP and Blast Radius. Some of the projects I led included the Starbucks Outlook Add-In, Frappuccino brand website, and the Pumpkin Spice Latte Facebook Campaign.'
 ---
 
 Over the years working at both [POP](https://www.wearepop.com) and [Blast Radius](https://www.linkedin.com/company/blast-radius/) I often found myself working on projects with Starbucks as a client. We delivered on anything from simple digital banners to complex applications.
