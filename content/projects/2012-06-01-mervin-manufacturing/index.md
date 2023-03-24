@@ -17,6 +17,7 @@ tags:
         'technical lead',
         'wordpress',
     ]
+excerpt: 'I had the pleasure of rebuilding the Mervin Manufacturing website, which was long overdue. With the help of a designer, I built a new WordPress template and completed all development myself, resulting in a clean and user-friendly responsive site that will continue to add more features over time.'
 ---
 
 ## Responsive Website Rebuild

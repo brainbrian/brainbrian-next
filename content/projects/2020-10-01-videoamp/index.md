@@ -21,7 +21,7 @@ tags:
         'typescript',
         'webpack',
     ]
-excerpt: "I started my VideoAmp journey in October of 2018. We moved to Los Angeles for my wife's job. I was originally working for REI when we moved, but quickly looked for a job on the Westside as isolation was taking its toll on me."
+excerpt: "I joined VideoAmp in 2018 and started working on the Design Ops team. We created the PreAmp Design System and I now work on the Measurement application, which allows users to optimize their ads and monitor past and active investment initiatives."
 ---
 
 I started my VideoAmp journey in October of 2018. We moved to Los Angeles for my wife's job. I was originally working for REI when we moved, but quickly looked for a job on the Westside as isolation was taking its toll on me.

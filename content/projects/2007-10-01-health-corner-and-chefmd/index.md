@@ -14,6 +14,7 @@ tags:
         'php',
         'technical lead',
     ]
+excerpt: 'During my time at Marx Creative, I worked on the publishing and distribution of the Health Corner TV Series for Walgreens, which aired on Lifetime. I assisted with the distribution of video online and through DVDs, and helped to develop an in-store video network initiative with Walgreens. Additionally, I led the development of the ChefMD.com website, which included a custom CMS with recipe searching and health calculators.'
 ---
 
 ## Health Corner

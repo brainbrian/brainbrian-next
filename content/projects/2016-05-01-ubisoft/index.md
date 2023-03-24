@@ -14,6 +14,7 @@ tags:
         'responsive design',
         'technical lead',
     ]
+excerpt: 'I led the development team at POP for a co-development project with Ubisoft to overhaul their customer support website. We provided static site template files and static JSON endpoints which Ubisoft integrated into their support backend system resulting in a useful, responsive website.'
 ---
 
 Ubisoft came to POP for a overhaul on their [customer support website](https://support.ubi.com). This project was a little different than normal. I lead the development team at [POP](https://www.wearepop.com) in a co-development of the site with Ubisoft’s backend team.

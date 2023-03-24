@@ -18,6 +18,7 @@ tags:
         'video production',
         'xml',
     ]
+excerpt: 'I worked as the lead interactive developer at POP for several Nintendo website projects, including Star Fox Zero, The Legend of Zelda: Tri Force Heroes, Mario Sports Mix, and Animal Crossing: City Folk. My team used animations, scrolling-triggered effects, and other interactive features to bring these game worlds to life online.'
 ---
 
 ## Star Fox Zero

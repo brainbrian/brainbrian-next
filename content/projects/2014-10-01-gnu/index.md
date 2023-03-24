@@ -17,6 +17,7 @@ tags:
         'technical lead',
         'wordpress',
     ]
+excerpt: 'I led the team that rebuilt the GNU Snowboards website for the 2014-2015 season, introducing new features like product filtering and social mash-ups to improve user experience across all devices. Our efforts successfully reduced bounce rates, increased time on site, and boosted transactions.'
 ---
 
 The Mervin Mfg. web team rebuilt the GNU Snowboards website for the 2014-2015 season. The goal was not only to update the website to GNU’s latest visuals, but also to introduce a new responsive, easy-to-use website.

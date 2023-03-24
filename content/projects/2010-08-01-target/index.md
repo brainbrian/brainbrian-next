@@ -4,6 +4,7 @@ date: '2010-08-01'
 image: './target.webp'
 url: 'https://www.target.com'
 tags: ['actionscript', 'javascript', 'motion design', 'technical lead', 'xml']
+excerpt: 'I worked as a Flash developer and animator for Target's interactive timeline where users can interact with individual points in Target's history and filter by different categories. I also led the development and animation for Where We Work, an interactive tour of Target's different workplaces filled with rich photos, text, and video.'
 ---
 
 ## Through The Years (Timeline)

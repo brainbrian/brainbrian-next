@@ -13,6 +13,7 @@ tags:
         'video',
         'videography',
     ]
+excerpt: 'Throughout my high school and college years, I played guitar in several bands, including "The Autumn View". Our first full-length album, "Fist-Fighting with Broken Wrists," was released in 2003, and I designed the album artwork. We also recorded a 2-song EP in Chicago with producer Matt Allison at Atlas Studios, and played a CD release show for our album. We have a collection of music available on Soundcloud, including our split EP with 52 Pick-Up, "For All The Wrong Reasons..." and footage from our recording session and tour.'
 ---
 
 Throughout high school and college I played in a couple of bands. One of the bands was called (for the majority of the time) "The Autumn View". I started out playing guitar in the band in middle school when we were called "Westbound". We evolved over the years, as many adolescents do.

@@ -17,6 +17,7 @@ tags:
         'technical lead',
         'xml',
     ]
+excerpt: 'I was part of the team that created the original marketing site for the Pokémon Go mobile app, and also led the development and animation of the Pokémon Platinum: Rotom Viewer Desktop Application, a fun gift for Pokémon fans. Both projects were completed while working at POP and were localized in multiple languages.'
 ---
 
 ## Pokémon Go Website

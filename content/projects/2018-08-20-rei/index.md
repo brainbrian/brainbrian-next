@@ -14,7 +14,7 @@ tags:
         'responsive design',
         'technical lead',
     ]
-excerpt: 'At REI I supported the Classes, Events and Adventures team. I led frontend software engineer for the team. We supported both applications. We were a team of engineers, a project manager, SDET and a product manager.'
+excerpt: 'During my time at REI, I led a team of frontend software engineers supporting both the Classes, Events, and Adventures applications. We used Agile methodology and a continuous integrated environment with Docker, Java, Jenkins, and more. I also upgraded our linting standards with Vue.js and delivered pages and components for the REI website using the Cedar Design System.'
 ---
 
 At [REI](https://www.rei.com) I supported the [Classes, Events](https://www.rei.com/events) and [Adventures](https://www.rei.com/adventures) team. I led frontend software engineer for the team. We supported both applications. We were a team of engineers, a project manager, SDET and a product manager.
