@@ -28,8 +28,10 @@ At Surfline, I started my journey on the Web Platform team, where I was responsi
 
 ![Surfline Website](./surfline-site.webp)
 
-Recently, as our business goals have evolved, I've shifted my focus to feature delivery. As part of a larger engineering squad, I've led multiple technical initiatives and engineers in delivering a new Travel experience and numerous updates to our surf forecasting web tools. I also lead frontend guild meetings and actively contribute to planning and documentation.
+Recently, as our business goals have evolved, I've shifted my focus to feature delivery on our Know Before You Go forecasting products. As part of a larger engineering squad, I've led multiple technical initiatives and engineers in delivering numerous updates to these surf forecasting tools. I also lead frontend guild meetings and actively contribute to planning and documentation.
 
-I'm committed to making surfing a better experience for everyone who loves it as much as I do.
+Below is a video of highlights from 2023 featuring many of the tools we build.
 
 https://www.youtube.com/watch?v=uZFx4PpHc7E
+
+I am committed to making surfing a better experience for everyone.

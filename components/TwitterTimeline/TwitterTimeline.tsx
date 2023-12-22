@@ -16,8 +16,9 @@ export const TwitterTimeline = () => (
                 }}
                 // https://developer.twitter.com/en/docs/twitter-for-websites/timelines/guides/parameter-reference
                 options={{
-                    chrome: 'noborders nofooter noheader noscrollbar transparent',
+                    chrome: 'noborders nofooter noheader transparent',
                     dnt: true,
+                    height: 600,
                     showReplies: false,
                     theme: 'dark',
                     tweetLimit: 4,
