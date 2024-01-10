@@ -1,3 +1,5 @@
+'use client';
+
 import { format } from 'date-fns';
 import { NextPage } from 'next';
 import Link from 'next/link';
