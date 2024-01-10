@@ -1,12 +1,10 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import cx from 'classnames';
 
 import Styles from './Header.module.scss';
 
 export const Header = (): any => {
-    const router = useRouter();
     const navItems = [
         { name: 'Projects', href: '/projects' },
         { name: 'Resume', href: '/resume' },
@@ -30,8 +28,7 @@ export const Header = (): any => {
                             <li className={Styles.NavListItem} key={index}>
                                 <Link
                                     className={cx(Styles.NavLink, {
-                                        [Styles.NavLinkActive]:
-                                            router.asPath === href,
+                                        [Styles.NavLinkActive]: false, //router.asPath === href,
                                     })}
                                     href={href}
                                 >
