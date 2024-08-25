@@ -5,7 +5,7 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
 import type { Post } from '../../types';
-import { TwitterTimeline } from '../TwitterTimeline/TwitterTimeline';
+import { Social } from '../Social/Social';
 
 import Styles from './Footer.module.scss';
 
@@ -39,7 +39,7 @@ export const Footer: NextPage<Props> = ({ posts }) => (
                 </ul>
             </section>
             <section>
-                <TwitterTimeline />
+                <Social />
             </section>
         </aside>
         <footer className={Styles.Footer}>

@@ -8,5 +8,5 @@ export * from './PostLink/PostLink';
 export * from './ProfileHeader/ProfileHeader';
 export * from './Project/Project';
 export * from './ProjectsRecent/ProjectsRecent';
-export * from './TwitterTimeline/TwitterTimeline';
+export * from './Social/Social';
 export * from './VideoList/VideoList';

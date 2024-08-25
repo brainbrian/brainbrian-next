@@ -1,9 +1,6 @@
 import React from 'react';
+import { Loader } from '../components';
 
-const Loading: React.FC = () => (
-    <div className="loading">
-        <p>Loading...</p>
-    </div>
-);
+const Loading: React.FC = () => <Loader />;
 
 export default Loading;

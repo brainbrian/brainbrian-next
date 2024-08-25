@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ReactNode } from 'react';
 import Image from 'next/image';
 import GitHubButton from 'react-github-btn';

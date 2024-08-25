@@ -11,12 +11,16 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
-    <div className="layout">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <Analytics />
-    </div>
+    <html>
+        <body>
+            <div className="layout">
+                <Header />
+                <main>{children}</main>
+                <Footer />
+                <Analytics />
+            </div>
+        </body>
+    </html>
 );
 
 export default Layout;
