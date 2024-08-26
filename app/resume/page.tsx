@@ -1,8 +1,11 @@
+'use server';
+
 import React from 'react';
+import { type NextPage } from 'next';
 import { Head, ProfileHeader } from '../../components';
 
-const Page: React.FC = () => (
-    <main className="content">
+const Page: NextPage = () => (
+    <main>
         <Head
             title="Resume | Brian Behrens | Los Angeles Software Engineer"
             description="The personal resume of Brian Behrens, Staff Software Engineer at Surfline."

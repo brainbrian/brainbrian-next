@@ -1,14 +1,9 @@
 import React from 'react';
+import { type NextPage } from 'next';
 
-import { Head, Panel } from '../components';
-// import type { Post, Project } from '../types';
+import { Head, Panel, ProjectsRecent } from '../components';
 
-// interface Props {
-//     recentPosts?: Post[];
-//     recentProjects?: Project[];
-// }
-
-const Page: React.FC = () => (
+const Page: NextPage = () => (
     <main>
         <Head />
         <Panel videoUrl="./videos/bg-hero.mp4">
@@ -43,7 +38,7 @@ const Page: React.FC = () => (
                 </p>
             </article>
         </Panel>
-        {/* <ProjectsRecent projects={recentProjects} /> */}
+        <ProjectsRecent />
     </main>
 );
 

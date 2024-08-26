@@ -1,9 +1,10 @@
 import React from 'react';
 
 const NotFound: React.FC = () => (
-    <div className="not-found">
-        <p>404: Page not found</p>
-    </div>
+    <main>
+        <h2>404</h2>
+        <p>Page not found</p>
+    </main>
 );
 
 export default NotFound;

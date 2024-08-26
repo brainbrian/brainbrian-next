@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 
 const apiKey = process.env.GOOGLE_API_KEY;
 const playlistId = 'UUnphFlefYslPtGlsRuRp5Kw';
@@ -10,11 +10,10 @@ async function fetchVideosFromPlaylist(size: number) {
     return data.items;
 }
 
-export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse,
-) {
-    const size = Number(req.query.size) || 20;
+export async function GET(req: NextRequest) {
+    const { searchParams } = new URL(req.url);
+    const size = Number(searchParams.get('size')) || 20;
     const videos = await fetchVideosFromPlaylist(size);
-    res.status(200).json(videos);
+    console.log(videos);
+    return NextResponse.json(videos);
 }

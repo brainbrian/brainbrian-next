@@ -14,10 +14,10 @@ import { unified } from 'unified';
 import remarkEmbedder, { TransformerInfo } from '@remark-embedder/core';
 import oembedTransformer from '@remark-embedder/transformer-oembed';
 
-import { Footer, Head, Header } from '../../components';
-import { config } from '../../config';
-import { getPosts } from '../../utils/posts';
-import type { Post } from '../../types';
+import { Footer, Head, Header } from '../../../components';
+import { config } from '../../../config';
+import { getPosts } from '../../../utils/posts';
+import type { Post } from '../../../types';
 
 interface Props {
     categories?: string[];

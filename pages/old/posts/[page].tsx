@@ -2,9 +2,9 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 import { NextPage } from 'next';
 
-import { Head, Header, Pagination, PostLink } from '../../components';
-import type { Post } from '../../types';
-import { getPosts } from '../../utils/posts';
+import { Head, Header, Pagination, PostLink } from '../../../components';
+import type { Post } from '../../../types';
+import { getPosts, getPostsTotalCount } from '../../../utils/posts';
 
 const PAGE_SIZE = 20;
 const PAGE_ORDER = 'desc';
@@ -53,8 +53,23 @@ const Posts: NextPage<Props> = ({ currentPage, error, posts, totalCount }) => {
     );
 };
 
+export async function getStaticPaths() {
+    const totalPages = Math.ceil((await getPostsTotalCount()) / PAGE_SIZE);
+
+    const paths = Array(totalPages)
+        .fill(0)
+        .map((_, index) => ({
+            params: { page: String(index + 1) },
+        }));
+
+    return {
+        paths,
+        fallback: false,
+    };
+}
+
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-    const currentPage = 1;
+    const currentPage = Number(context.params?.page) || 1;
     try {
         const postData = await getPosts(currentPage, PAGE_SIZE, PAGE_ORDER);
         const { posts, totalCount } = postData;

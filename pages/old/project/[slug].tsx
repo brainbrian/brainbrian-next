@@ -14,10 +14,10 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 
-import { Head, Header } from '../../components';
-import { config } from '../../config';
-import { getPosts } from '../../utils/posts';
-import type { Post } from '../../types';
+import { Head, Header } from '../../../components';
+import { config } from '../../../config';
+import { getPosts } from '../../../utils/posts';
+import type { Post } from '../../../types';
 
 interface Props {
     categories?: string[];
