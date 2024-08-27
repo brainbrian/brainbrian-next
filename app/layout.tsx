@@ -1,8 +1,7 @@
 import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
 
-import { Footer } from '../components/Footer/Footer';
-import { Header } from '../components/Header/Header';
+import { Header, Footer } from '../components';
 
 import '../styles/Styles.scss';
 

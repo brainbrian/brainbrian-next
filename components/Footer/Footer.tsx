@@ -3,7 +3,7 @@
 import { format } from 'date-fns';
 import Link from 'next/link';
 import React from 'react';
-import { Social } from '../Social/Social';
+import { Social } from '../';
 import type { Post } from '../../types';
 import { getPosts } from '../../utils/posts';
 
@@ -55,5 +55,3 @@ export const Footer: React.FC = async () => {
         </div>
     );
 };
-
-export default Footer;
