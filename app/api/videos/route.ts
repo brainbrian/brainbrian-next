@@ -14,6 +14,5 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const size = Number(searchParams.get('size')) || 20;
     const videos = await fetchVideosFromPlaylist(size);
-    console.log(videos);
     return NextResponse.json(videos);
 }

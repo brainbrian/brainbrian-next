@@ -19,7 +19,7 @@ const Page: NextPage = () => {
     if (error) return <main>An error occurred: {error.message}</main>;
 
     return (
-        <main>
+        <main className="content">
             <Head
                 title="Videos | Brian Behrens"
                 description="A collection of 20 of the latest videos created by Brian Behrens."
