@@ -2,5 +2,10 @@
 
 .timeline {
     margin: 0 auto;
-    max-width: 640px;
+
+    iframe {
+        border: none !important;
+        margin: 0;
+        width: 100%;
+    }
 }
