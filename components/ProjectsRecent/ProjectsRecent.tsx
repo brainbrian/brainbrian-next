@@ -23,7 +23,7 @@ export const ProjectsRecent: React.FC = async () => {
                 key={index}
                 excerpt={excerpt}
                 imageUrl={`/images/projects/${slug}/${image}`}
-                slug={`/project/${slug}`}
+                slug={`/projects/${slug}`}
                 title={title}
             />
         ),

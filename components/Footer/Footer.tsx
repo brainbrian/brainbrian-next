@@ -29,7 +29,7 @@ export const Footer: React.FC = async () => {
                         {recentPosts?.map(({ date, slug, title }) => (
                             <li key={slug} className={Styles.ListItemBrain}>
                                 <p>
-                                    <Link href={`/post/${slug}`}>
+                                    <Link href={`/posts/${slug}`}>
                                         {title}{' '}
                                         <span>
                                             {format(

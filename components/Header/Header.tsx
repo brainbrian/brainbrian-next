@@ -1,17 +1,22 @@
-import * as React from 'react';
+'use client';
+
+import React from 'react';
 import Link from 'next/link';
 import cx from 'classnames';
 
 import Styles from './Header.module.scss';
+import { usePathname } from 'next/navigation';
 
-export const Header = (): any => {
-    const navItems = [
-        { name: 'Projects', href: '/projects' },
-        { name: 'Resume', href: '/resume' },
-        { name: 'Posts', href: '/posts' },
-        { name: 'Videos', href: '/videos' },
-        { name: 'Gallery', href: 'https://gallery.brainbrian.com' },
-    ];
+const navItems = [
+    { name: 'Projects', href: '/projects' },
+    { name: 'Resume', href: '/resume' },
+    { name: 'Posts', href: '/posts' },
+    { name: 'Videos', href: '/videos' },
+    { name: 'Gallery', href: 'https://gallery.brainbrian.com' },
+];
+
+export const Header: React.FC = () => {
+    const pathname = usePathname();
 
     return (
         <header className={Styles.Header}>
@@ -28,7 +33,8 @@ export const Header = (): any => {
                             <li className={Styles.NavListItem} key={index}>
                                 <Link
                                     className={cx(Styles.NavLink, {
-                                        [Styles.NavLinkActive]: false, //router.asPath === href,
+                                        [Styles.NavLinkActive]:
+                                            pathname.includes(href),
                                     })}
                                     href={href}
                                 >

@@ -35,7 +35,7 @@ export const Pagination = ({
             {Array.from({ length: numPages }, (_, i) => (
                 <Link
                     key={`pagination-number${i + 1}`}
-                    href={`${basePath}/${i === 0 ? '' : i + 1}`}
+                    href={`${basePath}${i === 0 ? '' : `?page=${i + 1}`}`}
                     className={classNames(styles.PaginationLink, {
                         [styles.PaginationLinkActive]: currentPage === i + 1,
                     })}
