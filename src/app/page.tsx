@@ -17,7 +17,7 @@ const Page: NextPage = () => (
                     <a href="https://www.linkedin.com/in/brianbehrens">work</a>,
                     and <a href="https://github.com/brainbrian">code</a> in Los
                     Angeles. I like to{' '}
-                    <a href="https://www.youtube.com/watch?v=T_mYdkyN4l8&t=374s">
+                    <a href="https://www.youtube.com/watch?v=cWzseAXNzV8">
                         surf
                     </a>
                     ,{' '}
