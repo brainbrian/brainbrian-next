@@ -140,4 +140,17 @@ const Post: NextPage<Props> = async ({ params }) => {
     );
 };
 
+export const generateStaticParams = async () => {
+    const postsDir = path.join(config.contentDirectory, 'posts');
+    const slugs = fs.readdirSync(postsDir).filter((file) => {
+        return fs.statSync(path.join(postsDir, file)).isDirectory();
+    });
+
+    return slugs.map((slug) => ({
+        params: {
+            slug,
+        },
+    }));
+};
+
 export default Post;

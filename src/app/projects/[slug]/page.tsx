@@ -140,4 +140,17 @@ const Project: NextPage<Props> = async ({ params }) => {
     );
 };
 
+export const generateStaticParams = async () => {
+    const projectsDir = path.join(config.contentDirectory, 'projects');
+    const slugs = fs.readdirSync(projectsDir).filter((file) => {
+        return fs.statSync(path.join(projectsDir, file)).isDirectory();
+    });
+
+    return slugs.map((slug) => ({
+        params: {
+            slug,
+        },
+    }));
+};
+
 export default Project;
