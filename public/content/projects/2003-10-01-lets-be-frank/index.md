@@ -26,6 +26,6 @@ While in the Television and Video Production associates degree program at Milwau
 
 I (we) won best director award for the short film. The short film aired on Milwaukee Public Television.
 
-![Brian Behrens filming](brian-behrens-dp.webp)
+![Brian Behrens filming](./brian-behrens-dp.webp)
 
-![Brian Behrens director](brian-behrens-director.webp)
+![Brian Behrens director](./brian-behrens-director.webp)
