@@ -1,32 +1,39 @@
-'use client';
-
-import { type NextPage } from 'next';
+import type { Metadata } from 'next';
 import React from 'react';
-import useSWR from 'swr';
-import { Head, VideoList } from '@/components';
+import { VideoList } from '@/components';
 
-const Page: NextPage = () => {
-    const {
-        data: videos,
-        isLoading,
-        error,
-    } = useSWR(`/api/videos?size=20`, async (url) => {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data;
-    });
+const Page = async () => {
+    let videos = [];
+    let error = null;
 
-    if (error) return <main>An error occurred: {error.message}</main>;
+    try {
+        const response = await fetch(
+            `${process.env.NEXT_PUBLIC_BASE_URL}/api/videos?size=20`,
+        );
+        if (!response.ok) {
+            throw new Error('Failed to fetch videos');
+        }
+        videos = await response.json();
+    } catch (err: any) {
+        error = err?.message ?? true;
+    }
+
+    if (error)
+        return <main className="content">An error occurred: {error}</main>;
 
     return (
         <main className="content">
-            <Head
-                title="Videos | Brian Behrens"
-                description="A collection of 20 of the latest videos created by Brian Behrens."
-            />
-            <VideoList isLoading={isLoading} videos={videos} />
+            <VideoList isLoading={false} videos={videos} />
         </main>
     );
+};
+
+export const generateMetadata = async (): Promise<Metadata> => {
+    return {
+        title: 'Videos',
+        description:
+            'A collection of 20 of the latest videos created by Brian Behrens.',
+    };
 };
 
 export default Page;

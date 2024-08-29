@@ -1,13 +1,10 @@
-'use server';
-
 import React from 'react';
-import { type NextPage } from 'next';
+import type { NextPage } from 'next';
 
-import { Head, Panel, ProjectsRecent } from '@/components';
+import { Panel, ProjectsRecent } from '@/components';
 
-const Page: NextPage = () => (
+const Page: NextPage = async () => (
     <main>
-        <Head />
         <Panel videoUrl="./videos/bg-hero.mp4">
             <article className="content">
                 <h1>Hello, I&apos;m Brian Behrens.</h1>

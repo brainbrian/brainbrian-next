@@ -1,7 +1,5 @@
-'use server';
-
 import React, { createElement } from 'react';
-import type { NextPage } from 'next';
+import type { Metadata, NextPage } from 'next';
 import { format } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -16,7 +14,6 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 
-import { Head } from '@/components';
 import { config } from '@/config';
 import { getPosts } from '@/utils/posts';
 import type { Post } from '@/types';
@@ -126,7 +123,6 @@ const Post: NextPage<Props> = async ({ params }) => {
 
     return (
         <main className="content">
-            <Head title={`${title} | Posts | Brian Behrens`} />
             <div className="post-container">
                 <article className="post">
                     <h1>{title}</h1>
@@ -138,6 +134,24 @@ const Post: NextPage<Props> = async ({ params }) => {
             </div>
         </main>
     );
+};
+
+export const generateMetadata = async ({
+    params,
+}: Props): Promise<Metadata> => {
+    const { slug } = params;
+    const postsPath = path.join(
+        config.contentDirectory,
+        'posts',
+        slug,
+        'index.md',
+    );
+    const { data: frontmatter } = matter(fs.readFileSync(postsPath, 'utf-8'));
+
+    return {
+        title: `${frontmatter.title} | Posts | Brian Behrens`,
+        description: `${frontmatter.title} blog post written from the perspective of Brian Behrens.`,
+    };
 };
 
 export const generateStaticParams = async () => {

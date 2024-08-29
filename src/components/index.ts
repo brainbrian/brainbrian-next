@@ -1,5 +1,4 @@
 export { Footer } from './Footer/Footer';
-export { Head } from './Head';
 export { Header } from './Header/Header';
 export { Loader } from './Loader/Loader';
 export { Pagination } from './Pagination/Pagination';
