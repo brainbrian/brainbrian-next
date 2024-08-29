@@ -1,9 +1,7 @@
-'use server';
-
+import type { Metadata, NextPage } from 'next';
 import React from 'react';
-import type { NextPage } from 'next';
 
-import { Head, Pagination, Project } from '@/components';
+import { Pagination, Project } from '@/components';
 import type { Project as ProjectType } from '@/types';
 import { getProjects } from '@/utils/projects';
 
@@ -54,10 +52,6 @@ const ProjectsPage: NextPage<ProjectsPageProps> = async ({ searchParams }) => {
 
     return (
         <main className="content">
-            <Head
-                title="Projects | Brian Behrens | Los Angeles Software Engineer"
-                description="Projects (blogs) from Brian Behrens of my adventures and journey in coding."
-            />
             {projectsComponents}
             <Pagination
                 basePath={'/projects'}
@@ -66,6 +60,14 @@ const ProjectsPage: NextPage<ProjectsPageProps> = async ({ searchParams }) => {
             />
         </main>
     );
+};
+
+export const generateMetadata = async (): Promise<Metadata> => {
+    return {
+        title: 'Projects',
+        description:
+            'A collection of projects Brian Behrens has completed throughout his life.',
+    };
 };
 
 export default ProjectsPage;

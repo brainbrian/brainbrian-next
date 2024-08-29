@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { type NextPage } from 'next';
+import type { Metadata, NextPage } from 'next';
 
 interface ErrorProps {
     message: string;
@@ -13,5 +13,9 @@ const Error: NextPage<ErrorProps> = ({ message }) => (
         <p>{message}</p>
     </main>
 );
+
+export const metadata: Metadata = {
+    title: 'Error',
+};
 
 export default Error;

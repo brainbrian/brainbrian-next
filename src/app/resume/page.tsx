@@ -1,14 +1,6 @@
-'use server';
-
 import React from 'react';
 import type { NextPage, Metadata } from 'next';
 import { ProfileHeader } from '@/components';
-
-export const generateMetadata = async (): Promise<Metadata> => ({
-    title: 'Resume | Brian Behrens | Los Angeles Software Engineer',
-    description:
-        'The personal resume of Brian Behrens, Staff Software Engineer at Surfline.',
-});
 
 const Page: NextPage = () => (
     <main className="content">
@@ -243,5 +235,13 @@ const Page: NextPage = () => (
         </div>
     </main>
 );
+
+export const generateMetadata = async (): Promise<Metadata> => {
+    return {
+        title: 'Resume',
+        description:
+            'The personal resume of Brian Behrens, Staff Software Engineer at Surfline.',
+    };
+};
 
 export default Page;

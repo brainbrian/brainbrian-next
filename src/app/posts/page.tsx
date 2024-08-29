@@ -1,9 +1,7 @@
-'use server';
-
 import React from 'react';
-import { NextPage } from 'next';
+import type { Metadata, NextPage } from 'next';
 
-import { Head, Pagination, PostLink } from '@/components';
+import { Pagination, PostLink } from '@/components';
 import type { Post } from '@/types';
 import { getPosts } from '@/utils/posts';
 
@@ -49,10 +47,6 @@ const PostsPage: NextPage<PostsPageProps> = async ({ searchParams }) => {
 
     return (
         <main className="content">
-            <Head
-                title="Posts | Brian Behrens | Los Angeles Software Engineer"
-                description="Posts (blogs) from Brian Behrens of my adventures and journey in coding."
-            />
             {postsComponents}
             <Pagination
                 basePath={'/posts'}
@@ -61,6 +55,13 @@ const PostsPage: NextPage<PostsPageProps> = async ({ searchParams }) => {
             />
         </main>
     );
+};
+
+export const generateMetadata = async (): Promise<Metadata> => {
+    return {
+        title: 'Posts',
+        description: `Posts (blogs) written by Brian Behrens during his journey through life.`,
+    };
 };
 
 export default PostsPage;
