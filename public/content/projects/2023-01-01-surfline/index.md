@@ -35,3 +35,5 @@ Below is a video of highlights from 2023 featuring many of the tools we build.
 https://www.youtube.com/watch?v=uZFx4PpHc7E
 
 I am committed to making surfing a better experience for everyone.
+
+https://www.youtube.com/watch?v=il4OqsxHzso
