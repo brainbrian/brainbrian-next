@@ -1,11 +1,12 @@
-@import '../../styles/Config.scss';
+@use '../../styles/Config.scss';
 
 .Panel {
+    aspect-ratio: 1 / 2;
     color: var(--color-light);
     margin: 0;
+    min-height: calc(100vh - 14rem);
     overflow: hidden;
     position: relative;
-    aspect-ratio: 1 / 2;
     text-shadow: 0.06rem 0.06rem rgba(0, 0, 0, 0.5);
     width: 100%;
 
@@ -29,7 +30,7 @@
         aspect-ratio: 16 / 5;
     }
 
-    @media screen and (min-width: $size-sm) {
+    @media screen and (min-width: Config.$size-sm) {
         padding: 4rem;
     }
 
@@ -38,7 +39,7 @@
         font-size: 2.6rem;
         margin: 0;
 
-        @media screen and (min-width: $size-sm) {
+        @media screen and (min-width: Config.$size-sm) {
             font-size: 4rem;
         }
     }
@@ -49,7 +50,7 @@
         font-weight: 500;
         margin: 0;
 
-        @media screen and (min-width: $size-sm) {
+        @media screen and (min-width: Config.$size-sm) {
             font-size: 3rem;
         }
     }
@@ -60,11 +61,11 @@
         a {
             background-color: var(--color-main);
             color: var(--color-light);
+            line-height: 1.8;
             padding: 0.15rem 0.3rem;
             text-decoration: none;
             transition: background-color 200ms ease-in-out,
                 color 300ms ease-in-out;
-            line-height: 1.8;
 
             &:hover,
             &:focus-visible {
@@ -73,7 +74,7 @@
             }
         }
 
-        @media screen and (min-width: $size-sm) {
+        @media screen and (min-width: Config.$size-sm) {
             font-size: 2rem;
 
             a {

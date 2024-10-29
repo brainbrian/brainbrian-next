@@ -1,4 +1,4 @@
-@import '../../styles/Config.scss';
+@use '../../styles/Config.scss';
 
 $height-sm: 3rem;
 $height: 5rem;
@@ -13,7 +13,7 @@ $height-border: 1rem;
     flex-direction: row;
     position: relative;
 
-    @media screen and (min-width: $size-md) {
+    @media screen and (min-width: Config.$size-md) {
         left: 0;
         position: fixed;
         top: 0;
@@ -30,7 +30,7 @@ $height-border: 1rem;
     max-width: var(--max-width);
     width: 100%;
 
-    @media screen and (min-width: $size-xs) {
+    @media screen and (min-width: Config.$size-xs) {
         align-items: center;
         flex-direction: row;
         height: $height;
@@ -60,22 +60,18 @@ $height-border: 1rem;
         text-decoration: none;
     }
 
-    @media screen and (min-width: $size-xs) {
+    @media screen and (min-width: Config.$size-xs) {
         height: $height;
         width: 13rem;
     }
 
-    @media screen and (min-width: $size-sm) {
+    @media screen and (min-width: Config.$size-sm) {
         font-size: 2rem;
         width: 15rem;
     }
 }
 
 .Tagline {
-    @media screen and (max-width: $size-sm) {
-        display: none;
-    }
-
     color: var(--color-main);
     font-size: 0.5rem;
     font-style: italic;
@@ -83,11 +79,15 @@ $height-border: 1rem;
     padding: 0 2rem;
     white-space: nowrap;
 
-    @media screen and (min-width: $size-sm) {
+    @media screen and (max-width: Config.$size-sm) {
+        display: none;
+    }
+
+    @media screen and (min-width: Config.$size-sm) {
         font-size: 0.75rem;
     }
 
-    @media screen and (min-width: $size-md) {
+    @media screen and (min-width: Config.$size-md) {
         font-size: 1rem;
     }
 }
@@ -105,7 +105,7 @@ $height-border: 1rem;
     margin: 0;
     padding: 0;
 
-    @media screen and (min-width: $size-xs) {
+    @media screen and (min-width: Config.$size-xs) {
         background-color: transparent;
         float: right;
     }
@@ -149,12 +149,12 @@ $height-border: 1rem;
         text-decoration: none;
     }
 
-    @media screen and (min-width: $size-xxs) {
+    @media screen and (min-width: Config.$size-xxs) {
         font-size: 0.75rem;
         padding: 0 0.75rem;
     }
 
-    @media screen and (min-width: $size-xs) {
+    @media screen and (min-width: Config.$size-xs) {
         font-size: 1.125rem;
         height: $height;
         padding: 0 $height-border;

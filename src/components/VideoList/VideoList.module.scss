@@ -1,11 +1,11 @@
-@import '../../styles/Config.scss';
+@use '../../styles/Config.scss';
 
 .VideoList {
     list-style: none;
     margin: 0;
     padding: 0;
 
-    @media screen and (min-width: $size-xs) {
+    @media screen and (min-width: Config.$size-xs) {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -14,12 +14,12 @@
 
 @keyframes fade-in-and-up {
     0% {
-        transform: translateY(1rem);
         opacity: 0;
+        transform: translateY(1rem);
     }
     50% {
-        transform: translateY(-0.25rem);
         opacity: 1;
+        transform: translateY(-0.25rem);
     }
     100% {
         transform: translateY(0rem);
@@ -27,8 +27,8 @@
 }
 
 .VideoListItem {
-    margin-bottom: 2rem;
     animation: fade-in-and-up 500ms ease-in-out;
+    margin-bottom: 2rem;
 
     a {
         display: block;
@@ -43,7 +43,7 @@
             transition: background-color 200ms ease-in-out,
                 color 300ms ease-in-out;
 
-            @media screen and (min-width: $size-md) {
+            @media screen and (min-width: Config.$size-md) {
                 font-size: 1.5rem;
             }
         }
@@ -59,7 +59,7 @@
         }
     }
 
-    @media screen and (min-width: $size-xs) {
+    @media screen and (min-width: Config.$size-xs) {
         width: 50%;
 
         &:nth-child(odd) {
@@ -77,16 +77,16 @@
 }
 
 .VideoListImage {
-    width: 100%;
+    overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
-    overflow: hidden;
+    width: 100%;
 
     img {
-        width: 100%;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        width: 100%;
     }
 }
 

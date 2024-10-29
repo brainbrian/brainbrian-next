@@ -18,12 +18,10 @@ import { config } from '@/config';
 import { getPosts } from '@/utils/posts';
 import type { Post } from '@/types';
 
-interface Params {
-    slug: string;
-}
-
 interface Props {
-    params: Params;
+    params: Promise<{
+        slug: string;
+    }>;
 }
 
 interface PostProps {
@@ -37,8 +35,10 @@ interface PostProps {
     title?: string;
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const Post: NextPage<Props> = async ({ params }) => {
-    const { slug } = params;
+    const paramsResolved = await params;
+    const { slug } = paramsResolved;
 
     let postProps: PostProps;
 
@@ -89,7 +89,8 @@ const Post: NextPage<Props> = async ({ params }) => {
                 .then((file) => String(file)),
             recentPosts,
         };
-    } catch (error: any) {
+    } catch (error: unknown) {
+        console.error(error);
         postProps = {
             content: undefined,
             dateFormatted: null,
@@ -139,7 +140,8 @@ const Post: NextPage<Props> = async ({ params }) => {
 export const generateMetadata = async ({
     params,
 }: Props): Promise<Metadata> => {
-    const { slug } = params;
+    const paramsResolved = await params;
+    const { slug } = paramsResolved;
     const postsPath = path.join(
         config.contentDirectory,
         'posts',

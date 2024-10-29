@@ -1,10 +1,9 @@
 'use client';
 
 import React from 'react';
-import Script from 'next/script';
+import { InstagramEmbed } from 'react-social-media-embed';
 
 import styles from './Social.module.scss';
-import { InstagramEmbed } from 'react-social-media-embed';
 
 export const Social: React.FC = () => {
     return (

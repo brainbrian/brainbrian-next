@@ -16,7 +16,9 @@ export const Footer: React.FC = async () => {
         const postData = await getPosts(1, 8, 'desc');
         const { posts } = postData;
         recentPosts = posts;
-    } catch (error: any) {}
+    } catch (error: unknown) {
+        console.error(error);
+    }
 
     return (
         <div className="bg-page">
