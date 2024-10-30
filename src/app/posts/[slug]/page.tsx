@@ -1,4 +1,5 @@
-import React, { createElement } from 'react';
+import React, { createElement, Fragment } from 'react';
+import { jsx, jsxs } from 'react/jsx-runtime';
 import type { Metadata, NextPage } from 'next';
 import { format } from 'date-fns';
 import fs from 'fs';
@@ -114,10 +115,13 @@ const Post: NextPage<Props> = async ({ params }) => {
     const processor = unified()
         .use(rehypeParse as any, { fragment: true })
         .use(rehypeReact as any, {
-            createElement,
+            Fragment,
             components: {
                 img: ResponsiveImage,
             },
+            createElement,
+            jsx,
+            jsxs,
         });
 
     const { title, dateFormatted, content } = postProps;

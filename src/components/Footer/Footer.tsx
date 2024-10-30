@@ -45,9 +45,7 @@ export const Footer: React.FC = async () => {
                         ))}
                     </ul>
                 </section>
-                <section>
-                    <Social />
-                </section>
+                <Social />
             </aside>
             <footer className={Styles.Footer}>
                 &copy; {new Date().getFullYear()} Brain Brian (Brian Behrens) –{' '}
