@@ -1,13 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { InstagramEmbed } from 'react-social-media-embed';
-import { useIsMounted } from 'usehooks-ts';
 
 import styles from './Social.module.scss';
 
 export const Social: React.FC = () => {
-    const isMounted = useIsMounted();
+    const [isMounted, setIsMounted] = useState<boolean>(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     return (
         <section>
@@ -15,7 +18,7 @@ export const Social: React.FC = () => {
                 <h2 className="header-bar__text">Social</h2>
             </a>
             <div className={styles.timeline}>
-                {isMounted() && (
+                {isMounted && (
                     <InstagramEmbed
                         url="https://www.instagram.com/brianbehrens/"
                         width={'100%'}
