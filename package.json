@@ -17,8 +17,8 @@
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "next": "15.0.2",
-    "react": "19.0.0-rc-603e6108-20241029",
-    "react-dom": "19.0.0-rc-603e6108-20241029",
+    "react": "19.0.0-rc-4d577fd2-20241104",
+    "react-dom": "19.0.0-rc-4d577fd2-20241104",
     "react-github-btn": "^1.4.0",
     "react-social-media-embed": "^2.5.17",
     "react-twitter-widgets": "^1.11.0",
@@ -40,7 +40,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.3.3",
-    "sass": "^1.80.5",
+    "sass": "^1.80.6",
     "typescript": "^5.6.3"
   }
 }
