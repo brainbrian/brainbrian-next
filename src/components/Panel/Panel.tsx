@@ -11,9 +11,11 @@ export const Panel: React.FC<PanelProps> = ({ children, videoUrl }) => (
     <section className={Styles.Panel}>
         {children}
         {videoUrl && (
-            <video autoPlay loop playsInline muted className={Styles.Video}>
-                <source src={videoUrl} type="video/mp4" />
-            </video>
+            <div className={Styles.Video}>
+                <video autoPlay loop playsInline muted>
+                    <source src={videoUrl} type="video/mp4" />
+                </video>
+            </div>
         )}
     </section>
 );
