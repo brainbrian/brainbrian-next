@@ -9,17 +9,17 @@ const PAGE_SIZE = 10;
 const PAGE_ORDER = 'desc';
 
 interface ProjectsPageProps {
-    searchParams: { page?: string };
+    searchParams: Promise<{ page?: string }>;
 }
 
 const ProjectsPage: NextPage<ProjectsPageProps> = async ({ searchParams }) => {
-    const currentPage: number = searchParams?.page
-        ? Number(searchParams?.page)
+    const searchParamsResolved = await searchParams;
+    const currentPage: number = searchParamsResolved?.page
+        ? Number(searchParamsResolved?.page)
         : 1;
     let projects: ProjectType[] = [];
     let totalCount: number = 0;
-    let projectsError: any;
-
+    let projectsError: unknown;
     try {
         const projectsData = await getProjects(
             currentPage,
@@ -30,12 +30,10 @@ const ProjectsPage: NextPage<ProjectsPageProps> = async ({ searchParams }) => {
             projectsData;
         projects = [...projectsValue];
         totalCount = totalCountValue;
-    } catch (error: any) {
+    } catch (error: unknown) {
         projectsError = error;
     }
-
     const totalPages = Math.ceil(totalCount / PAGE_SIZE);
-
     const projectsComponents = projects.map(
         ({ excerpt, slug, title, image }) => (
             <Project
@@ -47,9 +45,8 @@ const ProjectsPage: NextPage<ProjectsPageProps> = async ({ searchParams }) => {
             />
         ),
     );
-
-    if (projectsError) return <p>An error occurred: {projectsError}</p>;
-
+    if (projectsError)
+        return <p>An error occurred: {projectsError.toString()}</p>;
     return (
         <main className="content">
             {projectsComponents}

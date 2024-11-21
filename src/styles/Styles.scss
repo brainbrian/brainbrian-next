@@ -1,16 +1,17 @@
+@use './Config.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
-@import './Config.scss';
 
 :root {
-    --color-main: #{$color-main};
-    --color-light: #{$color-light};
-    --color-dark: #{$color-dark};
-    --color-darker: #{$color-darker};
-    --font-headline: #{$font-headline};
-    --font-body: #{$font-body};
-    --max-width: #{$max-width};
-    --max-width-text: #{$max-width-text};
+    --color-main: #{Config.$color-main};
+    --color-light: #{Config.$color-light};
+    --color-dark: #{Config.$color-dark};
+    --color-darker: #{Config.$color-darker};
+    --font-headline: #{Config.$font-headline};
+    --font-body: #{Config.$font-body};
+    --max-width: #{Config.$max-width};
+    --max-width-text: #{Config.$max-width-text};
 }
 
 * {
@@ -25,7 +26,7 @@ body {
     min-width: 20rem;
     padding: 0;
 
-    @media screen and (min-width: $size-md) {
+    @media screen and (min-width: Config.$size-md) {
         padding-top: 6rem;
     }
 }
@@ -59,7 +60,7 @@ h6 {
 h1 {
     font-size: 2rem;
 
-    @media screen and (min-width: $size-md) {
+    @media screen and (min-width: Config.$size-md) {
         font-size: 2.25rem;
     }
 }
@@ -67,7 +68,7 @@ h1 {
 h2 {
     font-size: 1.5rem;
 
-    @media screen and (min-width: $size-md) {
+    @media screen and (min-width: Config.$size-md) {
         font-size: 1.75rem;
     }
 }
@@ -75,7 +76,7 @@ h2 {
 h3 {
     font-size: 1.17rem;
 
-    @media screen and (min-width: $size-md) {
+    @media screen and (min-width: Config.$size-md) {
         font-size: 1.25rem;
     }
 }
@@ -85,7 +86,7 @@ h5,
 h6 {
     font-size: 1rem;
 
-    @media screen and (min-width: $size-md) {
+    @media screen and (min-width: Config.$size-md) {
         font-size: 1.125rem;
     }
 }
@@ -96,7 +97,7 @@ p {
     line-height: 1.6;
     margin: 0 0 1rem;
 
-    @media screen and (min-width: $size-md) {
+    @media screen and (min-width: Config.$size-md) {
         font-size: 1.25rem;
         line-height: 1.8;
     }
@@ -129,7 +130,7 @@ a {
         font-size: 1.25rem;
         margin: 0;
 
-        @media screen and (min-width: $size-md) {
+        @media screen and (min-width: Config.$size-md) {
             font-size: 1.5rem;
         }
     }
@@ -182,7 +183,7 @@ a {
         position: absolute;
     }
 
-    @media screen and (min-width: $size-md) {
+    @media screen and (min-width: Config.$size-md) {
         width: 120%;
         padding-bottom: 67.5%;
         margin: 0 auto 0 -10%;
@@ -193,7 +194,7 @@ a {
     margin: 1em 0;
     width: 100%;
 
-    @media screen and (min-width: $size-md) {
+    @media screen and (min-width: Config.$size-md) {
         margin: 2em 0 2em -15%;
         max-width: 130%;
         width: 130%;
@@ -209,7 +210,7 @@ a {
         max-width: 109.8% !important;
         width: 109.8% !important;
 
-        @media screen and (min-width: $size-md) {
+        @media screen and (min-width: Config.$size-md) {
             margin-left: -10% !important;
             max-width: 120% !important;
             width: 120% !important;

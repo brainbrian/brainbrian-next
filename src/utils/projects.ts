@@ -18,10 +18,8 @@ export const getProjects = (
         const files = fs.readdirSync(
             path.join(`${config.contentDirectory}/projects`),
         );
-
         const projects = files.map((file) => {
             const slug = file;
-
             const { data: frontmatter } = matter(
                 fs.readFileSync(
                     path.join(
@@ -31,7 +29,6 @@ export const getProjects = (
                     'utf-8',
                 ),
             );
-
             return {
                 ...frontmatter,
                 dateFormatted: format(
@@ -41,22 +38,20 @@ export const getProjects = (
                 slug,
             } as Post;
         });
-
         const totalCount = projects.length;
         const startIndex = (page - 1) * size;
         const endIndex = startIndex + size;
-
         const slicedPosts = slice(
             orderBy(projects, 'date', order),
             startIndex,
             endIndex,
         );
-
         return {
             projects: slicedPosts,
             totalCount,
         };
-    } catch (error: any) {
+    } catch (error: unknown) {
+        console.error(error);
         return {
             projects: [],
             totalCount: 0,

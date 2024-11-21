@@ -14,8 +14,8 @@ const Page = async () => {
             throw new Error('Failed to fetch videos');
         }
         videos = await response.json();
-    } catch (err: any) {
-        error = err?.message ?? true;
+    } catch (err: unknown) {
+        error = err instanceof Error ? err.message : true;
     }
 
     if (error)

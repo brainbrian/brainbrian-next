@@ -56,7 +56,8 @@ export const getPosts = (
             posts: slicedPosts,
             totalCount,
         };
-    } catch (error: any) {
+    } catch (error: unknown) {
+        console.error(error);
         return {
             posts: [],
             totalCount: 0,

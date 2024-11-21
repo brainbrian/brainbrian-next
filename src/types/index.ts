@@ -1,6 +1,6 @@
 declare global {
     interface Window {
-        twttr: any;
+        twttr: unknown;
     }
 }
 
