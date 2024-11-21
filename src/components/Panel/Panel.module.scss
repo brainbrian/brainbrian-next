@@ -10,23 +10,23 @@
     text-shadow: 0.06rem 0.06rem rgba(0, 0, 0, 0.5);
     width: 100%;
 
-    @media screen and (min-width: $size-xxs) {
+    @media screen and (min-width: Config.$size-xxs) {
         aspect-ratio: 1 / 1;
     }
 
-    @media screen and (min-width: $size-xs) {
+    @media screen and (min-width: Config.$size-xs) {
         aspect-ratio: 16 / 9;
     }
 
-    @media screen and (min-height: $size-xs) {
+    @media screen and (min-height: Config.$size-xs) {
         max-height: calc(100vh - 200px);
     }
     
-    @media screen and (min-width: $size-xl) and (min-height: $size-xs) {
+    @media screen and (min-width: Config.$size-xl) and (min-height: Config.$size-xs) {
         aspect-ratio: 16 / 6;
     }
 
-    @media screen and (min-width: $size-xxl) and (min-height: $size-xs) {
+    @media screen and (min-width: Config.$size-xxl) and (min-height: Config.$size-xs) {
         aspect-ratio: 16 / 5;
     }
 
