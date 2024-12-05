@@ -17,8 +17,8 @@
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "next": "15.0.3",
-    "react": "19.0.0-rc-4d577fd2-20241104",
-    "react-dom": "19.0.0-rc-4d577fd2-20241104",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-github-btn": "^1.4.0",
     "react-social-media-embed": "^2.5.17",
     "react-twitter-widgets": "^1.11.0",
@@ -32,15 +32,15 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.17.13",
-    "@types/node": "^20.17.6",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/node": "^20.17.9",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.0.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.3.3",
-    "sass": "^1.81.0",
-    "typescript": "^5.6.3"
+    "prettier": "^3.4.2",
+    "sass": "^1.82.0",
+    "typescript": "^5.7.2"
   }
 }

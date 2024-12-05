@@ -89,7 +89,7 @@ const Project: NextPage<Props> = async ({ params }) => {
             dateFormatted: format(new Date(frontmatter.date), 'MMMM dd, yyyy'),
             content: await processor
                 .process(content || '')
-                .then((file) => String(file)),
+                .then((file: any) => String(file)),
             recentPosts,
         };
     } catch (error: unknown) {
