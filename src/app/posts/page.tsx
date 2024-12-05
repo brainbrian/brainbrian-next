@@ -9,12 +9,13 @@ const PAGE_SIZE = 20;
 const PAGE_ORDER = 'desc';
 
 interface PostsPageProps {
-    searchParams: { page?: string };
+    searchParams: Promise<{ page?: string }>;
 }
 
 const PostsPage: NextPage<PostsPageProps> = async ({ searchParams }) => {
-    const currentPage: number = searchParams?.page
-        ? Number(searchParams?.page)
+    const searchParamsResolved = await searchParams;
+    const currentPage: number = searchParamsResolved?.page
+        ? Number(searchParamsResolved?.page)
         : 1;
     let posts: Post[] = [];
     let totalCount: number = 0;
@@ -25,7 +26,8 @@ const PostsPage: NextPage<PostsPageProps> = async ({ searchParams }) => {
         const { posts: postsValue, totalCount: totalCountValue } = postData;
         posts = [...postsValue];
         totalCount = totalCountValue;
-    } catch (error: any) {
+    } catch (error: unknown) {
+        console.error(error);
         postsError = true;
     }
 

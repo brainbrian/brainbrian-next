@@ -15,7 +15,9 @@ export const ProjectsRecent: React.FC = async () => {
         const projectData = await getProjects(1, 3, 'desc');
         const { projects } = projectData;
         recentProjects = projects;
-    } catch (error: any) {}
+    } catch (error: unknown) {
+        console.error(error);
+    }
 
     const projectsComponents = recentProjects?.map(
         ({ slug, title, image, excerpt }, index) => (

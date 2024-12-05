@@ -1,10 +1,10 @@
-@import '../../styles/Config.scss';
+@use '../../styles/Config.scss';
 
 .ProfileHeader {
     margin: 0 auto;
     max-width: var(--max-width-text);
 
-    @media screen and (min-width: $size-sm) {
+    @media screen and (min-width: Config.$size-sm) {
         display: flex;
     }
 }
@@ -47,11 +47,11 @@
     max-width: 75%;
     margin: 2rem auto;
 
-    @media screen and (min-width: $size-xxs) {
+    @media screen and (min-width: Config.$size-xxs) {
         max-width: 50%;
     }
 
-    @media screen and (min-width: $size-sm) {
+    @media screen and (min-width: Config.$size-sm) {
         margin: 0;
         max-width: 14rem;
         width: 30%;
@@ -67,11 +67,11 @@
         line-height: 1.5;
         margin: 0;
 
-        @media screen and (min-width: $size-sm) {
+        @media screen and (min-width: Config.$size-sm) {
             font-size: 1.25rem;
         }
 
-        @media screen and (min-width: $size-md) {
+        @media screen and (min-width: Config.$size-md) {
             font-size: 1.5rem;
         }
     }

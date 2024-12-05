@@ -1,4 +1,5 @@
-import React, { createElement } from 'react';
+import React, { createElement, Fragment } from 'react';
+import { jsx, jsxs } from 'react/jsx-runtime';
 import type { Metadata, NextPage } from 'next';
 import { format } from 'date-fns';
 import fs from 'fs';
@@ -18,12 +19,10 @@ import { config } from '@/config';
 import { getPosts } from '@/utils/posts';
 import type { Post } from '@/types';
 
-interface Params {
-    slug: string;
-}
-
 interface Props {
-    params: Params;
+    params: Promise<{
+        slug: string;
+    }>;
 }
 
 interface PostProps {
@@ -37,8 +36,10 @@ interface PostProps {
     title?: string;
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const Post: NextPage<Props> = async ({ params }) => {
-    const { slug } = params;
+    const paramsResolved = await params;
+    const { slug } = paramsResolved;
 
     let postProps: PostProps;
 
@@ -86,10 +87,11 @@ const Post: NextPage<Props> = async ({ params }) => {
             dateFormatted: format(new Date(frontmatter.date), 'MMMM dd, yyyy'),
             content: await processor
                 .process(content || '')
-                .then((file) => String(file)),
+                .then((file: any) => String(file)),
             recentPosts,
         };
-    } catch (error: any) {
+    } catch (error: unknown) {
+        console.error(error);
         postProps = {
             content: undefined,
             dateFormatted: null,
@@ -113,10 +115,13 @@ const Post: NextPage<Props> = async ({ params }) => {
     const processor = unified()
         .use(rehypeParse as any, { fragment: true })
         .use(rehypeReact as any, {
-            createElement,
+            Fragment,
             components: {
                 img: ResponsiveImage,
             },
+            createElement,
+            jsx,
+            jsxs,
         });
 
     const { title, dateFormatted, content } = postProps;
@@ -139,7 +144,8 @@ const Post: NextPage<Props> = async ({ params }) => {
 export const generateMetadata = async ({
     params,
 }: Props): Promise<Metadata> => {
-    const { slug } = params;
+    const paramsResolved = await params;
+    const { slug } = paramsResolved;
     const postsPath = path.join(
         config.contentDirectory,
         'posts',
