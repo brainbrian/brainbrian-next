@@ -3,9 +3,9 @@
 import React, { ReactNode } from 'react';
 import Image from 'next/image';
 import GitHubButton from 'react-github-btn';
-import { Follow } from 'react-twitter-widgets';
 
 import Styles from './ProfileHeader.module.scss';
+import Script from 'next/script';
 
 interface ProfileHeaderProps {
     children: ReactNode;
@@ -31,8 +31,8 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
                             loading="lazy"
                             src="/images/linkedin.svg"
                             alt="View Brian Behrens's profile on LinkedIn"
-                            width="140"
-                            height="35"
+                            width="120"
+                            height="30"
                         />
                     </a>
                 </p>
@@ -47,7 +47,16 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
                         Follow @brainbrian
                     </GitHubButton>
                 </p>
-                <Follow username="brianbehrens" options={{ size: 'large' }} />
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: `<bsky-widget handle="brainbrian.com" show-description="false" theme="dim"></bsky-widget>
+                        `,
+                    }}
+                />
+                <Script
+                    src="https://unpkg.com/bsky-widget@~0.1/dist/index.js"
+                    type="module"
+                />
             </aside>
         </section>
     );
