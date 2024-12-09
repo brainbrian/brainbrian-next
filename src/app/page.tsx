@@ -11,7 +11,7 @@ const Page: NextPage = async () => (
                 <h2>I am a software engineer.</h2>
                 <p>
                     I live,{' '}
-                    <a href="https://www.linkedin.com/in/brianbehrens">work</a>,
+                    <a href="https://www.linkedin.com/in/brianbehrens">work</a>{' '}
                     and <a href="https://github.com/brainbrian">code</a> in Los
                     Angeles. I like to{' '}
                     <a href="https://www.youtube.com/watch?v=cWzseAXNzV8">
@@ -20,8 +20,7 @@ const Page: NextPage = async () => (
                     ,{' '}
                     <a href="https://www.youtube.com/watch?v=ehikEw8HsbY">
                         snowboard
-                    </a>
-                    , <a href="https://www.twitter.com/brianbehrens">tweet</a>,
+                    </a>{' '}
                     and ride my{' '}
                     <a href="https://www.strava.com/athletes/brianbehrens">
                         bike
@@ -31,9 +30,11 @@ const Page: NextPage = async () => (
                         music
                     </a>{' '}
                     and <a href="https://www.imdb.com/user/ur37273093/">film</a>
-                    . I enjoy creating my own{' '}
-                    <a href="https://gallery.brainbrian.com">photos</a> and{' '}
-                    <a href="https://www.youtube.com/brianbehrens">videos</a>.
+                    . I enojy sharing my own stories through{' '}
+                    <a href="https://gallery.brainbrian.com">photos</a>,{' '}
+                    <a href="https://www.youtube.com/brianbehrens">videos</a>{' '}
+                    and{' '}
+                    <a href="https://bsky.app/profile/brainbrian.com">posts</a>.
                 </p>
             </article>
         </Panel>
