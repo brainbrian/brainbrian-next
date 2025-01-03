@@ -26,13 +26,20 @@ const Page: NextPage = () => (
         <h2 className="header-bar">Experience</h2>
         <ul className="nostyle-list limit-text-width">
             <li>
-                <h3>Staff Software Engineer, Surfline</h3>
+                <h3>Senior Staff Software Engineer, Surfline</h3>
                 <h4>Remote (Huntington Beach, CA) | 2021 – Present</h4>
                 <p>
-                    I&apos;ve joined Surfline as the lead on a newly formed Web
-                    Platform squad. Our squad is responsible for building and
-                    maintaining our design system, shared packages, shared
-                    services, frontend architecture and more.
+                    I joined Surfline as the lead of the newly formed Web
+                    Platform squad, where I was responsible for building and
+                    maintaining the company’s design system, shared packages,
+                    services, and frontend architecture. Over time, as the
+                    organization underwent changes, including the arrival of a
+                    new CEO, my role evolved to focus as a Lead Engineer on the
+                    Forecast platform while continuing to lead the Frontend
+                    Guild. In this role, I maintain shared systems to ensure
+                    scalability and consistency across platforms while also
+                    planning and building new features to enhance the Forecast
+                    platform’s user experience.
                 </p>
             </li>
             <li>
