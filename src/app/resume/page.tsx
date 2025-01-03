@@ -27,7 +27,7 @@ const Page: NextPage = () => (
         <ul className="nostyle-list limit-text-width">
             <li>
                 <h3>Senior Staff Software Engineer, Surfline</h3>
-                <h4>Remote (Huntington Beach, CA) | 2021 – Present</h4>
+                <h4>Remote (Los Angeles, CA) | 2021 – Present</h4>
                 <p>
                     I joined Surfline as the lead of the newly formed Web
                     Platform squad, where I was responsible for building and
