@@ -6,6 +6,7 @@ import GitHubButton from 'react-github-btn';
 
 import Styles from './ProfileHeader.module.scss';
 import Script from 'next/script';
+import LinkedIn from '../Icons/LinkedIn';
 
 interface ProfileHeaderProps {
     children: ReactNode;
@@ -16,38 +17,35 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
         <section className={Styles.ProfileHeader}>
             <div className={Styles.Biography}>{children}</div>
             <aside className={Styles.Aside}>
-                <div className={Styles.ProfileImage} tabIndex={0}>
-                    <Image
-                        alt="Portrait of Brian Behrens"
-                        height="1125"
-                        src="/images/brian-behrens-profile.webp"
-                        width="1125"
-                        style={{ objectFit: 'fill' }}
-                    />
-                </div>
-                <p>
-                    <a href="https://www.linkedin.com/in/brianbehrens/">
+                <div>
+                    <p>
+                        <a href="https://www.linkedin.com/in/brianbehrens/">
+                            <LinkedIn className={Styles.LinkedIn} />
+                        </a>
+                    </p>
+                    <p>
+                        <GitHubButton
+                            href="https://github.com/brainbrian"
+                            data-color-scheme="no-preference: dark; light: light; dark: dark;"
+                            data-size="large"
+                            data-show-count="true"
+                            aria-label="Follow @brainbrian on GitHub"
+                        >
+                            Follow @brainbrian
+                        </GitHubButton>
+                    </p>
+                    <div className={Styles.ProfileImage} tabIndex={0}>
                         <Image
-                            loading="lazy"
-                            src="/images/linkedin.svg"
-                            alt="View Brian Behrens's profile on LinkedIn"
-                            width="120"
-                            height="30"
+                            alt="Portrait of Brian Behrens"
+                            height="1125"
+                            src="/images/brian-behrens-profile.webp"
+                            width="1125"
+                            style={{ objectFit: 'fill' }}
                         />
-                    </a>
-                </p>
-                <p>
-                    <GitHubButton
-                        href="https://github.com/brainbrian"
-                        data-color-scheme="no-preference: dark; light: light; dark: dark;"
-                        data-size="large"
-                        data-show-count="true"
-                        aria-label="Follow @brainbrian on GitHub"
-                    >
-                        Follow @brainbrian
-                    </GitHubButton>
-                </p>
+                    </div>
+                </div>
                 <div
+                    className={Styles.BSkyWidget}
                     dangerouslySetInnerHTML={{
                         __html: `<bsky-widget handle="brainbrian.com" show-description="false" theme="dim"></bsky-widget>
                         `,

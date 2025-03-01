@@ -1,5 +1,7 @@
 @use '../../styles/Config.scss';
 
+$color-linked-in: #0a66c2;
+
 .ProfileHeader {
     margin: 0 auto;
     max-width: var(--max-width-text);
@@ -10,8 +12,9 @@
 }
 
 .ProfileImage {
-    border-radius: 0.3rem;
+    border-radius: 0.7rem;
     margin-bottom: 1rem;
+    max-width: 350px;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -44,13 +47,37 @@
 }
 
 .Aside {
-    // max-width: 20rem;
     margin: 2rem auto;
 
+    @media screen and (min-width: Config.$size-xs) {
+        display: flex;
+        flex-direction: row;
+        // add a gap between the image and the aside
+        gap: 3rem;
+    }
+
     @media screen and (min-width: Config.$size-sm) {
+        display: block;
         margin: 0;
         max-width: 17rem;
         width: 40%;
+    }
+}
+
+.LinkedIn {
+    color: $color-linked-in;
+    display: block;
+    height: 30px;
+    width: 120px;
+}
+
+.BSkyWidget {
+    @media screen and (min-width: Config.$size-xs) {
+        padding-top: 6.2rem;
+    }
+
+    @media screen and (min-width: Config.$size-sm) {
+        padding-top: 0;
     }
 }
 

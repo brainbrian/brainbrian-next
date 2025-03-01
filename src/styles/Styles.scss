@@ -277,13 +277,9 @@ a {
 
 .intro-content {
     max-width: var(--max-width-text);
-    margin: 2rem auto;
 }
 
 .intro-section {
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-
     &.personal {
         font-style: italic;
         color: var(--color-light);

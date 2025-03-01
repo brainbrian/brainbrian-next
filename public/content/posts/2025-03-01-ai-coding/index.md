@@ -25,6 +25,8 @@ I like that Agent and Chat mode have been combined to one view. I didn't quite u
 
 `/a` to "Add Open Files to Context"
 
+![Add open files to context](./cursor-add-open-files.jpg)
+
 I have been using Claude 3.5 with the most success but lately have been using Claude 3.7 and gpt-4o.
 
 ## [Visual Studio Code](https://code.visualstudio.com)
