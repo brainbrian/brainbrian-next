@@ -10,6 +10,7 @@
     --color-darker: #{Config.$color-darker};
     --font-headline: #{Config.$font-headline};
     --font-body: #{Config.$font-body};
+    --font-code: #{Config.$font-code};
     --max-width: #{Config.$max-width};
     --max-width-text: #{Config.$max-width-text};
 }
@@ -215,6 +216,16 @@ a {
             max-width: 120% !important;
             width: 120% !important;
         }
+    }
+}
+
+.post-content {
+    code {
+        background-color: var(--color-darker);
+        color: var(--color-light);
+        font-family: var(--font-code);
+        padding: 0.25rem 0.5rem;
+        font-size: 0.85em;
     }
 }
 
