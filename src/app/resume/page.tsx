@@ -5,23 +5,43 @@ import { ProfileHeader } from '@/components';
 const Page: NextPage = () => (
     <main className="content">
         <ProfileHeader>
-            <p>
-                Hello, my name is Brian Behrens, and I am an experienced
-                software developer based in Los Angeles. With over 20 years of
-                experience, I specialize in developing interactive projects that
-                engage users, drive business results, and tell compelling
-                stories. My expertise in interaction design, web standards,
-                usability, and application architecture has enabled me to create
-                award-winning projects that meet business objectives. I have
-                worked on a diverse range of projects, including e-commerce
-                websites, social media campaigns, and web-based applications. As
-                a problem solver, I enjoy collaborating with teams to create
-                innovative solutions that push the boundaries of what is
-                possible. I am passionate about technology and always seek out
-                new challenges to keep up-to-date with the latest trends. In my
-                free time, I enjoy surfing, taking photos, and spending quality
-                time with my wife and dogs.
-            </p>
+            <div className="intro-content">
+                <div className="intro-section">
+                    <p>
+                        Hello, my name is Brian Behrens, and I am an experienced
+                        software developer based in Los Angeles. With over 20 years of
+                        experience, I specialize in developing interactive projects that
+                        engage users, drive business results, and tell compelling
+                        stories.
+                    </p>
+                </div>
+
+                <div className="intro-section">
+                    <p>
+                        My expertise in interaction design, web standards,
+                        usability, and application architecture has enabled me to create
+                        award-winning projects that meet business objectives. I have
+                        worked on a diverse range of projects, including e-commerce
+                        websites, social media campaigns, and web-based applications.
+                    </p>
+                </div>
+
+                <div className="intro-section">
+                    <p>
+                        As a problem solver, I enjoy collaborating with teams to create
+                        innovative solutions that push the boundaries of what is
+                        possible. I am passionate about technology and always seek out
+                        new challenges to keep up-to-date with the latest trends.
+                    </p>
+                </div>
+
+                <div className="intro-section personal">
+                    <p>
+                        In my free time, I enjoy surfing, taking photos, and spending quality
+                        time with my wife and dogs.
+                    </p>
+                </div>
+            </div>
         </ProfileHeader>
         <h2 className="header-bar">Experience</h2>
         <ul className="nostyle-list limit-text-width">

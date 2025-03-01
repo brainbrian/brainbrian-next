@@ -223,7 +223,7 @@ a {
     code {
         background-color: var(--color-darker);
         color: var(--color-light);
-        font-family: var(--font-code);
+        font-family: var (--font-code);
         padding: 0.25rem 0.5rem;
         font-size: 0.85em;
     }
@@ -273,4 +273,28 @@ a {
         max-width: none;
         width: 100%;
     }   
+}
+
+.intro-content {
+    max-width: var(--max-width-text);
+    margin: 2rem auto;
+}
+
+.intro-section {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+
+    &.personal {
+        font-style: italic;
+        color: var(--color-light);
+    }
+
+    p {
+        margin: 0 0 1rem;
+
+        @media screen and (min-width: Config.$size-md) {
+            font-size: 1.25rem;
+            line-height: 1.8;
+        }
+    }
 }
