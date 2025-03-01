@@ -64,24 +64,3 @@
         }
     }
 }
-
-.ListItemTweet {
-    background-image: url('/images/twitter.svg');
-    background-repeat: no-repeat;
-    background-size: 2rem 2rem;
-    margin-bottom: 1rem;
-    min-height: 2rem;
-    padding: 0 0 0 3rem;
-
-    p {
-        margin: 0;
-    }
-
-    a {
-        font-size: 0.75rem;
-
-        @media screen and (min-width: Config.$size-md) {
-            font-size: 0.875rem;
-        }
-    }
-}

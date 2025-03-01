@@ -3,8 +3,9 @@ $color-light: #fff;
 $color-dark: #484848;
 $color-darker: #262626;
 
-$font-headline: 'Poppins', sans-serif;
-$font-body: 'Open Sans', sans-serif;
+$font-headline: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-body: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-code: 'Courier New', Courier, monospace;
 
 $radius: 1rem;
 $max-width: 90rem;
