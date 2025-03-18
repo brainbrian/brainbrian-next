@@ -223,9 +223,42 @@ a {
     code {
         background-color: var(--color-darker);
         color: var(--color-light);
-        font-family: var (--font-code);
-        padding: 0.25rem 0.5rem;
-        font-size: 0.85em;
+        font-family: var(--font-code);
+        padding: 0.2em 0.4em;
+        font-size: 0.9em;
+        border-radius: 3px;
+        
+        &.block, 
+        &:has(+ br),
+        &.language-json,
+        &[class*="language-"] {
+            display: block;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            line-height: 1.5;
+            border-radius: 5px;
+            white-space: pre;
+            tab-size: 2;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            border-left: 3px solid var(--color-main);
+        }
+    }
+    
+    pre {
+        margin: 1rem 0;
+        
+        code {
+            display: block;
+            padding: 1rem;
+            overflow-x: auto;
+            line-height: 1.5;
+            border-radius: 5px;
+            white-space: pre;
+            tab-size: 2;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            border-left: 3px solid var(--color-main);
+        }
     }
 }
 
