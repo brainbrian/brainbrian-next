@@ -29,6 +29,26 @@ I like that Agent and Chat mode have been combined to one view. I didn't quite u
 
 I have been using Claude 3.5 Sonnet with the most success but lately have been using Claude 3.7 Sonnet and gpt-4o.
 
+### [MCP](https://modelcontextprotocol.io/introduction) [Servers](https://github.com/modelcontextprotocol/servers)
+
+MCP servers have proven to be super useful. I've been using [figma-context-mcp](https://github.com/GLips/Figma-Context-MCP) running inside Cursor by configuring the MCP config `.cursor/mcp.json`. You can see them actively running inside your Cursor settings.
+
+```json
+{
+  "mcpServers": {
+    "figma-developer-mcp": {
+      "command": "npx",
+      "args": ["-y", "figma-developer-mcp", "--stdio"],
+      "env": {
+        "FIGMA_API_KEY": "<your-figma-api-key>"
+      }
+    }
+  }
+}
+```
+
+The Figma MCP server specifcally has allowed Cursor to speak directly to targeted areas of a Figma mock by right-clicking and using "Copy link to selection" or (cmd + L). The LLM then has direct understanding of the designs.
+
 ## [Visual Studio Code](https://code.visualstudio.com)
 
 _Your code editor. Redefined with AI._  – from the VS Code website
