@@ -39,11 +39,30 @@ module.exports = {
                 DEFAULT: '1rem',
             },
             screens: {
+                xxs: '375px',
+                xs: '480px',
                 sm: '640px',
                 md: '768px',
                 lg: '1024px',
                 xl: '1280px',
                 '2xl': '1536px',
+            },
+            keyframes: {
+                'nav-animation': {
+                    from: {
+                        opacity: 0,
+                        transform: 'translateX(100%)',
+                        width: '0%',
+                    },
+                    to: {
+                        opacity: 1,
+                        transform: 'translateX(0%)',
+                        width: '100%',
+                    },
+                },
+            },
+            animation: {
+                'nav-animation': 'nav-animation 500ms ease-in-out',
             },
         },
     },
