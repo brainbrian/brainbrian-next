@@ -7,8 +7,6 @@ import { Social } from '@/components';
 import type { Post } from '@/types';
 import { getPosts } from '@/utils/posts';
 
-import Styles from './Footer.module.scss';
-
 export const Footer: React.FC = async () => {
     let recentPosts: Post[] = [];
 
@@ -21,19 +19,30 @@ export const Footer: React.FC = async () => {
     }
 
     return (
-        <div className="bg-page">
-            <aside className={`content ${Styles.Aside}`}>
-                <section>
-                    <Link href="/posts" className="header-bar">
-                        <h2 className="header-bar__text">From The Brain</h2>
+        <div className="bg-page w-full">
+            <aside className="max-w-screen-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8 sm:flex">
+                <section className="mb-8 sm:mb-0 sm:w-1/2 sm:pr-4">
+                    <Link
+                        href="/posts"
+                        className="header-bar block transition-colors hover:text-main"
+                    >
+                        <h2 className="header-bar__text text-xl sm:text-2xl font-bold">
+                            From The Brain
+                        </h2>
                     </Link>
-                    <ul className={Styles.List}>
+                    <ul className="mt-4 space-y-4 sm:space-y-6 list-none px-4 my-4">
                         {recentPosts?.map(({ date, slug, title }) => (
-                            <li key={slug} className={Styles.ListItemBrain}>
+                            <li
+                                key={slug}
+                                className="bg-[url('/images/brain.svg')] bg-no-repeat bg-[length:2rem_2rem] mb-4 min-h-[2rem] pl-12"
+                            >
                                 <p>
-                                    <Link href={`/posts/${slug}`}>
+                                    <Link
+                                        href={`/posts/${slug}`}
+                                        className="transition-colors hover:text-main text-light"
+                                    >
                                         {title}{' '}
-                                        <span>
+                                        <span className="text-xs sm:text-sm md:text-base text-main block hover:underline">
                                             {format(
                                                 new Date(date),
                                                 'MMMM dd, yyyy',
@@ -47,10 +56,17 @@ export const Footer: React.FC = async () => {
                 </section>
                 <Social />
             </aside>
-            <footer className={Styles.Footer}>
+            <footer className="max-w-screen-2xl mx-auto px-4 py-6 sm:px-6 lg:px-8 text-center sm:text-left text-xs sm:text-sm border-t-2 border-main">
                 &copy; {new Date().getFullYear()} Brain Brian (Brian Behrens) –{' '}
-                Powered by coffee, froth, salt water and curiosity –{' '}
-                <a href="https://www.brainbrian.com">brainbrian.com</a>
+                <span className="hidden sm:inline">
+                    Powered by coffee, froth, salt water and curiosity –{' '}
+                </span>
+                <a
+                    href="https://www.brainbrian.com"
+                    className="text-main hover:underline"
+                >
+                    brainbrian.com
+                </a>
             </footer>
         </div>
     );

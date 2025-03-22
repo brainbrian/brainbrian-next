@@ -1,10 +1,11 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
-    safelist: ['header-bar', 'header-bar__text', 'content'],
+    safelist: [],
     theme: {
         extend: {
             colors: {
@@ -38,13 +39,11 @@ module.exports = {
                 DEFAULT: '1rem',
             },
             screens: {
-                xxs: '30rem',
-                xs: '48rem',
-                sm: '68rem',
-                md: '75rem',
-                lg: '80rem',
-                xl: '100rem',
-                xxl: '140rem',
+                sm: '640px',
+                md: '768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1536px',
             },
         },
     },
