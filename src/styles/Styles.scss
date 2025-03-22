@@ -32,6 +32,10 @@ body {
     min-width: 20rem;
     padding: 0;
 
+    @media screen and (min-width: 1024px) {
+        padding-top: 6rem;
+    }
+    
     @media screen and (min-width: Config.$size-md) {
         padding-top: 6rem;
     }
