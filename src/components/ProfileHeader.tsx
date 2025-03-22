@@ -3,8 +3,8 @@
 import React, { ReactNode } from 'react';
 import Image from 'next/image';
 import GitHubButton from 'react-github-btn';
-import Script from 'next/script';
 import LinkedIn from './Icons/LinkedIn';
+import { BlueSky } from './BlueSky';
 
 interface ProfileHeaderProps {
     children: ReactNode;
@@ -24,7 +24,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
                         <LinkedIn className="text-[#0a66c2] block h-[30px] w-[120px]" />
                     </a>
                 </p>
-                <p className="mb-4">
+                <p className="mb-4 h-7">
                     <GitHubButton
                         href="https://github.com/brainbrian"
                         data-color-scheme="no-preference: dark; light: light; dark: dark;"
@@ -49,17 +49,13 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
                         />
                         <div className="absolute inset-0 bg-[url('/images/brian-behrens-profile-old.webp')] bg-cover opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100 group-focus-visible:opacity-100" />
                     </div>
-                    <div
-                        className="w-full"
-                        dangerouslySetInnerHTML={{
-                            __html: `<bsky-widget handle="brainbrian.com" show-description="false" theme="dim"></bsky-widget>
-                            `,
-                        }}
-                    />
-                    <Script
-                        src="https://unpkg.com/bsky-widget@~0.1/dist/index.js"
-                        type="module"
-                    />
+                    <div className="w-full">
+                        <BlueSky
+                            actor="brainbrian.com"
+                            showBanner={true}
+                            showCreationDate={true}
+                        />
+                    </div>
                 </div>
             </aside>
         </section>
