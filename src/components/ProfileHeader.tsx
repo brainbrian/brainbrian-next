@@ -12,7 +12,7 @@ interface ProfileHeaderProps {
 
 export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
     return (
-        <section className="mx-auto max-w-[var(--max-width-text)] flex flex-col lg:flex-row">
+        <section className="mx-auto max-w-[64rem] flex flex-col lg:flex-row">
             <div className="w-full lg:mr-8 mb-10 lg:mb-0">
                 <div className="w-full [&>p]:text-lg [&>p]:leading-normal [&>p]:m-0 sm:[&>p]:text-xl md:[&>p]:text-2xl">
                     {children}

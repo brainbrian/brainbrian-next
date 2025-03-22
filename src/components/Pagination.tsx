@@ -27,7 +27,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                 <Link
                     href={prevPage}
                     rel="prev"
-                    className="text-xl font-bold mx-0.5 p-2 hover:bg-[var(--color-main)] hover:text-[var(--color-light)] hover:no-underline focus-visible:bg-[var(--color-main)] focus-visible:text-[var(--color-light)] focus-visible:no-underline"
+                    className="text-xl font-bold mx-0.5 p-2 hover:bg-main hover:text-light hover:no-underline focus-visible:bg-main focus-visible:text-light focus-visible:no-underline"
                 >
                     ← <span className="sr-only">Previous Page</span>
                 </Link>
@@ -37,9 +37,9 @@ export const Pagination: React.FC<PaginationProps> = ({
                     key={`pagination-number${i + 1}`}
                     href={i === 0 ? basePath : `${basePath}?page=${i + 1}`}
                     className={classNames(
-                        'text-xl font-bold mx-0.5 p-2 hover:bg-[var(--color-main)] hover:text-[var(--color-light)] hover:no-underline focus-visible:bg-[var(--color-main)] focus-visible:text-[var(--color-light)] focus-visible:no-underline',
+                        'text-xl font-bold mx-0.5 p-2 hover:bg-main hover:text-light hover:no-underline focus-visible:bg-main focus-visible:text-light focus-visible:no-underline',
                         {
-                            'bg-[var(--color-main)] text-[var(--color-light)] no-underline':
+                            'bg-main text-light no-underline':
                                 currentPage === i + 1,
                         },
                     )}
@@ -51,7 +51,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                 <Link
                     href={nextPage}
                     rel="next"
-                    className="text-xl font-bold mx-0.5 p-2 hover:bg-[var(--color-main)] hover:text-[var(--color-light)] hover:no-underline focus-visible:bg-[var(--color-main)] focus-visible:text-[var(--color-light)] focus-visible:no-underline"
+                    className="text-xl font-bold mx-0.5 p-2 hover:bg-main hover:text-light hover:no-underline focus-visible:bg-main focus-visible:text-light focus-visible:no-underline"
                 >
                     <span className="sr-only">Next Page</span> →
                 </Link>

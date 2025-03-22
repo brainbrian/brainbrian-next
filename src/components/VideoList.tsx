@@ -65,7 +65,7 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
                                     className="absolute top-1/2 -translate-y-1/2 w-full"
                                 />
                             </div>
-                            <h2 className="bg-[var(--color-darker)] text-xl md:text-2xl font-medium m-0 p-4 uppercase transition-[background-color,color] duration-200 group-hover:bg-[var(--color-main)] group-hover:text-[var(--color-light)] group-focus-visible:bg-[var(--color-main)] group-focus-visible:text-[var(--color-light)]">
+                            <h2 className="bg-darker text-xl md:text-2xl font-medium m-0 p-4 uppercase transition-[background-color,color] duration-200 group-hover:bg-main group-hover:text-light group-focus-visible:bg-main group-focus-visible:text-light">
                                 {video?.snippet?.title}
                             </h2>
                         </a>

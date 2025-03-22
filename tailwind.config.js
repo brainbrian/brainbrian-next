@@ -4,9 +4,10 @@ module.exports = {
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/styles/**/*.{css,scss}',
     ],
     safelist: [
-        { pattern: /delay-\[\d+ms\]/ }, // Match any delay-[Xms] class
+        /^delay-/, // Match any delay-* class
         'animate-fadeInUp',
         'animation-delay-0',
         'animation-delay-100',
