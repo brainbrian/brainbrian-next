@@ -11,7 +11,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
-    <html>
+    <html lang="en">
         <body>
             <div className="layout">
                 <Header />

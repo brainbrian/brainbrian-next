@@ -8,4 +8,5 @@ export { ProfileHeader } from './ProfileHeader/ProfileHeader';
 export { Project } from './Project/Project';
 export { ProjectsRecent } from './ProjectsRecent/ProjectsRecent';
 export { Social } from './Social/Social';
+export { TailwindExample } from './TailwindExample/TailwindExample';
 export { VideoList } from './VideoList/VideoList';

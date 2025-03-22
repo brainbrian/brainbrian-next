@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next';
 
-import { Panel, ProjectsRecent } from '@/components';
+import { Panel, ProjectsRecent, TailwindExample } from '@/components';
 
 const Page: NextPage = async () => (
     <main>
@@ -38,6 +38,21 @@ const Page: NextPage = async () => (
                 </p>
             </article>
         </Panel>
+
+        <div className="content py-8">
+            <TailwindExample title="Tailwind CSS Example">
+                <p className="mb-4">
+                    This is an example component using Tailwind CSS. Note how it
+                    uses the custom colors and fonts defined in the Tailwind
+                    configuration.
+                </p>
+                <p>
+                    The styling is completely done with Tailwind utility classes
+                    while maintaining the design system from the existing SCSS.
+                </p>
+            </TailwindExample>
+        </div>
+
         <ProjectsRecent />
     </main>
 );
