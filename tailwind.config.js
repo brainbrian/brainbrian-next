@@ -7,7 +7,7 @@ module.exports = {
         './src/styles/**/*.{css,scss}',
     ],
     safelist: [
-        /^delay-/, // Match any delay-* class
+        { pattern: /^delay-/ }, // Updated syntax for regex patterns
         'animate-fadeInUp',
         'animation-delay-0',
         'animation-delay-100',
