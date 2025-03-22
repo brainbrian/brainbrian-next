@@ -29,14 +29,14 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
     // Define animation delay utility classes
     const getAnimationDelay = (index: number) => {
         const delays = [
-            'animation-delay-0',
-            'animation-delay-100',
-            'animation-delay-200',
-            'animation-delay-300',
-            'animation-delay-400',
-            'animation-delay-500',
-            'animation-delay-600',
-            'animation-delay-700',
+            'delay-0',
+            'delay-100',
+            'delay-200',
+            'delay-300',
+            'delay-400',
+            'delay-500',
+            'delay-600',
+            'delay-700',
         ];
         return delays[index % delays.length];
     };

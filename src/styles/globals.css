@@ -1,13 +1,73 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap')
+layer(base);
 
 /* Font variables */
-:root {
-  --font-headline: 'Poppins', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --font-body: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --font-code: 'Courier New', 'Courier', monospace;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer base {
+  :root {
+    --font-headline:
+      'Poppins', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    --font-body:
+      'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    --font-code: 'Courier New', 'Courier', monospace;
+  }
+}
+
+/* 
+ * We only need to define the delay utilities explicitly since those aren't
+ * working properly through the Tailwind config in v4
+ */
+@layer utilities {
+  /* Define the keyframes for the fadeInUp animation */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-0.25rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Make sure the animate-fadeInUp class is properly defined */
+  .animate-fadeInUp {
+    animation: fadeInUp 500ms ease-in-out forwards;
+  }
+  
+  /* Animation delay utilities */
+  .delay-0 { animation-delay: 0ms; }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+}

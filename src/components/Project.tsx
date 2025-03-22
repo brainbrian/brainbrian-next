@@ -28,7 +28,7 @@ export const Project: React.FC<ProjectProps> = ({
                 />
             )}
             <div className="relative">
-                <h2 className="text-xl font-medium m-0 p-4 uppercase sm:text-2xl sm:translate-x-8 transition-all duration-1200 group-hover:text-light group-hover:sm:translate-x-12 group-focus-visible:text-light group-focus-visible:sm:translate-x-12">
+                <h2 className="text-xl font-medium m-0 p-4 uppercase sm:text-2xl sm:translate-x-8 transition-all duration-1200 group-hover:text-light sm:group-hover:translate-x-12 group-focus-visible:text-light sm:group-focus-visible:translate-x-12">
                     {title}
                 </h2>
                 <span className="hidden sm:block absolute bottom-8 left-4 h-0.5 w-4 bg-main transition-all duration-1200 group-hover:bg-light group-hover:w-8 group-focus-visible:bg-light group-focus-visible:w-8"></span>

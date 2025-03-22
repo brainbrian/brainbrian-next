@@ -9,14 +9,14 @@ module.exports = {
     safelist: [
         { pattern: /^delay-/ }, // Updated syntax for regex patterns
         'animate-fadeInUp',
-        'animation-delay-0',
-        'animation-delay-100',
-        'animation-delay-200',
-        'animation-delay-300',
-        'animation-delay-400',
-        'animation-delay-500',
-        'animation-delay-600',
-        'animation-delay-700',
+        'delay-0',
+        'delay-100',
+        'delay-200',
+        'delay-300',
+        'delay-400',
+        'delay-500',
+        'delay-600',
+        'delay-700',
     ],
     theme: {
         extend: {
@@ -103,16 +103,6 @@ module.exports = {
                 float: 'float 1s ease-in-out infinite',
                 fadeInUp: 'fadeInUp 500ms ease-in-out forwards',
             },
-            animationDelay: {
-                0: '0ms',
-                100: '100ms',
-                200: '200ms',
-                300: '300ms',
-                400: '400ms',
-                500: '500ms',
-                600: '600ms',
-                700: '700ms',
-            },
             fontSize: {
                 xl: ['1.25rem', { lineHeight: '1.75rem' }],
                 '2xl': ['1.5rem', { lineHeight: '2rem' }],
@@ -130,20 +120,6 @@ module.exports = {
         },
     },
     plugins: [
-        function ({ addUtilities, theme }) {
-            const animationDelays = theme('animationDelay', {});
-            const utilities = Object.entries(animationDelays).map(
-                ([key, value]) => {
-                    return {
-                        [`.animation-delay-${key}`]: {
-                            'animation-delay': value,
-                        },
-                    };
-                },
-            );
-
-            addUtilities(utilities);
-        },
         function ({ addComponents, addBase, theme }) {
             addBase({
                 html: {
@@ -158,7 +134,7 @@ module.exports = {
                     minWidth: '20rem',
                     padding: '0',
                     margin: '0',
-                    '@screen lg': {
+                    '@media (min-width: 1024px)': {
                         paddingTop: '6rem',
                     },
                 },
@@ -179,25 +155,25 @@ module.exports = {
                 },
                 h1: {
                     fontSize: '1.5rem', // 2xl
-                    '@screen md': {
+                    '@media (min-width: 768px)': {
                         fontSize: '2.25rem',
                     },
                 },
                 h2: {
                     fontSize: '1.25rem', // xl
-                    '@screen md': {
+                    '@media (min-width: 768px)': {
                         fontSize: '1.75rem',
                     },
                 },
                 h3: {
                     fontSize: '1.125rem', // lg
-                    '@screen md': {
+                    '@media (min-width: 768px)': {
                         fontSize: '1.25rem',
                     },
                 },
                 'h4, h5, h6': {
                     fontSize: '1rem', // base
-                    '@screen md': {
+                    '@media (min-width: 768px)': {
                         fontSize: '1.125rem', // lg
                     },
                 },
@@ -206,7 +182,7 @@ module.exports = {
                     fontSize: '1.125rem', // lg
                     lineHeight: theme('lineHeight.relaxed'),
                     marginBottom: '1rem',
-                    '@screen md': {
+                    '@media (min-width: 768px)': {
                         fontSize: '1.25rem', // xl
                         lineHeight: theme('lineHeight.loose'),
                     },
@@ -249,7 +225,7 @@ module.exports = {
                     position: 'relative',
                     width: '100%',
                     paddingBottom: '56.25%',
-                    '@screen md': {
+                    '@media (min-width: 768px)': {
                         width: '120%',
                         paddingBottom: '67.5%',
                         margin: '0 auto',
@@ -264,7 +240,7 @@ module.exports = {
                 '.responsive-image': {
                     margin: '1rem 0',
                     width: '100%',
-                    '@screen md': {
+                    '@media (min-width: 768px)': {
                         margin: '2rem 0',
                         maxWidth: '130%',
                         width: '130%',
@@ -278,7 +254,7 @@ module.exports = {
                         marginLeft: '-4.9%',
                         maxWidth: '109.8%',
                         width: '109.8%',
-                        '@screen md': {
+                        '@media (min-width: 768px)': {
                             marginLeft: '-10%',
                             maxWidth: '120%',
                             width: '120%',
@@ -371,7 +347,7 @@ module.exports = {
                     },
                     '& p': {
                         marginBottom: '1rem',
-                        '@screen md': {
+                        '@media (min-width: 768px)': {
                             fontSize: '1.25rem', // xl
                             lineHeight: theme('lineHeight.loose'),
                         },

@@ -20,7 +20,7 @@ export const Footer: React.FC = async () => {
 
     return (
         <div className="bg-page w-full">
-            <aside className="max-w-screen-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8 sm:flex">
+            <aside className="max-w-(--breakpoint-2xl) mx-auto px-4 py-8 sm:px-6 lg:px-8 sm:flex">
                 <section className="mb-8 sm:mb-0 sm:w-1/2 sm:pr-4">
                     <Link
                         href="/posts"
@@ -56,7 +56,7 @@ export const Footer: React.FC = async () => {
                 </section>
                 <Social />
             </aside>
-            <footer className="max-w-screen-2xl mx-auto px-4 py-6 sm:px-6 lg:px-8 text-center sm:text-left text-xs sm:text-sm border-t-2 border-main">
+            <footer className="max-w-(--breakpoint-2xl) mx-auto px-4 py-6 sm:px-6 lg:px-8 text-center sm:text-left text-xs sm:text-sm border-t-2 border-main">
                 &copy; {new Date().getFullYear()} Brain Brian (Brian Behrens) –{' '}
                 <span className="hidden sm:inline">
                     Powered by coffee, froth, salt water and curiosity –{' '}
