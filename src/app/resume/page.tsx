@@ -45,7 +45,9 @@ const Page: NextPage = () => (
                 </div>
             </div>
         </ProfileHeader>
-        <h2 className="header-bar">Experience</h2>
+        <h2 className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase">
+            Experience
+        </h2>
         <ul className="nostyle-list limit-text-width">
             <li>
                 <h3>Senior Staff Software Engineer, Surfline</h3>
@@ -53,7 +55,7 @@ const Page: NextPage = () => (
                 <p>
                     I joined Surfline as the lead of the newly formed Web
                     Platform squad, where I was responsible for building and
-                    maintaining the company’s design system, shared packages,
+                    maintaining the company's design system, shared packages,
                     services, and frontend architecture. Over time, as the
                     organization underwent changes, including the arrival of a
                     new CEO, my role evolved to focus as a Lead Engineer on the
@@ -61,7 +63,7 @@ const Page: NextPage = () => (
                     Guild. In this role, I maintain shared systems to ensure
                     scalability and consistency across platforms while also
                     planning and building new features to enhance the Forecast
-                    platform’s user experience.
+                    platform's user experience.
                 </p>
             </li>
             <li>
@@ -183,26 +185,28 @@ const Page: NextPage = () => (
             </li>
             <li>
                 <h3>
-                    Co-Producer, Milwaukee Bucks “Bucks Buddy” Half-time Segment
+                    Co-Producer, Milwaukee Bucks "Bucks Buddy" Half-time Segment
                 </h3>
                 <h4>Milwaukee, WI | 2003</h4>
                 <p>
                     I Produced, Shot, and Edited a 30 second half-time segment
-                    for the “Bucks Buddy” program with partner, Brad
+                    for the &quot;Bucks Buddy&quot; program with partner, Brad
                     Manderscheid. The segment aired on the WB during a Bucks
                     half-time show.
                 </p>
             </li>
             <li>
-                <h3>Executive Producer, MPTV’s “Letters to Santa”</h3>
+                <h3>Executive Producer, MPTV's "Letters to Santa"</h3>
                 <h4>Milwaukee, WI | 2002</h4>
                 <p>
-                    I oversaw all aspects of production in the 7 Part Children’s
+                    I oversaw all aspects of production in the 7 Part Children's
                     Series aired on Milwaukee Public Television.
                 </p>
             </li>
         </ul>
-        <h2 className="header-bar">Awards</h2>
+        <h2 className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase">
+            Awards
+        </h2>
         <ul className="nostyle-list limit-text-width">
             <li>
                 <h3>Target – Best of the Bullseye: Collaboration</h3>
@@ -231,12 +235,15 @@ const Page: NextPage = () => (
                 <p>
                     Milwaukee Public Television Student Operations
                     <br />I was awarded best director for a half hour long
-                    feature titled “Let’s Be Frank”. I was the director,
-                    producer, cinematographer, and editor for this feature.
+                    feature titled &quot;Let&apos;s Be Frank&quot;. I was the
+                    director, producer, cinematographer, and editor for this
+                    feature.
                 </p>
             </li>
         </ul>
-        <h2 className="header-bar">Education</h2>
+        <h2 className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase">
+            Education
+        </h2>
         <ul className="nostyle-list limit-text-width">
             <li>
                 <h3>Milwaukee Area Technical College</h3>
@@ -249,7 +256,9 @@ const Page: NextPage = () => (
                 <p>Associates Degree in Visual Communications</p>
             </li>
         </ul>
-        <h2 className="header-bar">Skills</h2>
+        <h2 className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase">
+            Skills
+        </h2>
         <div className="limit-text-width">
             <p>
                 HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js,

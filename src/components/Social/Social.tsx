@@ -12,8 +12,13 @@ export const Social: React.FC = () => {
 
     return (
         <section className="sm:w-1/2 sm:odd:pr-4 sm:even:pl-4">
-            <a href="https://instagram.com/brianbehrens" className="header-bar">
-                <h2 className="header-bar__text">Social</h2>
+            <a
+                href="https://instagram.com/brianbehrens"
+                className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase hover:no-underline"
+            >
+                <h2 className="text-light text-xl md:text-2xl m-0 hover:text-main">
+                    Social
+                </h2>
             </a>
             <div className="mx-auto">
                 {isMounted && (

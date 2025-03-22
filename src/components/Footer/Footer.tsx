@@ -24,9 +24,9 @@ export const Footer: React.FC = async () => {
                 <section className="mb-8 sm:mb-0 sm:w-1/2 sm:pr-4">
                     <Link
                         href="/posts"
-                        className="header-bar block transition-colors hover:text-main"
+                        className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase hover:no-underline hover:text-main"
                     >
-                        <h2 className="header-bar__text text-xl sm:text-2xl font-bold">
+                        <h2 className="text-light text-xl sm:text-2xl font-bold hover:text-main">
                             From The Brain
                         </h2>
                     </Link>

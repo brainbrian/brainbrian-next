@@ -123,38 +123,6 @@ a {
     }
 }
 
-.header-bar {
-    background-color: var(--color-darker);
-    color: var(--color-light);
-    display: block;
-    font-family: var(--font-headline);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    text-transform: uppercase;
-
-    $parent: &;
-
-    &__text {
-        color: var(--color-light);
-        font-size: 1.25rem;
-        margin: 0;
-
-        @media screen and (min-width: Config.$size-md) {
-            font-size: 1.5rem;
-        }
-    }
-
-    &:hover,
-    &:focus-visible {
-        text-decoration: none;
-
-        #{$parent}__text {
-            color: var(--color-main);
-        }
-    }
-}
-
 .content {
     margin: 2rem auto;
     max-width: var(--max-width);
