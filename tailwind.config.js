@@ -60,9 +60,21 @@ module.exports = {
                         width: '100%',
                     },
                 },
+                float: {
+                    '0%': {
+                        transform: 'translateY(0rem)',
+                    },
+                    '50%': {
+                        transform: 'translateY(1rem)',
+                    },
+                    '100%': {
+                        transform: 'translateY(0rem)',
+                    },
+                },
             },
             animation: {
                 'nav-animation': 'nav-animation 500ms ease-in-out',
+                float: 'float 1s ease-in-out infinite',
             },
         },
     },
