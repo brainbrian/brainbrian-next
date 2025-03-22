@@ -4,7 +4,7 @@ import React, { ReactNode } from 'react';
 import Image from 'next/image';
 import GitHubButton from 'react-github-btn';
 import Script from 'next/script';
-import LinkedIn from '../Icons/LinkedIn';
+import LinkedIn from './Icons/LinkedIn';
 
 interface ProfileHeaderProps {
     children: ReactNode;
