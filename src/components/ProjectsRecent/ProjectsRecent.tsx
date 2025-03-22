@@ -6,8 +6,6 @@ import { Project } from '@/components';
 import type { Project as ProjectType } from '@/types';
 import { getProjects } from '@/utils/projects';
 
-import Styles from './ProjectsRecent.module.scss';
-
 export const ProjectsRecent: React.FC = async () => {
     let recentProjects: ProjectType[] = [];
 
@@ -33,7 +31,7 @@ export const ProjectsRecent: React.FC = async () => {
 
     return (
         <div className="bg-page">
-            <section className={Styles.ProjectsRecent}>
+            <section className="mx-auto -mb-16 max-w-[var(--max-width)] p-8">
                 <a className="header-bar" href="./projects">
                     <h2 className="header-bar__text">Recent Projects</h2>
                 </a>
