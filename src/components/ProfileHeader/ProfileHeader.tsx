@@ -45,8 +45,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
                             height="1125"
                             src="/images/brian-behrens-profile.webp"
                             width="1125"
-                            style={{ objectFit: 'fill' }}
-                            className="block h-auto w-full"
+                            className="block h-auto w-full object-fill"
                         />
                         <div className="absolute inset-0 bg-[url('/images/brian-behrens-profile-old.webp')] bg-cover opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100 group-focus-visible:opacity-100" />
                     </div>
