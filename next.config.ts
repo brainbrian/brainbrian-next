@@ -5,6 +5,15 @@ const nextConfig: NextConfig = {
     sassOptions: {
         silenceDeprecations: ['legacy-js-api'],
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'cdn.bsky.app',
+                pathname: '/**',
+            },
+        ],
+    },
 };
 
 export default nextConfig;

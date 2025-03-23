@@ -2,8 +2,6 @@ import * as React from 'react';
 
 import { Loader } from '@/components';
 
-import Styles from './VideoList.module.scss';
-
 interface VideoListProps {
     videos: Array<{
         id: number;
@@ -28,18 +26,34 @@ interface VideoListProps {
 export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
     if (isLoading) return <Loader />;
 
+    // Define animation delay utility classes
+    const getAnimationDelay = (index: number) => {
+        const delays = [
+            'delay-0',
+            'delay-100',
+            'delay-200',
+            'delay-300',
+            'delay-400',
+            'delay-500',
+            'delay-600',
+            'delay-700',
+        ];
+        return delays[index % delays.length];
+    };
+
     return (
         <>
-            <ul className={Styles.VideoList}>
-                {videos?.map((video) => (
+            <ul className="list-none m-0 p-0 xs:flex xs:flex-wrap xs:w-full">
+                {videos?.map((video, index) => (
                     <li
                         key={video?.snippet?.resourceId?.videoId}
-                        className={Styles.VideoListItem}
+                        className={`mb-8 opacity-0 xs:w-1/2 animate-fadeInUp ${getAnimationDelay(index)}`}
                     >
                         <a
                             href={`https://www.youtube.com/watch?v=${video?.snippet?.resourceId?.videoId}`}
+                            className="block xs:odd:pr-4 xs:even:pl-4 hover:no-underline focus-visible:no-underline group"
                         >
-                            <div className={Styles.VideoListImage}>
+                            <div className="overflow-hidden pb-[56.25%] relative w-full">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={
@@ -48,14 +62,17 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
                                         video?.snippet?.thumbnails?.high?.url
                                     }
                                     alt={`Thumbnail of video ${video.id}`}
+                                    className="absolute top-1/2 -translate-y-1/2 w-full"
                                 />
                             </div>
-                            <h2>{video?.snippet?.title}</h2>
+                            <h2 className="bg-background text-xl md:text-2xl font-medium m-0 p-4 uppercase transition-[background-color,color] duration-200 group-hover:bg-primary group-hover:text-text group-focus-visible:bg-primary group-focus-visible:text-text">
+                                {video?.snippet?.title}
+                            </h2>
                         </a>
                     </li>
                 ))}
             </ul>
-            <p className={Styles.VideoListLink}>
+            <p className="text-center">
                 <a href="https://www.youtube.com/c/BrianBehrens/videos">
                     More on youtube.com
                 </a>

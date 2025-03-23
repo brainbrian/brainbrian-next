@@ -1,0 +1,63 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap')
+layer(base);
+
+/* Tailwind directives */
+@import 'tailwindcss';
+@config '../../tailwind.config.ts';
+
+/* 
+ * Tailwind v4 compatibility styles 
+ * These ensure border colors work correctly when migrating from v3 to v4
+ */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+/* Font variables */
+@layer base {
+  :root {
+    --font-headline: 'Poppins', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    --font-body: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    --font-code: 'Courier New', 'Courier', monospace;
+  }
+}
+
+/* Animation utilities */
+@layer utilities {
+  /* FadeInUp animation */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-0.25rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 500ms ease-in-out forwards;
+  }
+  
+  /* Animation delay utilities */
+  .delay-0 { animation-delay: 0ms; }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+}

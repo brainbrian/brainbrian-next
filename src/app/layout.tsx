@@ -4,14 +4,26 @@ import { Analytics } from '@vercel/analytics/react';
 
 import { Header, Footer } from '@/components';
 
-import '../styles/Styles.scss';
+import '../styles/globals.css';
 
 interface LayoutProps {
     children: React.ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
-    <html>
+    <html lang="en">
+        <head>
+            <link
+                rel="preload"
+                href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+                as="style"
+            />
+            <link
+                rel="preload"
+                href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+                as="style"
+            />
+        </head>
         <body>
             <div className="layout">
                 <Header />

@@ -38,6 +38,7 @@ const Page: NextPage = async () => (
                 </p>
             </article>
         </Panel>
+
         <ProjectsRecent />
     </main>
 );
