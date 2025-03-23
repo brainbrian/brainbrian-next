@@ -1,22 +1,12 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import { type Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
+
+export default {
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
         './src/styles/**/*.{css,scss}',
-    ],
-    safelist: [
-        { pattern: /^delay-/ }, // Updated syntax for regex patterns
-        'animate-fadeInUp',
-        'delay-0',
-        'delay-100',
-        'delay-200',
-        'delay-300',
-        'delay-400',
-        'delay-500',
-        'delay-600',
-        'delay-700',
     ],
     theme: {
         extend: {
@@ -120,7 +110,7 @@ module.exports = {
         },
     },
     plugins: [
-        function ({ addComponents, addBase, theme }) {
+        plugin(function ({ addComponents, addBase, theme }) {
             addBase({
                 html: {
                     WebkitFontSmoothing: 'antialiased',
@@ -171,7 +161,19 @@ module.exports = {
                         fontSize: '1.25rem',
                     },
                 },
-                'h4, h5, h6': {
+                h4: {
+                    fontSize: '1rem', // base
+                    '@media (min-width: 768px)': {
+                        fontSize: '1.125rem', // lg
+                    },
+                },
+                h5: {
+                    fontSize: '1rem', // base
+                    '@media (min-width: 768px)': {
+                        fontSize: '1.125rem', // lg
+                    },
+                },
+                h6: {
                     fontSize: '1rem', // base
                     '@media (min-width: 768px)': {
                         fontSize: '1.125rem', // lg
@@ -354,6 +356,6 @@ module.exports = {
                     },
                 },
             });
-        },
+        }),
     ],
-};
+} satisfies Config;

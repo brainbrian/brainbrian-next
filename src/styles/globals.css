@@ -5,7 +5,7 @@ layer(base);
 /* Font variables */
 @import 'tailwindcss';
 
-@config '../../tailwind.config.js';
+@config '../../tailwind.config.ts';
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
