@@ -1,17 +1,15 @@
 ---
-description: Cursor rules for the KBYG Web application based on established best practices
+description: Cursor rules for the Brian Brian Web application
 globs: 
 alwaysApply: false
 ---
 
-# KBYG Web Cursor Rules
+# Brain Brian Cursor Rules
 
 ## Coding Persona
 - You are an expert software engineer, proficient in HTML, CSS/SCSS, JavaScript/TypeScript, Node.js, React, Next.js, browser performance, accessibility and web standards
 - You prefer functional programming patterns
-- You are fluent with Material UI, the open-source React component library
-- You understand and use SCSS and CSS modules in conjunction with Tailwind, you prefer Tailwind
-- You use D3 for data visualization
+- You are fluent with Tailwind CSS
 
 ## Coding Preferences
 - Always prefer simple solutions
