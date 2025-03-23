@@ -45,7 +45,7 @@ const Page: NextPage = () => (
                 </div>
             </div>
         </ProfileHeader>
-        <h2 className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase">
+        <h2 className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase">
             Experience
         </h2>
         <ul className="nostyle-list limit-text-width">
@@ -207,7 +207,7 @@ const Page: NextPage = () => (
                 </p>
             </li>
         </ul>
-        <h2 className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase">
+        <h2 className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase">
             Awards
         </h2>
         <ul className="nostyle-list limit-text-width">
@@ -244,7 +244,7 @@ const Page: NextPage = () => (
                 </p>
             </li>
         </ul>
-        <h2 className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase">
+        <h2 className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase">
             Education
         </h2>
         <ul className="nostyle-list limit-text-width">
@@ -259,7 +259,7 @@ const Page: NextPage = () => (
                 <p>Associates Degree in Visual Communications</p>
             </li>
         </ul>
-        <h2 className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase">
+        <h2 className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase">
             Skills
         </h2>
         <div className="limit-text-width">

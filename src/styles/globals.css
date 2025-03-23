@@ -2,19 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap')
 layer(base);
 
-/* Font variables */
+/* Tailwind directives */
 @import 'tailwindcss';
-
 @config '../../tailwind.config.ts';
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* 
+ * Tailwind v4 compatibility styles 
+ * These ensure border colors work correctly when migrating from v3 to v4
+ */
 @layer base {
   *,
   ::after,
@@ -25,22 +20,18 @@ layer(base);
   }
 }
 
+/* Font variables */
 @layer base {
   :root {
-    --font-headline:
-      'Poppins', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    --font-body:
-      'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    --font-headline: 'Poppins', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    --font-body: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     --font-code: 'Courier New', 'Courier', monospace;
   }
 }
 
-/* 
- * We only need to define the delay utilities explicitly since those aren't
- * working properly through the Tailwind config in v4
- */
+/* Animation utilities */
 @layer utilities {
-  /* Define the keyframes for the fadeInUp animation */
+  /* FadeInUp animation */
   @keyframes fadeInUp {
     0% {
       opacity: 0;
@@ -56,7 +47,6 @@ layer(base);
     }
   }
   
-  /* Make sure the animate-fadeInUp class is properly defined */
   .animate-fadeInUp {
     animation: fadeInUp 500ms ease-in-out forwards;
   }

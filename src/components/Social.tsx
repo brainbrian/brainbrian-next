@@ -14,9 +14,9 @@ export const Social: React.FC = () => {
         <section className="sm:w-1/2 sm:odd:pr-4 sm:even:pl-4">
             <a
                 href="https://instagram.com/brianbehrens"
-                className="bg-darker text-light block font-headline font-bold mb-4 p-4 uppercase hover:no-underline"
+                className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase hover:no-underline"
             >
-                <h2 className="text-light text-xl md:text-2xl m-0 hover:text-main">
+                <h2 className="text-text text-xl md:text-2xl m-0 hover:text-primary">
                     Social
                 </h2>
             </a>

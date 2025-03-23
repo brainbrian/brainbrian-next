@@ -17,10 +17,11 @@ export const Project: React.FC<ProjectProps> = ({
     <article className="mb-8">
         <Link
             href={slug}
-            className="flex flex-col-reverse bg-darker relative transition-colors duration-200 hover:bg-main hover:no-underline focus-visible:bg-main focus-visible:no-underline group"
+            className="flex flex-col-reverse bg-background relative transition-colors duration-200 hover:bg-primary hover:no-underline focus-visible:bg-primary focus-visible:no-underline group"
         >
             {}
             {imageUrl && (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                     src={imageUrl}
                     alt={`${title} Sample`}
@@ -28,10 +29,10 @@ export const Project: React.FC<ProjectProps> = ({
                 />
             )}
             <div className="relative">
-                <h2 className="text-xl font-medium m-0 p-4 uppercase sm:text-2xl sm:translate-x-8 transition-all duration-1200 group-hover:text-light sm:group-hover:translate-x-12 group-focus-visible:text-light sm:group-focus-visible:translate-x-12">
+                <h2 className="text-xl font-medium m-0 p-4 uppercase sm:text-2xl sm:translate-x-8 transition-all duration-500 group-hover:text-text sm:group-hover:translate-x-12 group-focus-visible:text-text sm:group-focus-visible:translate-x-12">
                     {title}
                 </h2>
-                <span className="hidden sm:block absolute bottom-8 left-4 h-0.5 w-4 bg-main transition-all duration-1200 group-hover:bg-light group-hover:w-8 group-focus-visible:bg-light group-focus-visible:w-8"></span>
+                <span className="hidden sm:block absolute bottom-8 left-4 h-0.5 w-4 bg-primary transition-all duration-500 group-hover:bg-text group-hover:w-8 group-focus-visible:bg-text group-focus-visible:w-8"></span>
             </div>
         </Link>
         {excerpt && (
@@ -41,7 +42,7 @@ export const Project: React.FC<ProjectProps> = ({
                     __html: excerpt
                         .replace(
                             /<a /g,
-                            '<a class="bg-main text-light py-1 px-1.5 no-underline leading-loose hover:bg-light hover:text-main focus-visible:bg-light focus-visible:text-main" ',
+                            '<a class="bg-primary text-text py-1 px-1.5 no-underline leading-loose hover:bg-text hover:text-primary focus-visible:bg-text focus-visible:text-primary" ',
                         )
                         .replace(/<p>/g, '<p class="m-0 break-words">'),
                 }}

@@ -69,7 +69,7 @@ export const BlueSky: React.FC<BlueSkyProps> = ({
 
     if (loading) {
         return (
-            <div className="rounded-lg bg-darker overflow-hidden animate-pulse">
+            <div className="rounded-lg bg-background overflow-hidden animate-pulse">
                 {/* Banner skeleton */}
                 {showBanner && <div className="w-full h-24 bg-gray-700"></div>}
                 <div className="px-4 pb-3 pt-1">
@@ -78,7 +78,7 @@ export const BlueSky: React.FC<BlueSkyProps> = ({
                         <div
                             className={`flex-shrink-0 -ml-2 ${showBanner ? '-mt-14' : 'mt-3'}`}
                         >
-                            <div className="w-20 h-20 rounded-full bg-gray-700 border-4 border-darker"></div>
+                            <div className="w-20 h-20 rounded-full bg-gray-700 border-4 border-background"></div>
                         </div>
 
                         {/* Profile info skeleton */}
@@ -122,7 +122,7 @@ export const BlueSky: React.FC<BlueSkyProps> = ({
 
     if (error || !profile) {
         return (
-            <div className="rounded-lg bg-darker p-3 text-red-400 text-xs">
+            <div className="rounded-lg bg-background p-3 text-red-400 text-xs">
                 Failed to load BlueSky profile
             </div>
         );
@@ -135,7 +135,7 @@ export const BlueSky: React.FC<BlueSkyProps> = ({
             : null;
 
     return (
-        <div className="rounded-lg bg-darker text-gray-200 overflow-hidden">
+        <div className="rounded-lg bg-background text-gray-200 overflow-hidden">
             {showBanner && profile.banner && (
                 <div className="w-full h-24 relative">
                     <Image
@@ -153,7 +153,7 @@ export const BlueSky: React.FC<BlueSkyProps> = ({
                         <div
                             className={`flex-shrink-0 -ml-2 ${showBanner && profile.banner ? '-mt-16' : 'mt-3'}`}
                         >
-                            <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-darker relative">
+                            <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-background relative">
                                 <Image
                                     src={profile.avatar}
                                     alt={profile.displayName || profile.handle}

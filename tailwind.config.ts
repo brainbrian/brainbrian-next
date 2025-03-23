@@ -11,27 +11,15 @@ export default {
     theme: {
         extend: {
             colors: {
-                main: '#23a1ff',
-                light: '#fff',
-                dark: '#484848',
-                darker: '#262626',
+                primary: '#23a1ff',
+                text: '#fff',
+                surface: '#484848',
+                background: '#262626',
             },
             fontFamily: {
-                headline: [
-                    'Poppins',
-                    'Helvetica Neue',
-                    'Helvetica',
-                    'Arial',
-                    'sans-serif',
-                ],
-                body: [
-                    'Open Sans',
-                    'Helvetica Neue',
-                    'Helvetica',
-                    'Arial',
-                    'sans-serif',
-                ],
-                code: ['Courier New', 'Courier', 'monospace'],
+                headline: ['var(--font-headline)'],
+                body: ['var(--font-body)'],
+                code: ['var(--font-code)'],
             },
             maxWidth: {
                 '90rem': '90rem',
@@ -94,11 +82,9 @@ export default {
                 fadeInUp: 'fadeInUp 500ms ease-in-out forwards',
             },
             fontSize: {
-                xl: ['1.25rem', { lineHeight: '1.75rem' }],
-                '2xl': ['1.5rem', { lineHeight: '2rem' }],
-                '[1.25rem]': ['1.25rem', { lineHeight: '1.75rem' }],
-                '[1.75rem]': ['1.75rem', { lineHeight: '2.25rem' }],
-                '[2.25rem]': ['2.25rem', { lineHeight: '2.5rem' }],
+                medium: ['1.25rem', { lineHeight: '1.75rem' }],
+                large: ['1.75rem', { lineHeight: '2.25rem' }],
+                xlarge: ['2.25rem', { lineHeight: '2.5rem' }],
             },
             typography: {
                 DEFAULT: {
@@ -118,8 +104,8 @@ export default {
                     textRendering: 'optimizeLegibility',
                 },
                 body: {
-                    backgroundColor: theme('colors.dark'),
-                    color: theme('colors.light'),
+                    backgroundColor: theme('colors.surface'),
+                    color: theme('colors.text'),
                     fontFamily: 'var(--font-body)',
                     minWidth: '20rem',
                     padding: '0',
@@ -129,12 +115,12 @@ export default {
                     },
                 },
                 'h1, h2': {
-                    color: theme('colors.main'),
+                    color: theme('colors.primary'),
                     fontFamily: 'var(--font-headline)',
                     fontWeight: theme('fontWeight.bold'),
                 },
                 'h3, h4, h5, h6': {
-                    color: theme('colors.light'),
+                    color: theme('colors.text'),
                     fontFamily: 'var(--font-headline)',
                 },
                 'h1, h2, h3': {
@@ -180,7 +166,7 @@ export default {
                     },
                 },
                 p: {
-                    color: theme('colors.light'),
+                    color: theme('colors.text'),
                     fontSize: '1.125rem', // lg
                     lineHeight: theme('lineHeight.relaxed'),
                     marginBottom: '1rem',
@@ -190,7 +176,7 @@ export default {
                     },
                 },
                 a: {
-                    color: theme('colors.main'),
+                    color: theme('colors.primary'),
                     textDecoration: 'none',
                     '&:hover, &:focus-visible': {
                         textDecoration: 'underline',
@@ -209,7 +195,7 @@ export default {
                     maxWidth: '64rem',
                 },
                 '.bg-page': {
-                    backgroundColor: theme('colors.dark'),
+                    backgroundColor: theme('colors.surface'),
                 },
                 '.sr-only': {
                     position: 'absolute',
@@ -265,8 +251,8 @@ export default {
                 },
                 '.post-content': {
                     '& code': {
-                        backgroundColor: theme('colors.darker'),
-                        color: theme('colors.light'),
+                        backgroundColor: theme('colors.background'),
+                        color: theme('colors.text'),
                         fontFamily: 'var(--font-code)',
                         padding: '0.2em 0.4em',
                         fontSize: '0.9em',
@@ -281,7 +267,7 @@ export default {
                                 borderRadius: theme('borderRadius.DEFAULT'),
                                 boxShadow: theme('boxShadow.md'),
                                 borderLeft: '3px solid',
-                                borderColor: theme('colors.main'),
+                                borderColor: theme('colors.primary'),
                                 whiteSpace: 'pre',
                                 tabSize: '2',
                             },
@@ -296,7 +282,7 @@ export default {
                             borderRadius: theme('borderRadius.DEFAULT'),
                             boxShadow: theme('boxShadow.md'),
                             borderLeft: '3px solid',
-                            borderColor: theme('colors.main'),
+                            borderColor: theme('colors.primary'),
                             whiteSpace: 'pre',
                             tabSize: '2',
                         },
@@ -345,7 +331,7 @@ export default {
                 '.intro-section': {
                     '&.personal': {
                         fontStyle: 'italic',
-                        color: theme('colors.light'),
+                        color: theme('colors.text'),
                     },
                     '& p': {
                         marginBottom: '1rem',
