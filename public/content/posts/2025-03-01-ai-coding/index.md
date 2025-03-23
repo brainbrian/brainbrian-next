@@ -15,6 +15,12 @@ excerpt: 'A running document of my experience with AI assisted coding.'
 
 Here is a list of tools I've been using to assist me day to day with my various coding needs. I'll update this post over time as my journey continues down this assisted coding rabbit hole.
 
+## GitHub
+
+In GitHub I've lately been using Copilot for generating commit messages and pull request summaries. Both of these have been super helpful. I really like the generated commits when coding faster with an LLM, in particular in Agent mode.
+
+I've also found the newly added ability to add Copilot as a reviewer on pull requests is super helpful. This comes in handy for me on project I may be the only engineer or when working with others across various timezones. I can kick off a Copilot review, or re-review before any of my coworkers are online to give their first look at the code.
+
 ## [Cursor](https://www.cursor.com)
 
 _The AI Code Editor_ – from the Cursor website 
@@ -29,7 +35,7 @@ I like that Agent and Chat mode have been combined to one view. I didn't quite u
 
 At this point I rely primarily on Claude 3.7 Sonnet, and for more complex issues across a wider amount of the code base I may switch to 3.7 with thinking.
 
-I find myself commiting more frequently using an LLM. Any time I complete the next steps in a feature and it is in a working state I commit that portion of code and move onto the next set of prompts.
+I find myself committing more frequently using an LLM. Any time I complete the next steps in a feature and it is in a working state I commit that portion of code and move onto the next set of prompts.
 
 I've found it helpful to ask Cursor in Agent mode to check its own work by diffing the current branch against the main branch and recommending any improvements based on my rules file.
 
@@ -55,7 +61,7 @@ MCP servers have proven to be super useful. I've been using [figma-context-mcp](
 }
 ```
 
-The Figma MCP server specifcally has allowed Cursor to speak directly to targeted areas of a Figma mock by right-clicking and using "Copy link to selection" or (cmd + L). The LLM then has direct understanding of the designs.
+The Figma MCP server specifically has allowed Cursor to speak directly to targeted areas of a Figma mock by right-clicking and using "Copy link to selection" or (cmd + L). The LLM then has direct understanding of the designs.
 
 ## [Visual Studio Code](https://code.visualstudio.com)
 
@@ -72,7 +78,7 @@ I've been using the main extension but I turned on the nightly builds. "Switch t
 
 Been using o3-mini, claude 3.5 Sonnet and Gemini 2.0 Flash.
 
-## [Warp]()
+## [Warp](https://warp.dev)
 
 _The intelligent terminal_ – from the Warp website
 
