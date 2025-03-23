@@ -39,7 +39,7 @@ I find myself committing more frequently using an LLM. Any time I complete the n
 
 I've found it helpful to ask Cursor in Agent mode to check its own work by diffing the current branch against the main branch and recommending any improvements based on my rules file.
 
-## [AI Rules](https://docs.cursor.com/context/rules-for-ai)
+### [AI Rules](https://docs.cursor.com/context/rules-for-ai)
 
 I recommend going through the basic steps of creating a rules markdown file. This can be done in virtually all IDEs supporting AI development with an LLM now. There is a collection of example rules you can browse at [cursor.directory](https://cursor.directory/rules). These are a good starting point for creating your own set of rules.
 
