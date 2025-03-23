@@ -26,7 +26,7 @@ export default {
                 '64rem': '64rem',
             },
             borderRadius: {
-                DEFAULT: '1rem',
+                DEFAULT: '0.5rem',
             },
             screens: {
                 xxs: '375px',
@@ -228,7 +228,7 @@ export default {
                 '.responsive-image': {
                     margin: '1rem 0',
                     width: '100%',
-                    '@media (min-width: 768px)': {
+                    '@media (min-width: 1350px)': {
                         margin: '2rem 0',
                         maxWidth: '130%',
                         width: '130%',
@@ -256,7 +256,7 @@ export default {
                         fontFamily: 'var(--font-code)',
                         padding: '0.2em 0.4em',
                         fontSize: '0.9em',
-                        borderRadius: theme('borderRadius.DEFAULT'),
+                        borderRadius: '0.4rem',
                         '&.block, &:has(+ br), &.language-json, &[class*="language-"]':
                             {
                                 display: 'block',
@@ -264,8 +264,7 @@ export default {
                                 margin: '1rem 0',
                                 overflowX: 'auto',
                                 lineHeight: 'normal',
-                                borderRadius: theme('borderRadius.DEFAULT'),
-                                boxShadow: theme('boxShadow.md'),
+                                borderRadius: '0.4rem',
                                 borderLeft: '3px solid',
                                 borderColor: theme('colors.primary'),
                                 whiteSpace: 'pre',
@@ -279,8 +278,7 @@ export default {
                             padding: '1rem',
                             overflowX: 'auto',
                             lineHeight: 'normal',
-                            borderRadius: theme('borderRadius.DEFAULT'),
-                            boxShadow: theme('boxShadow.md'),
+                            borderRadius: '0.4rem',
                             borderLeft: '3px solid',
                             borderColor: theme('colors.primary'),
                             whiteSpace: 'pre',
