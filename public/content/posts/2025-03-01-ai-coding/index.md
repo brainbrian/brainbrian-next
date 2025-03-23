@@ -27,7 +27,15 @@ I like that Agent and Chat mode have been combined to one view. I didn't quite u
 
 ![Add open files to context](./cursor-add-open-files.png)
 
-I have been using Claude 3.5 Sonnet with the most success but lately have been using Claude 3.7 Sonnet and gpt-4o.
+At this point I rely primarily on Claude 3.7 Sonnet, and for more complex issues across a wider amount of the code base I may switch to 3.7 with thinking.
+
+I find myself commiting more frequently using an LLM. Any time I complete the next steps in a feature and it is in a working state I commit that portion of code and move onto the next set of prompts.
+
+I've found it helpful to ask Cursor in Agent mode to check its own work by diffing the current branch against the main branch and recommending any improvements based on my rules file.
+
+## [AI Rules](https://docs.cursor.com/context/rules-for-ai)
+
+I recommend going through the basic steps of creating a rules markdown file. This can be done in virtually all IDEs supporting AI development with an LLM now. There is a collection of example rules you can browse at [cursor.directory](https://cursor.directory/rules). These are a good starting point for creating your own set of rules.
 
 ### [MCP](https://modelcontextprotocol.io/introduction) [Servers](https://github.com/modelcontextprotocol/servers)
 
