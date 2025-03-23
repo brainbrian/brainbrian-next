@@ -31,7 +31,7 @@ export const ProjectsRecent: React.FC = async () => {
 
     return (
         <div className="bg-surface">
-            <section className="mx-auto -mb-16 max-w-[90rem] p-8">
+            <section className="mx-auto -mb-16 max-w-screen-2xl p-8">
                 <a
                     className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase hover:no-underline"
                     href="./projects"

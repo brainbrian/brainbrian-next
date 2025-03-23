@@ -187,7 +187,7 @@ export default {
             addComponents({
                 '.content': {
                     margin: '2rem auto',
-                    maxWidth: '90rem',
+                    maxWidth: theme('screens.2xl'),
                     padding: '0 2rem',
                 },
                 '.limit-text-width': {
