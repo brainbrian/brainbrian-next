@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
         <header className="flex flex-row items-center bg-background border-0 border-solid border-primary border-b-[1rem] relative lg:fixed lg:left-0 lg:top-0 lg:w-full lg:z-10">
             <div className="flex flex-col items-left w-full mx-auto max-w-screen-2xl md:flex-row md:items-center md:h-[5rem]">
                 <Link
-                    className="flex items-center justify-center flex-none bg-primary text-text font-headline font-bold text-medium h-[3rem] w-full uppercase transition-colors duration-200 hover:bg-surface hover:text-primary focus-visible:bg-surface focus-visible:text-primary focus:outline-none md:h-[5rem] md:w-[13rem] lg:text-[2rem] lg:w-[15rem]"
+                    className="flex items-center justify-center flex-none bg-primary text-text font-headline font-bold text-medium h-[3rem] w-full uppercase transition-colors duration-200 hover:bg-surface hover:text-primary focus-visible:bg-surface focus-visible:text-primary focus:outline-none md:h-[5rem] md:w-[13rem] lg:text-[2rem] lg:w-[15rem] no-underline"
                     href="/"
                 >
                     Brain Brian
