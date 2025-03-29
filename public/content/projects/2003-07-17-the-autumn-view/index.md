@@ -71,4 +71,4 @@ Split EP with 52 Pick-Up
 
 ![Photo of the band outside the venue in St. Louis](./st-louis.webp)
 
-Out back of the of The Creepy Crawl in St. Louis 2023 with our friend who washed our van for a t-shirt.
+Out back of The Creepy Crawl in St. Louis 2023 with our friend who washed our van for a t-shirt.
