@@ -18,7 +18,7 @@ excerpt: 'Throughout my high school and college years, I played guitar in severa
 
 Throughout high school and college I played in a couple of bands. One of the bands was called (for the majority of the time) "The Autumn View". I started out playing guitar in the band in middle school when we were called "Westbound". We evolved over the years, as many adolescents do.
 
-## Recording
+## Music
 
 ### "This Room Could Swallow Me" by The Autumn View
 
@@ -55,13 +55,82 @@ Here is a collection of music we released as "The Autumn View" for your listenin
 
 Recorded in Chicago with [Matt Allison](<https://en.wikipedia.org/wiki/Matt_Allison_(record_producer)>) at [Atlas Studios](https://www.facebook.com/atlaschicago/)
 
-<iframe width="100%" height="560" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/449394&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="max-width: 640px;"></iframe>
+<iframe width="100%" height="560" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/449394&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="max-width: 640px; margin-bottom: 1rem;"></iframe>
+
+#### This Room Could Swallow Me Lyrics
+
+```
+I can’t slip far enough into this computer screen, 
+a technological miscalculation of human error
+where to turn when humans and machines have failed
+
+[Chorus]
+Rip the phone cord from the wall
+drop the television from the window
+[drop it, drop it out now]
+Leave the pen 
+Leave the paper
+Goodnight
+
+Let’s fast-forward this autobiography
+Two months in the too near future
+Replacement parts won’t do
+Gripping these standard felt memories only kills time
+
+I can’t slip far enough into this TV screen, 
+This technological disaster
+Where to turn
+
+[Chorus]
+Rip the phone cord from the wall
+drop the television from the window
+[drop it, drop it out now]
+Leave the pen 
+Leave the paper
+Goodnight cruel world
+
+I’ll be back when this mirror doesn’t spit in my eye 
+when this vacant chest is filled
+```
+
+#### If Only Household Solvents Could Solves This Lyrics
+
+```
+With the fluidity of a cement block I spell out these sleepwalking emotions
+Traverse the catacombs to find a crackerjack message
+Flail your wings and beat your desperate fins
+
+[Chorus]
+So stay where you lie
+I’m the fish with the smooth back and underbelly
+But slice me open and I’ll cut us both
+And if household solvents could solve this now I might become an addict
+I’m turning into
+But an internal disease doesn’t require external medication
+
+And this sinking ship
+We still don’t need navigation
+Our navigation’s love
+
+[Chorus]
+So stay where you lie
+I’m the fish with the smooth back and underbelly
+But slice me open and I’ll cut us both
+
+And I’ll kindly cut us both 3x
+
+So slice me open
+I’ll spill my guts for you
+And we will sit very still as you look in horror at the color of my blood
+It’s black and filling your cupped hands
+It’s black and filling your cupped hands
+```
 
 ### [The Autumn View - Fist-Fighting With Broken Wrists (2003)](https://soundcloud.com/brainbrian/sets/fist-fighting-with-broken-wrists)
 
 First and only full-length
 
-<iframe width="100%" height="700" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/409954&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="max-width: 640px;"></iframe>
+<iframe width="100%" height="700" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/409954&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="max-width: 640px; margin-bottom: 2rem;"></iframe>
 
 ### [The Autumn View - For All The Wrong Reasons... (1999)](https://soundcloud.com/brainbrian/sets/for-all-the-wrong-reasons)
 
@@ -71,4 +140,4 @@ Split EP with 52 Pick-Up
 
 ![Photo of the band outside the venue in St. Louis](./st-louis.webp)
 
-Out back of The Creepy Crawl in St. Louis 2023 with our friend who washed our van for a t-shirt.
+Out back of the of The Creepy Crawl in St. Louis 2023 with our friend who washed our van for a t-shirt.
