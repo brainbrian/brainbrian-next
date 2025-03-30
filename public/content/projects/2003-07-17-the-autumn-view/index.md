@@ -18,9 +18,7 @@ excerpt: 'Throughout my high school and college years, I played guitar in severa
 
 Throughout high school and college I played in a couple of bands. One of the bands was called (for the majority of the time) "The Autumn View". I started out playing guitar in the band in middle school when we were called "Westbound". We evolved over the years, as many adolescents do.
 
-## Music
-
-### "This Room Could Swallow Me" by The Autumn View
+## "This Room Could Swallow Me" by The Autumn View
 
 https://www.youtube.com/watch?v=8Cf3RWETlFM
 
@@ -34,9 +32,19 @@ In 2003 we released our first full-length record on our friend's label, Uniform 
 
 ![Fist Fighting with Broken Wrists Back and Inside Tray](./fist-fighting-with-broken-wrists-back.webp)
 
-Below is footage from our CD Release show for the above album. This was the start of a tour we took to California and back.
+## 2003 Sumer Tour
+
+We started our tour at one of the local VFW halls known for shows. Hawthorne Heights actually opened the show for us; kicking of what I believe was one of their first tours on Victory Records.
 
 https://www.youtube.com/watch?v=I64-BUpv-cM
+
+This is footage from our CD Release show for the above album. This was the start of a tour we took to California and back.
+
+### "If Only Household Solvents Could Solves This" by The Autumn View
+
+https://www.youtube.com/watch?v=hBqQzS1oUvc
+
+This video is a collection of footage from our 2003 tour and other random clips from around that time period. This was edited by Tom.
 
 ## Merch
 Every year or so we'd have new t-shirts printed for shows. Here are 2 from both The Autumn View and Uniform Records:
@@ -47,7 +55,7 @@ These are 2 of many t-shirt designs we came up with over the years. The one on t
 
 ![The Autumn View T-Shirt Designs](./the-autumn-view-t-shirts.webp)
 
-## Collection of Albums
+## Music
 
 Here is a collection of music we released as "The Autumn View" for your listening pleasure.
 
@@ -57,8 +65,9 @@ Recorded in Chicago with [Matt Allison](<https://en.wikipedia.org/wiki/Matt_Alli
 
 <iframe width="100%" height="560" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/449394&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="max-width: 640px; margin-bottom: 1rem;"></iframe>
 
-#### This Room Could Swallow Me Lyrics
+#### Lyrics
 
+_This Room Could Swallow Me_
 ```
 I can’t slip far enough into this computer screen, 
 a technological miscalculation of human error
@@ -93,8 +102,7 @@ I’ll be back when this mirror doesn’t spit in my eye
 when this vacant chest is filled
 ```
 
-#### If Only Household Solvents Could Solves This Lyrics
-
+_If Only Household Solvents Could Solves This_
 ```
 With the fluidity of a cement block I spell out these sleepwalking emotions
 Traverse the catacombs to find a crackerjack message
