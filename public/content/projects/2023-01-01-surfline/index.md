@@ -28,7 +28,11 @@ At Surfline, I started my journey on the Web Platform team, where I was responsi
 
 ![Surfline Website](./surfline-site.webp)
 
-Recently, as our business goals have evolved, I've shifted my focus to feature delivery on our Know Before You Go forecasting products. As part of a larger engineering squad, I've led multiple technical initiatives and engineers in delivering numerous updates to these surf forecasting tools. I also lead frontend guild meetings and actively contribute to planning and documentation.
+Recently, as our business goals have evolved, I've shifted my focus to feature delivery on our Know Before You Go forecasting products. As the lead developer for the KBYG web application, I've architected and implemented numerous UI components that display critical surf data, creating robust, responsive, and user-friendly experiences for surfers worldwide. I've rebuilt the surf height graph system with improved tooltips, observation clarity indicators, and responsive designs that work across all devices, while also developing custom forecasts features allowing users to create personalized weather models.
+
+As part of a larger engineering squad, I've led multiple technical initiatives and engineers in delivering numerous updates to these surf forecasting tools. My work has included infrastructure improvements such as migrating the webcam player from JW Player to Video.js, implementing UI themes with traffic light condition indicators, and creating systems to handle GDPR compliance. Most recently, I've focused on enhancing observation clarity treatment in our forecasting tools, adding advanced analytics tracking, and optimizing the mobile experience with improved layouts and interaction patterns.
+
+I also lead frontend guild meetings and actively contribute to planning and documentation. My consistent work has ensured that Surfline users receive accurate, reliable information with minimal latency, maintaining the platform's position as the leading surf forecasting service globally. I am committed to making surfing a better experience for everyone.
 
 Below is a video of highlights from 2023 featuring many of the tools we build.
 
