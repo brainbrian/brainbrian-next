@@ -34,11 +34,9 @@ In 2003 we released our first full-length record on our friend's label, Uniform 
 
 ## 2003 Sumer Tour
 
-We started our tour at one of the local VFW halls known for shows. Hawthorne Heights actually opened the show for us; kicking of what I believe was one of their first tours on Victory Records.
+We started our tour at one of the local VFW halls known for shows. Hawthorne Heights actually opened the show for us; kicking of what I believe was one of their first tours on Victory Records. This is footage from that performance. We then took off on tour to California and back.
 
 https://www.youtube.com/watch?v=I64-BUpv-cM
-
-This is footage from our CD Release show for the above album. This was the start of a tour we took to California and back.
 
 ### "If Only Household Solvents Could Solves This" by The Autumn View
 
@@ -139,6 +137,119 @@ It’s black and filling your cupped hands
 First and only full-length
 
 <iframe width="100%" height="700" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/409954&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="max-width: 640px; margin-bottom: 2rem;"></iframe>
+
+#### Lyrics
+
+_Bring Out the Leeches Doctor_
+```
+lethargic and apathetic
+these hands and feet failed again
+its like taking sewing scissors to prison chains
+and its part of the culture
+and its deep inside this skin
+with corpses all around
+i watch some more tv
+take the needle and the ink to my arm to remind me
+maybe it will cut too deep
+and bleed out the poison
+bring out the leeches doctor
+hold off on the sedatives nurse     
+```
+
+_Babies to Jets_
+```
+a finger to the lips
+like a coal to the ashes
+keeping me alive
+like the moonlight by the sun
+breathe dont even motion
+these baby steps i take
+it seems like i crawl to get to you
+but i fly when i leave
+i swear to god this building never sleeps
+maybe its just me
+```
+
+_This Long Goodnight_
+```
+do you know i watch you walk away
+long after we have said goodnight and kissed goodbye
+and its the subtle traces of love that linger on
+they are what keep me going on
+my hands are dry and youre holding them anyway
+holding my head up to watch you sleep
+and every long 
+goodnight and minute that youre late keeps me up and eases me to sleep
+because i sleep better knowing that there is love in your heart
+and that theres a place for me
+lets tear it all down
+and build it new again and stronger still
+our foundations have been laid
+and im waiting for you
+```
+
+_The Perils of a Microscope_
+```
+dust the dusk to reveal a tired landscape of sinking expressions resting on trodden torsos
+a cavalcade that leaves no disappointment to the imagination
+spelled out with rhyme
+reason
+rhetoric and cat o nines tail
+metamorphosis serves as temporary disillusionment
+and ultimately leaves a larger hole
+sitting safely with water brimming to our eyelids
+threatening to flood this whole city upward
+if only marching two by two onto wooden deck had worked or would work now
+drown us all
+start over
+```
+
+_One Fifty-Three_
+```
+i sit in the white glow of a blank night
+the stars are above
+but my heart is dim
+cold its so cold
+but im sweating out my life
+time serves its purpose as the bearer of changing tides
+and the fireflies are singing
+they dance around my head
+they sing the song of uncertainty
+and i lose my thoughts to them
+i curse and kick for i cant find my way out
+```
+
+_Unbalanced_
+```
+turn and walk away
+she says to me
+dim light falls upon this room
+i fall into your breath
+intoxicate like crashing waves
+drunk on words of pain
+the sunset falls upon these shores
+i cant give up when you wont give in
+false security still calls to me
+i'm still unbalanced
+i'm so sorry
+she says to me
+reflecting looking back
+its over
+douse the fire
+the flames comes back
+sometimes its right to be wrong
+chilling words
+recite to rehearse
+break it down until the light is on
+swaying high above pine trees
+swinging down im still unbalanced
+```
+
+### 2003 2 Song EP
+
+![The Autumn View 2003 EP Release](./2003-03-18-the-autumn-view-ep.webp)
+
+We recorded this 2 song release in preparation for the full-length in later that year. We released this with Uniform Records and Lucas from The Pacific Agency; who went on to become our guitarist.
 
 ### [The Autumn View - For All The Wrong Reasons... (1999)](https://soundcloud.com/brainbrian/sets/for-all-the-wrong-reasons)
 

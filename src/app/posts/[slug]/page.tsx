@@ -102,13 +102,14 @@ const Post: NextPage<Props> = async ({ params }) => {
 
     const ResponsiveImage = (props: any) => {
         return (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-                {...props}
-                alt={props.alt}
-                className="responsive-image"
-                src={props.src.replaceAll('./', `/content/posts/${slug}/`)}
-            />
+            <div className="my-4 w-full flex justify-center 2xl:my-8 2xl:max-w-[120%] 2xl:w-[120%] 2xl:-ml-[10%]">
+                <img
+                    {...props}
+                    className="max-w-full h-auto object-contain rounded-md"
+                    alt={props.alt}
+                    src={props.src.replaceAll('./', `/content/posts/${slug}/`)}
+                />
+            </div>
         );
     };
 

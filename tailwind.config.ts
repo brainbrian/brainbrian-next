@@ -225,16 +225,6 @@ export default {
                         height: '100%',
                     },
                 },
-                '.responsive-image': {
-                    margin: '1rem 0',
-                    width: '100%',
-                    '@media (min-width: 1350px)': {
-                        margin: '2rem 0',
-                        maxWidth: '130%',
-                        width: '130%',
-                        marginLeft: '-15%',
-                    },
-                },
                 '.post-container': {
                     margin: '0 auto',
                     maxWidth: '64rem',
