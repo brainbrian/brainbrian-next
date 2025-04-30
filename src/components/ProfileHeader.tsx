@@ -19,12 +19,12 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
                 </div>
             </div>
             <aside className="w-full lg:max-w-[17rem] lg:w-2/5">
-                <p className="mb-2">
+                <p className="mb-4">
                     <a href="https://www.linkedin.com/in/brianbehrens/">
                         <LinkedIn className="text-[#0a66c2] block h-[30px] w-[120px]" />
                     </a>
                 </p>
-                <p className="mb-4 h-7">
+                <p className="mb-6 h-7">
                     <GitHubButton
                         href="https://github.com/brainbrian"
                         data-color-scheme="no-preference: dark; light: light; dark: dark;"
@@ -42,9 +42,9 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
                     >
                         <Image
                             alt="Portrait of Brian Behrens"
-                            height="1125"
+                            height="1440"
                             src="/images/brian-behrens-profile.webp"
-                            width="1125"
+                            width="1920"
                             className="block h-auto w-full object-fill"
                         />
                         <div className="absolute inset-0 bg-[url('/images/brian-behrens-profile-old.webp')] bg-cover opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100 group-focus-visible:opacity-100" />

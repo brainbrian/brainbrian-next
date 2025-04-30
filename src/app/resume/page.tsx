@@ -1,5 +1,6 @@
 import React from 'react';
 import type { NextPage, Metadata } from 'next';
+import Image from 'next/image';
 import { ProfileHeader } from '@/components';
 
 const Page: NextPage = () => (
@@ -14,9 +15,20 @@ const Page: NextPage = () => (
                         interactive projects that engage users, drive business
                         results, and tell compelling stories.
                     </p>
-                </div>
-
-                <div className="intro-section">
+                    <p>
+                        <Image
+                            alt="My first computer, an Apple IIGS and our family cat, Peanuts"
+                            height="1125"
+                            src="/images/brian-behrens-first-computer.webp"
+                            width="1125"
+                            className="block h-auto w-full object-fill rounded-lg"
+                        />
+                        <span className="block text-sm italic text-center mt-2 text-text-light">
+                            The first computer I ever used was our family&apos;s
+                            Apple IIGS. It was the first computer our family
+                            owned.
+                        </span>
+                    </p>
                     <p>
                         My expertise in interaction design, web standards,
                         usability, and application architecture has enabled me
@@ -25,9 +37,6 @@ const Page: NextPage = () => (
                         projects, including e-commerce websites, social media
                         campaigns, and web-based applications.
                     </p>
-                </div>
-
-                <div className="intro-section">
                     <p>
                         As a problem solver, I enjoy collaborating with teams to
                         create innovative solutions that push the boundaries of
@@ -36,7 +45,6 @@ const Page: NextPage = () => (
                         the latest trends.
                     </p>
                 </div>
-
                 <div className="intro-section personal">
                     <p>
                         In my free time, I enjoy surfing, taking photos, and
