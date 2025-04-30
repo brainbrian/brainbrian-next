@@ -1,6 +1,6 @@
 'use server';
 
-import type { Metadata, NextPage } from 'next';
+import type { Metadata } from 'next';
 import React, { createElement, Fragment } from 'react';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { format } from 'date-fns';
@@ -21,10 +21,12 @@ import { config } from '@/config';
 import { getPosts } from '@/utils/posts';
 import type { Post } from '@/types';
 
-interface Props {
-    params: Promise<{
-        slug: string;
-    }>;
+interface PageParams {
+    slug: string;
+}
+
+interface PageProps {
+    params: Promise<PageParams>;
 }
 
 interface ProjectProps {
@@ -39,21 +41,29 @@ interface ProjectProps {
 }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const Project: NextPage<Props> = async ({ params }) => {
-    const paramsResolved = await params;
-    const { slug } = paramsResolved;
+export default async function Page({ params }: PageProps) {
+    const { slug } = await params;
 
     let projectProps: ProjectProps;
 
     try {
+        // Validate slug format to avoid path traversal issues
+        if (!slug || slug.includes('..') || slug.includes('/')) {
+            throw new Error(`Invalid slug format: ${slug}`);
+        }
+
+        const projectPath = path.join(
+            `${config.contentDirectory}/projects/${slug}/`,
+            'index.md',
+        );
+
+        // Check if file exists before trying to read it
+        if (!fs.existsSync(projectPath)) {
+            throw new Error(`Project file not found: ${projectPath}`);
+        }
+
         const { data: frontmatter, content } = matter(
-            fs.readFileSync(
-                path.join(
-                    `${config.contentDirectory}/projects/${slug}/`,
-                    'index.md',
-                ),
-                'utf-8',
-            ),
+            fs.readFileSync(projectPath, 'utf-8'),
         );
 
         const handleHTML = (html: string, info: TransformerInfo) => {
@@ -93,7 +103,7 @@ const Project: NextPage<Props> = async ({ params }) => {
             recentPosts,
         };
     } catch (error: unknown) {
-        console.error(error);
+        console.error(`Error processing project [${slug}]:`, error);
         projectProps = {
             content: undefined,
             dateFormatted: null,
@@ -145,46 +155,103 @@ const Project: NextPage<Props> = async ({ params }) => {
             </div>
         </main>
     );
-};
+}
 
 export const generateMetadata = async ({
     params,
-}: Props): Promise<Metadata> => {
-    const paramsResolved = await params;
-    const { slug } = paramsResolved;
-    const projectPath = path.join(
-        config.contentDirectory,
-        'projects',
-        slug,
-        'index.md',
-    );
-    const { data: frontmatter } = matter(fs.readFileSync(projectPath, 'utf-8'));
+}: PageProps): Promise<Metadata> => {
+    const { slug } = await params;
 
-    return {
-        title: `${frontmatter.title} | Projects | Brian Behrens`,
-        description: `${frontmatter.title} project overview from the perspective of Brian Behrens.`,
-        openGraph: {
-            images: [
-                ...(frontmatter.image
-                    ? [`/content/projects/${slug}/${frontmatter.image}`]
-                    : []),
-                '/images/share-computer.jpg',
-            ],
-        },
-    };
+    try {
+        // Validate slug format
+        if (!slug || slug.includes('..') || slug.includes('/')) {
+            throw new Error(`Invalid slug format: ${slug}`);
+        }
+
+        const projectPath = path.join(
+            config.contentDirectory,
+            'projects',
+            slug,
+            'index.md',
+        );
+
+        // Check if file exists
+        if (!fs.existsSync(projectPath)) {
+            return {
+                title: 'Project Not Found | Brian Behrens',
+                description: 'The requested project could not be found.',
+            };
+        }
+
+        const { data: frontmatter } = matter(
+            fs.readFileSync(projectPath, 'utf-8'),
+        );
+
+        return {
+            title: `${frontmatter.title || 'Untitled'} | Projects | Brian Behrens`,
+            description: `${frontmatter.title || 'Untitled'} project overview from the perspective of Brian Behrens.`,
+            openGraph: {
+                images: [
+                    ...(frontmatter.image
+                        ? [`/content/projects/${slug}/${frontmatter.image}`]
+                        : []),
+                    '/images/share-computer.jpg',
+                ],
+            },
+        };
+    } catch (error) {
+        console.error(
+            `Error generating metadata for project [${slug}]:`,
+            error,
+        );
+        return {
+            title: 'Error | Brian Behrens',
+            description: 'An error occurred while loading this project.',
+        };
+    }
 };
 
 export const generateStaticParams = async () => {
-    const projectsDir = path.join(config.contentDirectory, 'projects');
-    const slugs = fs.readdirSync(projectsDir).filter((file) => {
-        return fs.statSync(path.join(projectsDir, file)).isDirectory();
-    });
+    try {
+        const projectsDir = path.join(config.contentDirectory, 'projects');
 
-    return slugs.map((slug) => ({
-        params: {
+        // Make sure the directory exists
+        if (!fs.existsSync(projectsDir)) {
+            console.error(`Projects directory not found: ${projectsDir}`);
+            return [];
+        }
+
+        // Read and filter directories
+        const slugs = fs.readdirSync(projectsDir).filter((file) => {
+            // Skip any files/directories with problematic names
+            if (file.includes('\n') || file.includes('\r')) {
+                console.warn(
+                    `Skipping project with problematic filename: "${file}"`,
+                );
+                return false;
+            }
+
+            try {
+                const stat = fs.statSync(path.join(projectsDir, file));
+                const isDirectory = stat.isDirectory();
+
+                // Check if index.md exists in the directory
+                const hasIndexFile =
+                    isDirectory &&
+                    fs.existsSync(path.join(projectsDir, file, 'index.md'));
+
+                return isDirectory && hasIndexFile;
+            } catch (err) {
+                console.warn(`Error checking directory ${file}:`, err);
+                return false;
+            }
+        });
+
+        return slugs.map((slug) => ({
             slug,
-        },
-    }));
+        }));
+    } catch (error) {
+        console.error('Error generating static params for projects:', error);
+        return [];
+    }
 };
-
-export default Project;

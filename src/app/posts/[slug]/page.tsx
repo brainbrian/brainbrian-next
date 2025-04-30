@@ -1,6 +1,6 @@
 import React, { createElement, Fragment } from 'react';
 import { jsx, jsxs } from 'react/jsx-runtime';
-import type { Metadata, NextPage } from 'next';
+import type { Metadata } from 'next';
 import { format } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -19,10 +19,12 @@ import { config } from '@/config';
 import { getPosts } from '@/utils/posts';
 import type { Post } from '@/types';
 
-interface Props {
-    params: Promise<{
-        slug: string;
-    }>;
+interface PageParams {
+    slug: string;
+}
+
+interface PageProps {
+    params: Promise<PageParams>;
 }
 
 interface PostProps {
@@ -37,21 +39,29 @@ interface PostProps {
 }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const Post: NextPage<Props> = async ({ params }) => {
-    const paramsResolved = await params;
-    const { slug } = paramsResolved;
+export default async function Page({ params }: PageProps) {
+    const { slug } = await params;
 
     let postProps: PostProps;
 
     try {
+        // Validate slug format to avoid path traversal issues
+        if (!slug || slug.includes('..') || slug.includes('/')) {
+            throw new Error(`Invalid slug format: ${slug}`);
+        }
+
+        const postPath = path.join(
+            `${config.contentDirectory}/posts/${slug}/`,
+            'index.md',
+        );
+
+        // Check if file exists before trying to read it
+        if (!fs.existsSync(postPath)) {
+            throw new Error(`Post file not found: ${postPath}`);
+        }
+
         const { data: frontmatter, content } = matter(
-            fs.readFileSync(
-                path.join(
-                    `${config.contentDirectory}/posts/${slug}/`,
-                    'index.md',
-                ),
-                'utf-8',
-            ),
+            fs.readFileSync(postPath, 'utf-8'),
         );
 
         const handleHTML = (html: string, info: TransformerInfo) => {
@@ -91,7 +101,7 @@ const Post: NextPage<Props> = async ({ params }) => {
             recentPosts,
         };
     } catch (error: unknown) {
-        console.error(error);
+        console.error(`Error processing post [${slug}]:`, error);
         postProps = {
             content: undefined,
             dateFormatted: null,
@@ -140,46 +150,100 @@ const Post: NextPage<Props> = async ({ params }) => {
             </div>
         </main>
     );
-};
+}
 
 export const generateMetadata = async ({
     params,
-}: Props): Promise<Metadata> => {
-    const paramsResolved = await params;
-    const { slug } = paramsResolved;
-    const postsPath = path.join(
-        config.contentDirectory,
-        'posts',
-        slug,
-        'index.md',
-    );
-    const { data: frontmatter } = matter(fs.readFileSync(postsPath, 'utf-8'));
+}: PageProps): Promise<Metadata> => {
+    const { slug } = await params;
 
-    return {
-        title: `${frontmatter.title} | Posts | Brian Behrens`,
-        description: `${frontmatter.title} blog post written from the perspective of Brian Behrens.`,
-        openGraph: {
-            images: [
-                ...(frontmatter.image
-                    ? [`/content/posts/${slug}/${frontmatter.image}`]
-                    : []),
-                '/images/share.jpg',
-            ],
-        },
-    };
+    try {
+        // Validate slug format
+        if (!slug || slug.includes('..') || slug.includes('/')) {
+            throw new Error(`Invalid slug format: ${slug}`);
+        }
+
+        const postsPath = path.join(
+            config.contentDirectory,
+            'posts',
+            slug,
+            'index.md',
+        );
+
+        // Check if file exists
+        if (!fs.existsSync(postsPath)) {
+            return {
+                title: 'Post Not Found | Brian Behrens',
+                description: 'The requested post could not be found.',
+            };
+        }
+
+        const { data: frontmatter } = matter(
+            fs.readFileSync(postsPath, 'utf-8'),
+        );
+
+        return {
+            title: `${frontmatter.title || 'Untitled'} | Posts | Brian Behrens`,
+            description: `${frontmatter.title || 'Untitled'} blog post written from the perspective of Brian Behrens.`,
+            openGraph: {
+                images: [
+                    ...(frontmatter.image
+                        ? [`/content/posts/${slug}/${frontmatter.image}`]
+                        : []),
+                    '/images/share.jpg',
+                ],
+            },
+        };
+    } catch (error) {
+        console.error(`Error generating metadata for post [${slug}]:`, error);
+        return {
+            title: 'Error | Brian Behrens',
+            description: 'An error occurred while loading this post.',
+        };
+    }
 };
 
 export const generateStaticParams = async () => {
-    const postsDir = path.join(config.contentDirectory, 'posts');
-    const slugs = fs.readdirSync(postsDir).filter((file) => {
-        return fs.statSync(path.join(postsDir, file)).isDirectory();
-    });
+    try {
+        const postsDir = path.join(config.contentDirectory, 'posts');
 
-    return slugs.map((slug) => ({
-        params: {
+        // Make sure the directory exists
+        if (!fs.existsSync(postsDir)) {
+            console.error(`Posts directory not found: ${postsDir}`);
+            return [];
+        }
+
+        // Read and filter directories
+        const slugs = fs.readdirSync(postsDir).filter((file) => {
+            // Skip any files/directories with problematic names
+            if (file.includes('\n') || file.includes('\r')) {
+                console.warn(
+                    `Skipping post with problematic filename: "${file}"`,
+                );
+                return false;
+            }
+
+            try {
+                const stat = fs.statSync(path.join(postsDir, file));
+                const isDirectory = stat.isDirectory();
+
+                // Check if index.md exists in the directory
+                const hasIndexFile =
+                    isDirectory &&
+                    fs.existsSync(path.join(postsDir, file, 'index.md'));
+
+                return isDirectory && hasIndexFile;
+            } catch (err) {
+                console.warn(`Error checking directory ${file}:`, err);
+                return false;
+            }
+        });
+
+        return slugs.map((slug) => ({
             slug,
-        },
-    }));
+        }));
+    } catch (error) {
+        console.error('Error generating static params for posts:', error);
+        return [];
+    }
 };
-
-export default Post;
