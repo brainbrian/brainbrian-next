@@ -64,6 +64,9 @@ export const generateMetadata = async (): Promise<Metadata> => {
         title: 'Projects',
         description:
             'A collection of projects Brian Behrens has completed throughout his life.',
+        openGraph: {
+            images: ['/images/share-computer.jpg'],
+        },
     };
 };
 

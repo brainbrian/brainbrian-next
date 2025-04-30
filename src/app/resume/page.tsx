@@ -18,9 +18,9 @@ const Page: NextPage = () => (
                     <p>
                         <Image
                             alt="My first computer, an Apple IIGS and our family cat, Peanuts"
-                            height="1125"
+                            height="1440"
                             src="/images/brian-behrens-first-computer.webp"
-                            width="1125"
+                            width="1920"
                             className="block h-auto w-full object-fill rounded-lg"
                         />
                         <span className="block text-sm italic text-center mt-2 text-text-light">
@@ -290,6 +290,9 @@ export const generateMetadata = async (): Promise<Metadata> => {
         title: 'Resume',
         description:
             'The personal resume of Brian Behrens, Staff Software Engineer at Surfline.',
+        openGraph: {
+            images: ['/images/share-computer.jpg'],
+        },
     };
 };
 

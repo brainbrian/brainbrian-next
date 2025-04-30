@@ -163,6 +163,14 @@ export const generateMetadata = async ({
     return {
         title: `${frontmatter.title} | Projects | Brian Behrens`,
         description: `${frontmatter.title} project overview from the perspective of Brian Behrens.`,
+        openGraph: {
+            images: [
+                ...(frontmatter.image
+                    ? [`/content/projects/${slug}/${frontmatter.image}`]
+                    : []),
+                '/images/share-computer.jpg',
+            ],
+        },
     };
 };
 
