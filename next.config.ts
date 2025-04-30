@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
                 pathname: '/**',
             },
         ],
+        domains: ['localhost', 'brainbrian.com'],
     },
 };
 

@@ -1,29 +1,33 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/react';
+import { Poppins, Open_Sans } from 'next/font/google';
 
 import { Header, Footer } from '@/components';
 
 import '../styles/globals.css';
+
+// Define fonts
+const poppins = Poppins({
+    weight: ['400', '500', '700'],
+    style: ['normal'],
+    subsets: ['latin'],
+    display: 'swap',
+});
+
+const openSans = Open_Sans({
+    weight: ['400', '700'],
+    style: ['normal', 'italic'],
+    subsets: ['latin'],
+    display: 'swap',
+});
 
 interface LayoutProps {
     children: React.ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
-    <html lang="en">
-        <head>
-            <link
-                rel="preload"
-                href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-                as="style"
-            />
-            <link
-                rel="preload"
-                href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
-                as="style"
-            />
-        </head>
+    <html lang="en" className={`${poppins.className} ${openSans.className}`}>
         <body>
             <div className="layout">
                 <Header />

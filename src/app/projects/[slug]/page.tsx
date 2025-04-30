@@ -16,6 +16,7 @@ import rehypeRaw from 'rehype-raw';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
+import Image from 'next/image';
 
 import { config } from '@/config';
 import { getPosts } from '@/utils/posts';
@@ -115,7 +116,7 @@ export default async function Page({ params }: PageProps) {
     const ResponsiveImage = (props: any) => {
         return (
             <div className="my-4 w-full flex justify-center 2xl:my-8 2xl:max-w-[120%] 2xl:w-[120%] 2xl:-ml-[10%]">
-                <img
+                <Image
                     {...props}
                     className="max-w-full h-auto object-contain rounded-md"
                     alt={props.alt}
