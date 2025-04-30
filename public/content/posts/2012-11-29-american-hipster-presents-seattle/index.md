@@ -12,12 +12,6 @@ tags:
 
 There's a new show on YouTube called American Hipster Presents. I stumbled upon the Linda Derschang episode last night. They're well produced videos about a community I love so much. I hope you enjoy as much as I did.
 
-### Linda Derschang - American Hipster Presents #35 (Seattle - Social Life)
-
-If you're from Seattle I'm sure a lot of you know of Linda's in Capitol Hill. Take a peek into Seattle's night life with Linda Derschang, owner of Linda's and others.
-
-https://www.youtube.com/watch?v=0CVWeactgcY
-
 ### KeseyPollock & Melting Bodies - American Hipster Presents #32 (Seattle - Art)
 
 I absolutely love this art and can't wait for their show in spring of 2013.
