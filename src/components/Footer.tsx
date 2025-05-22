@@ -3,7 +3,7 @@
 import { format } from 'date-fns';
 import Link from 'next/link';
 import React from 'react';
-import { Social } from '@/components';
+import { BlueSkyFeed } from '@/components/BlueSkyFeed';
 import type { Post } from '@/types';
 import { getPosts } from '@/utils/posts';
 
@@ -55,7 +55,7 @@ export const Footer: React.FC = async () => {
                             ))}
                         </ul>
                     </section>
-                    <Social />
+                    <BlueSkyFeed actor="brainbrian.com" postsToShow={3} />
                 </aside>
                 <footer className="max-w-(--breakpoint-2xl) mx-auto px-4 py-6 sm:px-6 lg:px-8 text-center sm:text-left text-xs sm:text-sm border-t-2 border-primary">
                     &copy; {new Date().getFullYear()} Brain Brian (Brian

@@ -19,13 +19,13 @@ interface BlueSkyProfile {
     indexedAt?: string;
 }
 
-interface BlueSkyProps {
+interface BlueSkyProfileProps {
     actor: string;
     showBanner?: boolean;
     showCreationDate?: boolean;
 }
 
-export const BlueSky: React.FC<BlueSkyProps> = ({
+export const BlueSkyProfile: React.FC<BlueSkyProfileProps> = ({
     actor,
     showBanner = true,
     showCreationDate = true,

@@ -1,3 +1,5 @@
+export { BlueSkyFeed } from './BlueSkyFeed';
+export { BlueSkyProfile } from './BlueSkyProfile';
 export { Footer } from './Footer';
 export { Header } from './Header';
 export { Loader } from './Loader';
@@ -7,6 +9,4 @@ export { PostLink } from './PostLink';
 export { ProfileHeader } from './ProfileHeader';
 export { Project } from './Project';
 export { ProjectsRecent } from './ProjectsRecent';
-export { Social } from './Social';
 export { VideoList } from './VideoList';
-export { BlueSky } from './BlueSky';
