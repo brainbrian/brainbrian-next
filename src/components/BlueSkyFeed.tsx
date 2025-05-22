@@ -164,7 +164,7 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = ({
                             href={`https://bsky.app/profile/${handle}/post/${postId}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            key={post.cid || `post-${Math.random()}`}
+                            key={post.cid || `post-${postId}`}
                             className="block bg-background p-3 rounded-lg hover:bg-zinc-800 transition-colors no-underline group"
                         >
                             <div>
