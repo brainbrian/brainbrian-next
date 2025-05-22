@@ -4,7 +4,7 @@ import React, { ReactNode } from 'react';
 import Image from 'next/image';
 import GitHubButton from 'react-github-btn';
 import LinkedIn from './Icons/LinkedIn';
-import { BlueSky } from './BlueSky';
+import { BlueSkyProfile } from './BlueSkyProfile';
 
 interface ProfileHeaderProps {
     children: ReactNode;
@@ -50,7 +50,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
                         <div className="absolute inset-0 bg-[url('/images/brian-behrens-profile-old.webp')] bg-cover opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100 group-focus-visible:opacity-100" />
                     </div>
                     <div className="w-full">
-                        <BlueSky
+                        <BlueSkyProfile
                             actor="brainbrian.com"
                             showBanner={true}
                             showCreationDate={true}
