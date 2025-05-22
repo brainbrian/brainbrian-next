@@ -1,13 +1,13 @@
 import React from 'react';
 import type { NextPage } from 'next';
 
-import { Panel, ProjectsRecent } from '@/components';
+import { Panel, ProjectsRecent, SpeakableHeading } from '@/components';
 
 const Page: NextPage = async () => (
     <main>
         <Panel videoUrl="./videos/bg-hero.mp4">
             <article className="content">
-                <h1>Hello, I&apos;m Brian Behrens.</h1>
+                <SpeakableHeading text="Hello, I'm Brian Behrens." />
                 <h2>I am a software engineer.</h2>
                 <p>
                     I live,{' '}

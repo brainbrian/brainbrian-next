@@ -9,4 +9,5 @@ export { PostLink } from './PostLink';
 export { ProfileHeader } from './ProfileHeader';
 export { Project } from './Project';
 export { ProjectsRecent } from './ProjectsRecent';
+export { SpeakableHeading } from './SpeakableHeading';
 export { VideoList } from './VideoList';
