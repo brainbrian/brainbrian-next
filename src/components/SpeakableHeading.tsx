@@ -1,19 +1,52 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+
+interface VoiceConfig {
+    name: string;
+    rate?: number;
+    pitch?: number;
+}
+
+interface SpeechConfig {
+    preferredVoices: VoiceConfig[];
+    defaultRate?: number;
+    defaultPitch?: number;
+}
 
 interface SpeakableHeadingProps {
     text: string;
     as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     className?: string;
+    speechConfig?: SpeechConfig;
+    tabIndex?: number;
+    ariaLabel?: string;
+    showFocusOutline?: boolean;
 }
+
+// Default configuration
+const defaultSpeechConfig: SpeechConfig = {
+    preferredVoices: [
+        { name: 'Aaron', rate: 0.6, pitch: 0.6 },
+        { name: 'Fred', rate: 0.9, pitch: 0.7 },
+        { name: 'Reed', rate: 0.7, pitch: 0.6 },
+        { name: 'Zarvox', rate: 0.75, pitch: 0.62 },
+    ],
+    defaultRate: 0.85,
+    defaultPitch: 0.4,
+};
 
 export const SpeakableHeading: React.FC<SpeakableHeadingProps> = ({
     text,
     as: Component = 'h1',
     className = '',
+    speechConfig = defaultSpeechConfig,
+    tabIndex = 0,
+    ariaLabel,
+    showFocusOutline = true,
 }) => {
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+    const [voiceConfigs, setVoiceConfigs] = useState<VoiceConfig[]>([]);
     const [lastVoiceName, setLastVoiceName] = useState<string | null>(null);
 
     useEffect(() => {
@@ -21,37 +54,39 @@ export const SpeakableHeading: React.FC<SpeakableHeadingProps> = ({
             // Load voices
             const loadVoices = () => {
                 const allVoices = window.speechSynthesis.getVoices();
-                // Filter for English voices only and exclude likely female voices
-                const englishMaleVoices = allVoices.filter(
-                    (voice) =>
-                        voice.lang.startsWith('en') &&
-                        // Exclude voices that have female indicators
-                        !voice.name.includes('Female') &&
-                        !voice.name.includes('Woman') &&
-                        !voice.name.includes('Girl') &&
-                        !/\b(Samantha|Karen|Susan|Victoria|Allison|Ava|Siri|Zira|Kathy|Veena|Moira|Tessa|Fiona|Lisa)\b/i.test(
-                            voice.name,
-                        ) &&
-                        // Include voices that have male indicators or common male names
-                        (voice.name.includes('Male') ||
-                            voice.name.includes('Guy') ||
-                            voice.name.includes('Man') ||
-                            /\b(Alex|Josh|John|Mike|David|Guy|Tom|Nathan|Reed|Daniel|Eric|George|James|Paul)\b/i.test(
-                                voice.name,
-                            ) ||
-                            // If no gender indicators, include it anyway for more variety
-                            (!voice.name.includes('Female') &&
-                                !voice.name.includes('Woman'))),
-                );
 
-                // If no male voices found, fall back to all English voices
-                if (englishMaleVoices.length > 0) {
-                    setVoices(englishMaleVoices);
+                // Find voices that match our preferred list and store their configs
+                const selectedVoices: SpeechSynthesisVoice[] = [];
+                const matchedConfigs: VoiceConfig[] = [];
+
+                speechConfig.preferredVoices.forEach((voiceConfig) => {
+                    const matchedVoice = allVoices.find(
+                        (voice) =>
+                            voice.name.includes(voiceConfig.name) &&
+                            voice.lang === 'en-US',
+                    );
+                    if (matchedVoice) {
+                        selectedVoices.push(matchedVoice);
+                        matchedConfigs.push(voiceConfig);
+                    }
+                });
+
+                if (selectedVoices.length > 0) {
+                    setVoices(selectedVoices);
+                    setVoiceConfigs(matchedConfigs);
                 } else {
-                    const englishVoices = allVoices.filter((voice) =>
-                        voice.lang.startsWith('en'),
+                    // Final fallback to any en-US voices with default config
+                    const englishVoices = allVoices.filter(
+                        (voice) => voice.lang === 'en-US',
                     );
                     setVoices(englishVoices);
+                    // Create default configs for fallback voices
+                    const fallbackConfigs = englishVoices.map((voice) => ({
+                        name: voice.name,
+                        rate: speechConfig.defaultRate,
+                        pitch: speechConfig.defaultPitch,
+                    }));
+                    setVoiceConfigs(fallbackConfigs);
                 }
             };
 
@@ -62,9 +97,9 @@ export const SpeakableHeading: React.FC<SpeakableHeadingProps> = ({
                 window.speechSynthesis.onvoiceschanged = null;
             };
         }
-    }, []);
+    }, [speechConfig]);
 
-    const handleClick = () => {
+    const handleClick = useCallback(() => {
         if (
             typeof window !== 'undefined' &&
             'speechSynthesis' in window &&
@@ -74,33 +109,58 @@ export const SpeakableHeading: React.FC<SpeakableHeadingProps> = ({
 
             const utterance = new SpeechSynthesisUtterance(text);
 
-            // Keep rate consistent with a fixed pitch
-            utterance.rate = 0.92; // Consistent rate
-            utterance.pitch = 0.85; // Fixed lower pitch for male voices
+            // Select a random voice and its corresponding config
+            const randomIndex = Math.floor(Math.random() * voices.length);
+            const selectedVoice = voices[randomIndex];
+            const selectedConfig = voiceConfigs[randomIndex];
+
+            // Use voice-specific settings or defaults
+            utterance.rate =
+                selectedConfig.rate ?? speechConfig.defaultRate ?? 0.8;
+            utterance.pitch =
+                selectedConfig.pitch ?? speechConfig.defaultPitch ?? 0.7;
             utterance.volume = 1.0;
 
-            // Select a random voice from available English voices
-            const randomIndex = Math.floor(Math.random() * voices.length);
-            const randomVoice = voices[randomIndex];
-
-            if (randomVoice) {
-                utterance.voice = randomVoice;
-                setLastVoiceName(`${randomVoice.name} (${randomVoice.lang})`);
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+                setLastVoiceName(
+                    `${selectedVoice.name} (${selectedVoice.lang}) - Rate: ${utterance.rate}, Pitch: ${utterance.pitch}`,
+                );
                 window.speechSynthesis.speak(utterance);
             }
         }
-    };
+    }, [voices, voiceConfigs, text, speechConfig]);
+
+    const handleKeyDown = useCallback(
+        (e: React.KeyboardEvent) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleClick();
+            }
+        },
+        [handleClick],
+    );
+
+    const focusClasses = showFocusOutline
+        ? 'hover:text-primary focus-visible:text-primary'
+        : '';
 
     return (
         <Component
-            className={className}
+            className={`${className} cursor-pointer outline-none ${focusClasses}`}
             onClick={handleClick}
-            style={{ cursor: 'pointer' }}
             title={
                 lastVoiceName
                     ? `Last voice: ${lastVoiceName}. Click to hear with a random voice`
                     : 'Click to hear with a random voice'
             }
+            tabIndex={tabIndex}
+            aria-label={
+                ariaLabel ||
+                `Speakable heading: ${text}. Press Enter or Space to hear this text spoken aloud.`
+            }
+            role="button"
+            onKeyDown={handleKeyDown}
         >
             {text}
         </Component>
