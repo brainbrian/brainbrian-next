@@ -45,11 +45,11 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
 
     return (
         <>
-            <ul className="list-none m-0 p-0 grid grid-cols-1 xs:grid-cols-2 gap-8">
+            <ul className="list-none m-0 p-0 grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-y-8 sm:gap-x-0">
                 {videos?.map((video, index) => (
                     <li
                         key={video?.snippet?.resourceId?.videoId}
-                        className={`opacity-0 animate-fadeInUp ${getAnimationDelay(index)}`}
+                        className={`opacity-0 animate-fadeInUp sm:odd:pr-4 sm:even:pl-4 ${getAnimationDelay(index)}`}
                     >
                         <a
                             href={`https://www.youtube.com/watch?v=${video?.snippet?.resourceId?.videoId}`}

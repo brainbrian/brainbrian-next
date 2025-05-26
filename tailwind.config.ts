@@ -190,6 +190,9 @@ export default {
                     maxWidth: theme('screens.2xl'),
                     padding: '0 1rem',
                     '@media (min-width: 640px)': {
+                        padding: '0 1.5rem',
+                    },
+                    '@media (min-width: 1024px)': {
                         padding: '0 2rem',
                     },
                 },
