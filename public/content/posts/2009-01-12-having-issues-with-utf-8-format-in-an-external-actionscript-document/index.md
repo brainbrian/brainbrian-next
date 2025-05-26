@@ -1,13 +1,12 @@
 ---
-title: 'Having Issues with UTF-8 Format in an External ActionScript Document?'
+title: Having Issues with UTF-8 Format in an External ActionScript Document?
 date: '2009-01-12'
-categories:
-    - 'adobe'
-    - 'flash-development'
 tags:
-    - 'flash'
-    - 'text-encoding'
-    - 'utf-8'
+  - adobe
+  - flash-development
+  - flash
+  - text-encoding
+  - utf-8
 ---
 
 From what I gather, any external ActionScript script you may have that you are linking to through an #include statement, you may need to use this code to allow certain characters to be read in the document as UTF-8.  I ran into this issue about a month ago, and a co-worker of mine knew the solution.  It's something I find is rarely used and easily forgotten:

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { format } from 'date-fns';
 
 import { Loader } from '@/components';
 
@@ -6,6 +7,7 @@ interface VideoListProps {
     videos: Array<{
         id: number;
         snippet: {
+            publishedAt: string;
             resourceId: {
                 videoId: string;
             };
@@ -51,9 +53,9 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
                     >
                         <a
                             href={`https://www.youtube.com/watch?v=${video?.snippet?.resourceId?.videoId}`}
-                            className="block xs:odd:pr-4 xs:even:pl-4 hover:no-underline focus-visible:no-underline group"
+                            className="block xs:odd:pr-4 xs:even:pl-4 hover:no-underline focus-visible:no-underline group rounded-lg overflow-hidden"
                         >
-                            <div className="overflow-hidden pb-[56.25%] relative w-full">
+                            <div className="overflow-hidden pb-[56.25%] relative w-full rounded-t-lg">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={
@@ -65,18 +67,44 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
                                     className="absolute top-1/2 -translate-y-1/2 w-full"
                                 />
                             </div>
-                            <h2 className="bg-background text-xl md:text-2xl font-medium m-0 p-4 uppercase transition-[background-color,color] duration-200 group-hover:bg-primary group-hover:text-text group-focus-visible:bg-primary group-focus-visible:text-text">
-                                {video?.snippet?.title}
-                            </h2>
+                            <div className="bg-[#383838] group-hover:bg-[#404040] transition-colors p-4 rounded-b-lg">
+                                <h3 className="text-text group-hover:text-primary transition-colors text-sm font-medium leading-tight mb-1 m-0">
+                                    {video?.snippet?.title}
+                                </h3>
+                                {video?.snippet?.publishedAt && (
+                                    <span className="text-xs text-gray-400">
+                                        {format(
+                                            new Date(video.snippet.publishedAt),
+                                            'MMMM dd, yyyy',
+                                        )}
+                                    </span>
+                                )}
+                            </div>
                         </a>
                     </li>
                 ))}
             </ul>
-            <p className="text-center">
-                <a href="https://www.youtube.com/c/BrianBehrens/videos">
-                    More on youtube.com
+            <div className="text-center mt-8">
+                <a
+                    href="https://www.youtube.com/c/BrianBehrens/videos"
+                    className="inline-flex items-center gap-2 bg-[#262626] text-white px-5 py-2.5 rounded-lg hover:bg-[#23a1ff] transition-all duration-200 no-underline font-medium group"
+                >
+                    View more on YouTube
+                    <svg
+                        className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                    </svg>
                 </a>
-            </p>
+            </div>
         </>
     );
 };

@@ -1,8 +1,8 @@
 ---
-title: 'Wing Ridge Splitboard Adventure'
+title: Wing Ridge Splitboard Adventure
 date: '2015-01-25'
-categories:
-    - 'snowboarding'
+tags:
+  - snowboarding
 ---
 
 January 22 - January 25, 2015

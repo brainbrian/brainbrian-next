@@ -34,13 +34,14 @@ const PostsPage: NextPage<PostsPageProps> = async ({ searchParams }) => {
     const totalPages = Math.ceil(totalCount / PAGE_SIZE);
 
     const postsComponents = posts.map(
-        ({ dateFormatted, excerpt, slug, title }, index) => (
+        ({ dateFormatted, excerpt, slug, title, tags }, index) => (
             <PostLink
                 date={dateFormatted}
                 excerpt={excerpt}
                 href={`/posts/${slug}`}
                 key={index}
                 title={title}
+                tags={tags}
             />
         ),
     );

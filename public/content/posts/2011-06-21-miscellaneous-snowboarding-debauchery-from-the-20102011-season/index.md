@@ -1,12 +1,11 @@
 ---
-title: 'Miscellaneous Snowboarding Debauchery From The 2010/2011 Season'
+title: Miscellaneous Snowboarding Debauchery From The 2010/2011 Season
 date: '2011-06-21'
-categories:
-    - 'personal'
-    - 'travel'
 tags:
-    - 'snowboard'
-    - 'snowboarding'
+  - personal
+  - travel
+  - snowboard
+  - snowboarding
 ---
 
 ### Snowboarding at Stevens Pass on January 8th, 2011

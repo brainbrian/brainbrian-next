@@ -1,8 +1,8 @@
 ---
-title: 'Milwaukee Web/Design Groups...'
+title: Milwaukee Web/Design Groups...
 date: '2007-08-30'
-categories:
-    - 'miscellaneous'
+tags:
+  - miscellaneous
 ---
 
 [https://www.web414.com](https://www.web414.com)

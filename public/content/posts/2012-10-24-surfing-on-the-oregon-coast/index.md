@@ -1,9 +1,9 @@
 ---
-title: 'Surfing on the Oregon Coast'
+title: Surfing on the Oregon Coast
 date: '2012-10-24'
-categories:
-    - 'miscellaneous'
-    - 'video'
+tags:
+  - miscellaneous
+  - video
 ---
 
 Since April/May of 2012 I started surfing. Being from the midwest this was never an option for me, but now after living in Washington for almost 5 years I figuered I should stop holding out for a trip to some place warm like Hawaii and just get in the water. This summer was filled with a lot of surf trips to Westport and the Olympic Peninsula. We also made it down to Oregon a couple times.

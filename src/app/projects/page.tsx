@@ -35,13 +35,14 @@ const ProjectsPage: NextPage<ProjectsPageProps> = async ({ searchParams }) => {
     }
     const totalPages = Math.ceil(totalCount / PAGE_SIZE);
     const projectsComponents = projects.map(
-        ({ excerpt, slug, title, image }) => (
+        ({ excerpt, slug, title, image, tags }) => (
             <Project
                 key={slug}
                 excerpt={excerpt}
                 imageUrl={`/content/projects/${slug}/${image}`}
                 slug={`/projects/${slug}`}
                 title={title}
+                tags={tags}
             />
         ),
     );

@@ -1,8 +1,8 @@
 ---
-title: 'Owning a bike.'
+title: Owning a bike.
 date: '2009-06-22'
-categories:
-    - 'miscellaneous'
+tags:
+  - miscellaneous
 ---
 
 [![](https://farm4.static.flickr.com/3322/3645514709_2812fe64de_m.jpg)](https://www.flickr.com/photos/brianbehrens/3645514709/ 'photo sharing')  

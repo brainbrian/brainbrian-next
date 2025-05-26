@@ -1,12 +1,13 @@
 ---
-title: 'Trip to Andalusia region of Spain'
+title: Trip to Andalusia region of Spain
 date: '2019-03-25'
-excerpt: 'A year before all this Covid craziness I took a trip (March 15th - 25th, 2019) to the Andalusia region with Amanda and two of our friends.'
-categories:
-    - 'personal'
-    - 'travel'
+excerpt: >-
+  A year before all this Covid craziness I took a trip (March 15th - 25th, 2019)
+  to the Andalusia region with Amanda and two of our friends.
 tags:
-    - 'spain'
+  - personal
+  - travel
+  - spain
 ---
 
 A year before all this Covid craziness I took a trip (March 15th - 25th, 2019) to the [Andalusia region](https://en.wikipedia.org/wiki/Andalusia) with Amanda and two of our friends. The trip was very memorable, in particular the amazing architecture and street art. There is so much history, art, amazing food and wine. I hope to go back again one day as we still have so much to see!

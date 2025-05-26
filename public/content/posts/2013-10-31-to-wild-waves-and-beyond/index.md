@@ -1,9 +1,9 @@
 ---
-title: 'To Wild Waves and Beyond!'
+title: To Wild Waves and Beyond!
 date: '2013-10-31'
-categories:
-    - 'personal'
-    - 'video'
+tags:
+  - personal
+  - video
 ---
 
 `video:https://www.youtube.com/watch?v=Sri2IEd-TUo`

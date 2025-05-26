@@ -1,11 +1,9 @@
 ---
-title: 'Azure Ray is Realeasing a New Album!'
+title: Azure Ray is Realeasing a New Album!
 date: '2010-08-24'
-categories:
-    - 'music'
 tags:
-    - 'azure-ray'
-    - 'music'
+  - music
+  - azure-ray
 ---
 
 Azure Ray is releasing a new album after a 6 year hiatus. Both Maria Taylor and Orenda Fink have been off pursing music in their own ways, but are releasing a new full-length album as Azure Ray again on September 14th. Check out a sample of the upcoming album below:

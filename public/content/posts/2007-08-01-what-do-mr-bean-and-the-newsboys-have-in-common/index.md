@@ -1,8 +1,8 @@
 ---
-title: 'What do Mr. Bean and the Newsboys have in common?'
+title: What do Mr. Bean and the Newsboys have in common?
 date: '2007-08-01'
-categories:
-    - 'work'
+tags:
+  - work
 ---
 
 You ask? Well not a whole lot. I've been working on some banner campaigns for Mr. Bean's Holiday with my friend Taylor at Robots Made It. The banners are going well, and we will continue to complete them throughout the week. I'm not sure what my thoughts are in reguards to the movie, but I guess we'll see.

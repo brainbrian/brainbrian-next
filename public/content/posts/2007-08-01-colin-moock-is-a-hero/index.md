@@ -1,8 +1,8 @@
 ---
-title: 'Colin Moock is a hero.'
+title: Colin Moock is a hero.
 date: '2007-08-01'
-categories:
-    - 'actionscript3'
+tags:
+  - actionscript3
 ---
 
 I love that he commented on working on snowboarding and gardening. Even the most brilliant of minds still have time to play!

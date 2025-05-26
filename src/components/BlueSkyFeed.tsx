@@ -1,6 +1,6 @@
-'use client';
+'use server';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
@@ -55,73 +55,41 @@ interface BlueSkyFeedProps {
     className?: string;
 }
 
-export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = ({
+export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = async ({
     actor,
     postsToShow = 3,
     className = 'sm:w-1/2 sm:odd:pr-4 sm:even:pl-4',
 }) => {
-    const [feed, setFeed] = useState<BlueSkyFeedItem[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-    const [isMounted, setIsMounted] = useState<boolean>(false);
+    let feed: BlueSkyFeedItem[] = [];
+    let error: string | null = null;
 
-    useEffect(() => {
-        setIsMounted(true);
+    try {
+        const response = await fetch(
+            `https://api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${actor}&limit=${postsToShow}`,
+            {
+                next: { revalidate: 300 }, // Cache for 5 minutes
+            },
+        );
 
-        const fetchFeed = async () => {
-            try {
-                setLoading(true);
-                const response = await fetch(
-                    `https://api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${actor}&limit=${postsToShow}`,
-                );
-
-                if (!response.ok) {
-                    throw new Error(
-                        `Failed to fetch feed: ${response.statusText}`,
-                    );
-                }
-
-                const data = await response.json();
-                console.log('BlueSky API response:', data);
-
-                if (data && Array.isArray(data.feed)) {
-                    setFeed(data.feed);
-                } else {
-                    console.error('Unexpected API response format:', data);
-                    setError('Unexpected API response format');
-                }
-            } catch (err) {
-                setError(
-                    err instanceof Error ? err.message : 'Failed to fetch feed',
-                );
-                console.error('Error fetching BlueSky feed:', err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        if (isMounted) {
-            fetchFeed();
+        if (!response.ok) {
+            throw new Error(`Failed to fetch feed: ${response.statusText}`);
         }
-    }, [isMounted, actor, postsToShow]);
 
-    const renderSkeleton = () => (
-        <div className="space-y-2">
-            {[...Array(postsToShow)].map((_, i) => (
-                <div
-                    key={i}
-                    className="bg-background p-3 rounded-lg animate-pulse"
-                >
-                    <div className="h-3 bg-gray-700 rounded w-full mb-1"></div>
-                    <div className="h-3 bg-gray-700 rounded w-3/4 mb-1"></div>
-                    <div className="h-3 bg-gray-700 rounded w-1/2"></div>
-                </div>
-            ))}
-        </div>
-    );
+        const data = await response.json();
+
+        if (data && Array.isArray(data.feed)) {
+            feed = data.feed;
+        } else {
+            console.error('Unexpected API response format:', data);
+            error = 'Unexpected API response format';
+        }
+    } catch (err) {
+        error = err instanceof Error ? err.message : 'Failed to fetch feed';
+        console.error('Error fetching BlueSky feed:', err);
+    }
 
     const renderError = () => (
-        <div className="text-red-400 p-4 bg-background rounded-lg text-sm">
+        <div className="text-red-400 p-4 bg-[#383838] rounded-lg text-sm">
             Failed to load BlueSky feed. {error}
         </div>
     );
@@ -129,7 +97,7 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = ({
     const renderFeed = () => {
         if (!feed || feed.length === 0) {
             return (
-                <div className="text-gray-400 p-3 bg-background rounded-lg text-xs">
+                <div className="text-gray-400 p-3 bg-[#383838] rounded-lg text-xs">
                     No posts found.
                 </div>
             );
@@ -165,7 +133,7 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = ({
                             target="_blank"
                             rel="noopener noreferrer"
                             key={post.cid || `post-${postId}`}
-                            className="block bg-background p-3 rounded-lg hover:bg-zinc-800 transition-colors no-underline group"
+                            className="block bg-[#383838] p-3 rounded-lg hover:bg-[#404040] transition-colors no-underline group"
                         >
                             <div>
                                 <p className="text-sm text-text mb-1 line-clamp-3">
@@ -308,20 +276,16 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = ({
         <section className={className}>
             <a
                 href={`https://bsky.app/profile/${actor}`}
-                className="bg-background text-text block font-headline font-bold mb-2 p-3 uppercase hover:no-underline"
+                className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase hover:no-underline hover:text-primary group rounded-lg"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <h2 className="text-text text-lg md:text-xl m-0 hover:text-primary">
+                <h2 className="text-text text-xl sm:text-2xl font-bold group-hover:text-primary">
                     Social
                 </h2>
             </a>
             <div className="mx-auto">
-                {!isMounted || loading
-                    ? renderSkeleton()
-                    : error
-                      ? renderError()
-                      : renderFeed()}
+                {error ? renderError() : renderFeed()}
             </div>
         </section>
     );

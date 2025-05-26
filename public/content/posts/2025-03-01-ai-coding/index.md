@@ -1,16 +1,15 @@
 ---
-title: 'AI Coding tools and more'
+title: AI Coding tools and more
 date: '2025-03-01'
-categories:
-    - 'development'
-    - 'technology'
-    - 'work'
 tags:
-    - 'ai'
-    - 'javascript'
-    - 'node'
-    - 'typescript'
-excerpt: 'A running document of my experience with AI assisted coding.'
+  - development
+  - technology
+  - work
+  - ai
+  - javascript
+  - node
+  - typescript
+excerpt: A running document of my experience with AI assisted coding.
 ---
 
 Here is a list of tools I've been using to assist me day to day with my various coding needs. I'll update this post over time as my journey continues down this assisted coding rabbit hole.

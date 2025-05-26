@@ -1,8 +1,8 @@
 ---
-title: 'We Got Married'
+title: We Got Married
 date: '2014-08-16'
-categories:
-    - 'personal'
+tags:
+  - personal
 ---
 
 I met my wife, Amanda, on October 31st, 2010. Now over 3 years later we tied the knot at [Red Cedar Farm](https://redcedarfarm.com) in Poulsbo, WA.

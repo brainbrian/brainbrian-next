@@ -1,13 +1,12 @@
 ---
-title: 'Skydiving with Friends for my 30th Birthday'
+title: Skydiving with Friends for my 30th Birthday
 date: '2013-08-10'
-categories:
-    - 'personal'
-    - 'travel'
-    - 'video'
 tags:
-    - 'skydive'
-    - 'skydiving'
+  - personal
+  - travel
+  - video
+  - skydive
+  - skydiving
 ---
 
 https://www.youtube.com/watch?v=l7oW9z_7o58

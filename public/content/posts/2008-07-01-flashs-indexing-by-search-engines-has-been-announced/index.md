@@ -1,16 +1,14 @@
 ---
-title: "Flash's indexing by search engines has been announced!"
+title: Flash's indexing by search engines has been announced!
 date: '2008-07-01'
-categories:
-    - 'adobe'
-    - 'flash-development'
-    - 'technology'
-    - 'web-design'
 tags:
-    - 'adobe'
-    - 'flash'
-    - 'google'
-    - 'search-engine'
+  - adobe
+  - flash-development
+  - technology
+  - web-design
+  - flash
+  - google
+  - search-engine
 ---
 
 Take a look at the articles:

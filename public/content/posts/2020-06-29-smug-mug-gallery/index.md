@@ -1,13 +1,15 @@
 ---
-title: 'Smug Mug Photo Gallery'
+title: Smug Mug Photo Gallery
 date: '2020-06-29'
-excerpt: 'I finally published an online photography gallery via Smug Mug gallery. Here I hope to showcase a more curated set of photographs as well as provide surfers at the various spots I frequent, photos of themselves for purchase.'
-categories:
-    - 'personal'
-    - 'photography'
+excerpt: >-
+  I finally published an online photography gallery via Smug Mug gallery. Here I
+  hope to showcase a more curated set of photographs as well as provide surfers
+  at the various spots I frequent, photos of themselves for purchase.
 tags:
-    - 'smug mug'
-    - 'gallery'
+  - personal
+  - photography
+  - smug mug
+  - gallery
 ---
 
 I finally published an online photography gallery via [Smug Mug gallery](https://gallery.brainbrian.com). Here I hope to showcase a more curated set of photographs as well as provide surfers at the various spots I frequent, photos of themselves for purchase.
