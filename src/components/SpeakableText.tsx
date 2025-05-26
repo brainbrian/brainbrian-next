@@ -14,9 +14,8 @@ interface SpeechConfig {
     defaultPitch?: number;
 }
 
-interface SpeakableHeadingProps {
+interface SpeakableTextProps {
     text: string;
-    as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     className?: string;
     speechConfig?: SpeechConfig;
     tabIndex?: number;
@@ -36,9 +35,8 @@ const defaultSpeechConfig: SpeechConfig = {
     defaultPitch: 0.4,
 };
 
-export const SpeakableHeading: React.FC<SpeakableHeadingProps> = ({
+export const SpeakableText: React.FC<SpeakableTextProps> = ({
     text,
-    as: Component = 'h1',
     className = '',
     speechConfig = defaultSpeechConfig,
     tabIndex = 0,
@@ -146,7 +144,7 @@ export const SpeakableHeading: React.FC<SpeakableHeadingProps> = ({
         : '';
 
     return (
-        <Component
+        <span
             className={`${className} cursor-pointer outline-none ${focusClasses}`}
             onClick={handleClick}
             title={
@@ -163,6 +161,6 @@ export const SpeakableHeading: React.FC<SpeakableHeadingProps> = ({
             onKeyDown={handleKeyDown}
         >
             {text}
-        </Component>
+        </span>
     );
 };

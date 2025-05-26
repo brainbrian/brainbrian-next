@@ -4,6 +4,7 @@ import cx from 'classnames';
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { MapPin } from 'lucide-react';
 
 const navItems = [
     { name: 'Projects', href: '/projects' },
@@ -26,7 +27,9 @@ export const Header: React.FC = () => {
                     Brain Brian
                 </Link>
                 <p className="text-primary text-[0.5rem] italic m-0 px-8 whitespace-nowrap hidden xl:block xl:text-base">
-                    software engineer living in Los Angeles, California.
+                    software engineer living in{' '}
+                    <MapPin className="inline w-4 h-4 mx-1" />
+                    Los Angeles, California.
                 </p>
                 <nav className="w-full">
                     <ul className="flex justify-center bg-background flex-1 list-none m-0 p-0 md:bg-transparent md:float-right">

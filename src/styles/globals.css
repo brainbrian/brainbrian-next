@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800;900&display=swap')
 layer(base);
 
 /* Tailwind directives */
@@ -26,11 +26,171 @@ layer(base);
     --font-headline: 'Poppins', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     --font-body: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     --font-code: 'Courier New', 'Courier', monospace;
+    --font-display: 'Inter', 'Poppins', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    
+    /* Header height variables for consistent spacing */
+    --header-height-mobile: 4rem; /* 3rem + 1rem border */
+    --header-height-desktop: 6rem; /* 5rem + 1rem border */
+    
+    /* Color variables */
+    --link-color: #23a1ff;
+    --link-hover-glow: rgba(35, 161, 255, 0.4);
   }
 }
 
-/* Animation utilities */
+/* Panel Component Styles */
+@layer components {
+  .panel-text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  .panel-video-filter {
+    filter: brightness(0.7);
+  }
+  
+  /* Panel container with header-aware height */
+  .panel-container {
+    min-height: calc(100vh - var(--header-height-mobile));
+  }
+  
+  @media (min-width: 1024px) {
+    .panel-container {
+      min-height: calc(100vh - var(--header-height-desktop));
+    }
+  }
+  
+  /* Simplified typography */
+  .panel-content h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 1.1;
+    margin: 0 0 1.5rem 0;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: white;
+    animation: fade-in-up 1s ease-out 0.2s both;
+  }
+  
+  /* Special styling for name spans within h1 */
+  .panel-content h1 .name-highlight {
+    color: var(--link-color);
+    transition: all 300ms ease;
+    cursor: pointer;
+  }
+  
+  .panel-content h1 .name-highlight:hover {
+    color: #ffffff;
+    background-color: var(--link-color);
+    padding: 0 0.2em;
+    border-radius: 4px;
+  }
+  
+  .panel-content h2 {
+    font-family: var(--font-headline);
+    font-size: clamp(1.75rem, 4.5vw, 3.5rem);
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0 0 2rem 0;
+    letter-spacing: -0.01em;
+    color: white;
+    animation: fade-in-up 1s ease-out 0.4s both;
+  }
+  
+  .panel-content h3 {
+    font-family: var(--font-headline);
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    line-height: 1.3;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.01em;
+    color: white;
+    animation: fade-in-up 1s ease-out 0.6s both;
+  }
+  
+  .panel-content p {
+    font-family: var(--font-body);
+    font-size: clamp(1.25rem, 2.8vw, 1.9rem);
+    line-height: 1.7;
+    margin: 1.5rem 0;
+    max-width: 65ch;
+    color: white;
+    font-weight: 400;
+    animation: fade-in-up 1s ease-out 0.8s both;
+  }
+  
+  /* Enhanced link styling */
+  .panel-content p a {
+    color: var(--link-color);
+    padding: 0.1em 0.1em;
+    display: inline-flex;
+    line-height: 1.3em;
+    text-decoration: none;
+    transition: all 300ms ease;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  
+  .panel-content p a:hover,
+  .panel-content p a:focus-visible {
+    color: #ffffff;
+    background-color: var(--link-color);
+  }
+  
+  .panel-content p a:active {
+    transform: translateY(1px);
+  }
+  
+  /* List styling */
+  .panel-content ul,
+  .panel-content ol {
+    font-family: var(--font-body);
+    font-size: clamp(1.25rem, 2.8vw, 1.9rem);
+    line-height: 1.7;
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    color: white;
+  }
+  
+  .panel-content li {
+    margin: 0.8rem 0;
+    position: relative;
+  }
+  
+  .panel-content ul li::marker {
+    color: var(--link-color);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .panel-content {
+      text-align: center;
+    }
+    
+    .panel-content p {
+      max-width: none;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .panel-content {
+      text-align: left;
+    }
+  }
+}
+
+/* Keyframe animations */
 @layer utilities {
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
   /* FadeInUp animation */
   @keyframes fadeInUp {
     0% {
