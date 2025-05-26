@@ -39,7 +39,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = async ({ searchParams }) => {
             <Project
                 key={slug}
                 excerpt={excerpt}
-                imageUrl={`/content/projects/${slug}/${image}`}
+                imageUrl={`/content/projects/${slug}/${image.replace('./', '')}`}
                 slug={`/projects/${slug}`}
                 title={title}
                 tags={tags}
