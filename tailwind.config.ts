@@ -188,7 +188,10 @@ export default {
                 '.content': {
                     margin: '2rem auto',
                     maxWidth: theme('screens.2xl'),
-                    padding: '0 2rem',
+                    padding: '0 1rem',
+                    '@media (min-width: 640px)': {
+                        padding: '0 2rem',
+                    },
                 },
                 '.limit-text-width': {
                     margin: '0 auto',

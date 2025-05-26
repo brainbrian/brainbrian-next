@@ -49,7 +49,7 @@ const PostsPage: NextPage<PostsPageProps> = async ({ searchParams }) => {
     if (postsError) return <p>An error occurred</p>;
 
     return (
-        <main className="content">
+        <main className="mx-auto my-8 max-w-screen-2xl px-4 sm:px-6 lg:px-8">
             {postsComponents}
             <Pagination
                 basePath={'/posts'}

@@ -45,17 +45,17 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
 
     return (
         <>
-            <ul className="list-none m-0 p-0 xs:flex xs:flex-wrap xs:w-full">
+            <ul className="list-none m-0 p-0 grid grid-cols-1 xs:grid-cols-2 gap-8">
                 {videos?.map((video, index) => (
                     <li
                         key={video?.snippet?.resourceId?.videoId}
-                        className={`mb-8 opacity-0 xs:w-1/2 animate-fadeInUp ${getAnimationDelay(index)}`}
+                        className={`opacity-0 animate-fadeInUp ${getAnimationDelay(index)}`}
                     >
                         <a
                             href={`https://www.youtube.com/watch?v=${video?.snippet?.resourceId?.videoId}`}
-                            className="block xs:odd:pr-4 xs:even:pl-4 hover:no-underline focus-visible:no-underline group rounded-lg overflow-hidden"
+                            className="flex flex-col hover:no-underline focus-visible:no-underline group rounded-lg overflow-hidden h-full"
                         >
-                            <div className="overflow-hidden pb-[56.25%] relative w-full rounded-t-lg">
+                            <div className="overflow-hidden pb-[56.25%] relative w-full rounded-t-lg flex-shrink-0">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={
@@ -67,7 +67,7 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
                                     className="absolute top-1/2 -translate-y-1/2 w-full"
                                 />
                             </div>
-                            <div className="bg-[#383838] group-hover:bg-[#404040] transition-colors p-4 rounded-b-lg">
+                            <div className="bg-[#383838] group-hover:bg-[#404040] transition-colors p-4 rounded-b-lg flex-1">
                                 <h3 className="text-text group-hover:text-primary transition-colors text-sm font-medium leading-tight mb-1 m-0">
                                     {video?.snippet?.title}
                                 </h3>
