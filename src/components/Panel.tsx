@@ -6,23 +6,29 @@ interface PanelProps {
 }
 
 export const Panel: React.FC<PanelProps> = ({ children, videoUrl }) => (
-    <section
-        className="relative w-full overflow-hidden text-text m-0 min-h-[calc(100vh-14rem)] [text-shadow:1px_1px_2px_rgba(0,0,0,0.5)] aspect-1/2 xxs:aspect-1/1 xs:aspect-16/9 xl:aspect-16/6 xxl:aspect-[16/5] md:p-16 xs:max-h-[calc(100vh-200px)] [&_h1]:text-text [&_h1]:text-[2.6rem] [&_h1]:leading-[1.1] [&_h1]:m-0 md:[&_h1]:text-[3.2rem] md:[&_h1]:leading-[1.2] lg:[&_h1]:text-[4rem] lg:[&_h1]:leading-[1.3]
-    [&_h2]:text-text [&_h2]:text-[2rem] [&_h2]:leading-[1.4] [&_h2]:font-medium [&_h2]:m-0 [&_h2]:mb-6 md:[&_h2]:text-[2.4rem] md:[&_h2]:leading-[1.3] md:[&_h2]:mb-6 lg:[&_h2]:text-[3rem] lg:[&_h2]:leading-[1.3] lg:[&_h2]:mb-8
-    [&_p]:text-[1.4rem] [&_p]:leading-[1.4] [&_p]:my-4 md:[&_p]:text-[1.8rem] md:[&_p]:leading-[1.4] lg:[&_p]:text-[2rem] lg:[&_p]:leading-[1.4] md:[&_p]:my-6 [&_p_a]:bg-primary [&_p_a]:text-text [&_p_a]:leading-[1.4] [&_p_a]:py-[0.1em] [&_p_a]:px-[0.3rem] [&_p_a]:inline-block [&_p_a]:no-underline [&_p_a]:transition-[background-color_200ms_ease-in-out,color_300ms_ease-in-out] [&_p_a:hover]:bg-text [&_p_a:hover]:text-primary [&_p_a:focus-visible]:bg-text [&_p_a:focus-visible]:text-primary"
-    >
-        {children}
+    <section className="panel-container relative w-full overflow-hidden m-0 text-white flex items-center justify-center">
+        {/* Content Container */}
+        <div className="relative z-1 w-full max-w-7xl mx-auto px-4 py-8 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+            <div className="panel-text-shadow space-y-4 md:space-y-6 lg:space-y-8">
+                <div className="panel-content">{children}</div>
+            </div>
+        </div>
+
+        {/* Video Background */}
         {videoUrl && (
-            <div className="absolute w-full h-full top-0 left-0 -z-10">
+            <div className="absolute inset-0 w-full h-full -z-1 overflow-hidden">
                 <video
-                    className="absolute min-w-full min-h-full -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover w-auto h-auto"
+                    className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover panel-video-filter"
                     autoPlay
                     loop
                     playsInline
                     muted
+                    preload="metadata"
                 >
                     <source src={videoUrl} type="video/mp4" />
                 </video>
+                {/* Gradient overlay for better text readability */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
             </div>
         )}
     </section>

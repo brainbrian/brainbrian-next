@@ -1,12 +1,11 @@
 ---
-title: 'Whidbey Island'
+title: Whidbey Island
 date: '2013-05-27'
-categories:
-    - 'personal'
-    - 'travel'
 tags:
-    - 'travels'
-    - 'whidbey-island'
+  - personal
+  - travel
+  - travels
+  - whidbey-island
 ---
 
 I went to Whidbey Island for the Memorial Day weekend. This was my first time on Whidbey and it was quite enjoyable, even with the rain.

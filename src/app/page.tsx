@@ -1,14 +1,21 @@
 import React from 'react';
 import type { NextPage } from 'next';
+import { TreePalm } from 'lucide-react';
 
-import { Panel, ProjectsRecent, SpeakableHeading } from '@/components';
+import { Panel, ProjectsRecent, SpeakableText } from '@/components';
 
 const Page: NextPage = async () => (
     <main>
         <Panel videoUrl="./videos/bg-hero.mp4">
             <article className="content">
-                <SpeakableHeading text="Hello, I'm Brian Behrens." />
-                <h2>I am a software engineer.</h2>
+                <h1>
+                    Hello, I&apos;m <SpeakableText text="Brian Behrens" />.
+                </h1>
+                <h2>
+                    I am a software engineer.{' '}
+                    <TreePalm className="inline w-10 h-10 mx-1" />
+                </h2>
+
                 <p>
                     I live,{' '}
                     <a href="https://www.linkedin.com/in/brianbehrens">work</a>{' '}

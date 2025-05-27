@@ -1,8 +1,8 @@
 ---
-title: 'The iPhone 3G S and the Camera.'
+title: The iPhone 3G S and the Camera.
 date: '2009-06-22'
-categories:
-    - 'miscellaneous'
+tags:
+  - miscellaneous
 ---
 
 [![](https://farm4.static.flickr.com/3388/3642665421_b2abcdf682_m.jpg)](https://www.flickr.com/photos/brianbehrens/3642665421/ 'photo sharing')  

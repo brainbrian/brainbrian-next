@@ -1,8 +1,8 @@
 ---
-title: "Watch the latest blockbuster before it's even in the theater!"
+title: Watch the latest blockbuster before it's even in the theater!
 date: '2007-08-03'
-categories:
-    - 'miscellaneous'
+tags:
+  - miscellaneous
 ---
 
 It's crazy what people get away with.

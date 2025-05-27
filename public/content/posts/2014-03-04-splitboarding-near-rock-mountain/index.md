@@ -1,10 +1,10 @@
 ---
-title: 'Splitboarding Near Rock Mountain'
+title: Splitboarding Near Rock Mountain
 date: '2014-03-04'
-categories:
-    - 'snowboarding'
-    - 'travel'
-    - 'video'
+tags:
+  - snowboarding
+  - travel
+  - video
 ---
 
 https://www.youtube.com/watch?v=u6RzUBepJDQ

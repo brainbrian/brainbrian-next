@@ -15,6 +15,8 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Calendar, ArrowLeft, Tag } from 'lucide-react';
 
 import { config } from '@/config';
 import { getPosts } from '@/utils/posts';
@@ -113,14 +115,16 @@ export default async function Page({ params }: PageProps) {
 
     const ResponsiveImage = (props: any) => {
         return (
-            <div className="my-4 w-full flex justify-center 2xl:my-8 2xl:max-w-[120%] 2xl:w-[120%] 2xl:-ml-[10%]">
+            <span className="my-4 w-full flex justify-center 2xl:my-8 2xl:max-w-[120%] 2xl:w-[120%] 2xl:-ml-[10%] block">
                 <Image
                     {...props}
+                    width={props.width || 1200}
+                    height={props.height || 800}
                     className="max-w-full h-auto object-contain rounded-md"
                     alt={props.alt}
                     src={props.src.replaceAll('./', `/content/posts/${slug}/`)}
                 />
-            </div>
+            </span>
         );
     };
 
@@ -136,17 +140,89 @@ export default async function Page({ params }: PageProps) {
             jsxs,
         });
 
-    const { title, dateFormatted, content } = postProps;
+    const { title, dateFormatted, content, tags, categories } = postProps;
 
     return (
         <main className="content">
             <div className="post-container">
                 <article className="post">
-                    <h1>{title}</h1>
-                    <h3>{dateFormatted}</h3>
+                    <header className="mb-8 md:mb-12 border-b border-gray-200/20 pb-6 md:pb-8">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-4 md:mb-6">
+                            {title}
+                        </h1>
+                        {dateFormatted && (
+                            <div className="flex items-center text-gray-400">
+                                <Calendar
+                                    className="w-4 h-4 mr-2 opacity-70"
+                                    aria-label="Published date"
+                                />
+                                <time
+                                    className="text-sm md:text-base font-medium tracking-wide"
+                                    dateTime={postProps.date}
+                                >
+                                    {dateFormatted}
+                                </time>
+                            </div>
+                        )}
+                    </header>
                     <div className="post-content">
                         {processor.processSync(content).result as any}
                     </div>
+                    <footer className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-gray-200/20">
+                        {/* Categories */}
+                        {categories && categories.length > 0 && (
+                            <div className="mb-4">
+                                <div className="flex items-center mb-2">
+                                    <span className="text-gray-400 text-sm font-medium">
+                                        Categories:
+                                    </span>
+                                </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {categories.map((category, index) => (
+                                        <span
+                                            key={index}
+                                            className="inline-block bg-blue-600/20 text-blue-300 text-xs font-medium px-3 py-1.5 rounded-full border border-blue-500/30"
+                                            title={category}
+                                        >
+                                            {category}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Tags */}
+                        {tags && tags.length > 0 && (
+                            <div className="mb-6">
+                                <div className="flex items-center flex-wrap gap-2">
+                                    <Tag
+                                        className="w-4 h-4 mr-2 text-gray-400 opacity-70"
+                                        aria-label="Tags"
+                                    />
+                                    {tags.map((tag, index) => (
+                                        <span
+                                            key={index}
+                                            className="inline-block bg-gray-600/80 text-gray-200 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-500/50"
+                                            title={tag}
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Navigation */}
+                        <div className="flex justify-between items-center">
+                            <Link
+                                href="/posts"
+                                className="inline-flex items-center text-gray-400 hover:text-primary transition-colors duration-200 text-sm font-medium"
+                            >
+                                <ArrowLeft className="w-4 h-4 mr-2" />
+                                Back to Posts
+                            </Link>
+                        </div>
+                    </footer>
                 </article>
             </div>
         </main>

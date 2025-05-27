@@ -1,8 +1,8 @@
 ---
-title: 'Olympic Peninsula Coast Backpacking Trip'
+title: Olympic Peninsula Coast Backpacking Trip
 date: '2011-07-05'
-categories:
-    - 'miscellaneous'
+tags:
+  - miscellaneous
 ---
 
 [![Olympic Peninsula Coast Backpacking Trip - July 2011](https://farm6.static.flickr.com/5040/5905295582_a3194362d1_s.jpg)](https://www.flickr.com/photos/brianbehrens/5905295582/in/set-72157627122501188/ 'Olympic Peninsula Coast Backpacking Trip - July 2011')[![Olympic Peninsula Coast Backpacking Trip - July 2011](https://farm7.static.flickr.com/6042/5904694927_7723a2d4a5_s.jpg)](https://www.flickr.com/photos/brianbehrens/5904694927/in/set-72157627122501188/ 'Olympic Peninsula Coast Backpacking Trip - July 2011')[![Olympic Peninsula Coast Backpacking Trip - July 2011](https://farm7.static.flickr.com/6041/5905255190_00bce039cc_s.jpg)](https://www.flickr.com/photos/brianbehrens/5905255190/in/set-72157627122501188/ 'Olympic Peninsula Coast Backpacking Trip - July 2011')[![Olympic Peninsula Coast Backpacking Trip - July 2011](https://farm6.static.flickr.com/5115/5904697095_f59f4b20ca_s.jpg)](https://www.flickr.com/photos/brianbehrens/5904697095/in/set-72157627122501188/ 'Olympic Peninsula Coast Backpacking Trip - July 2011')[![Olympic Peninsula Coast Backpacking Trip - July 2011](https://farm6.static.flickr.com/5072/5905257404_a29d51853a_s.jpg)](https://www.flickr.com/photos/brianbehrens/5905257404/in/set-72157627122501188/ 'Olympic Peninsula Coast Backpacking Trip - July 2011')[![Hanging in Neverland.](https://farm7.static.flickr.com/6051/5903339158_910c22248d_s.jpg)](https://www.flickr.com/photos/brianbehrens/5903339158/in/set-72157627122501188/ 'Hanging in Neverland.')  

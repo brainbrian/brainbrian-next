@@ -1,12 +1,11 @@
 ---
-title: 'Great Fall Day Surfing at Westport'
+title: Great Fall Day Surfing at Westport
 date: '2014-10-05'
-categories:
-    - 'personal'
-    - 'surfing'
-    - 'travel'
 tags:
-    - 'westport'
+  - personal
+  - surfing
+  - travel
+  - westport
 ---
 
 https://www.youtube.com/watch?v=wtUtVssV-Ac

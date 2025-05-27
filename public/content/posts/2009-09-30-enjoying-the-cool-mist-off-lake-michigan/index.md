@@ -1,8 +1,8 @@
 ---
-title: 'Enjoying the cool mist off Lake Michigan'
+title: Enjoying the cool mist off Lake Michigan
 date: '2009-09-30'
-categories:
-    - 'miscellaneous'
+tags:
+  - miscellaneous
 ---
 
 [![](https://farm3.static.flickr.com/2551/3956475908_d19edb13e9_m.jpg)](https://www.flickr.com/photos/brianbehrens/3956475908/ 'photo sharing')

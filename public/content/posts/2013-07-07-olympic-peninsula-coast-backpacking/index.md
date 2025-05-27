@@ -1,10 +1,10 @@
 ---
-title: 'Shi Shi 2013'
+title: Shi Shi 2013
 date: '2013-07-07'
-categories:
-    - 'personal'
-    - 'surfing'
-    - 'travel'
+tags:
+  - personal
+  - surfing
+  - travel
 ---
 
 We traveled to the coast to spend another 4th of July with friends drinking beers, exchanging stories, fashioning various beach tools and surfing.

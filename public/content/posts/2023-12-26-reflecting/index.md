@@ -1,13 +1,15 @@
 ---
-title: 'Reflections on a Heavy Year'
+title: Reflections on a Heavy Year
 date: '2023-12-26'
-categories:
-    - 'personal'
-    - 'writing'
 tags:
-    - 'life'
-    - 'surfing'
-excerpt: 'Reflecting on a year of aging and loss. It has been a tough year, but I am doing my best to stay positive and be an anchor for family and friends going through hard times.'
+  - personal
+  - writing
+  - life
+  - surfing
+excerpt: >-
+  Reflecting on a year of aging and loss. It has been a tough year, but I am
+  doing my best to stay positive and be an anchor for family and friends going
+  through hard times.
 ---
 
 2023 was a heavy year for my family and me. If 2023 has taught me anything, it is about the real look at our own mortality and how close this has affected me over the past year. Turning 40 is one thing, but when you have a year like mine, that door is opened wide, and you have a real look inside yourself to see if you're doing what truly makes you happy. I'm happy to say I am very grateful for my life, family, friends, and career. All are very special to me, and I realize not everyone has all of these things to balance out their lives.

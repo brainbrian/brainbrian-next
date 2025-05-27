@@ -1,11 +1,11 @@
 ---
-title: 'Installing JSLint in Sublime Text 3'
+title: Installing JSLint in Sublime Text 3
 date: '2014-05-15'
-categories:
-    - 'development'
-    - 'javascript'
-    - 'technology'
-    - 'work'
+tags:
+  - development
+  - javascript
+  - technology
+  - work
 ---
 
 I got a new computer today and needed a refresher on installing JSLint with Sublime Text. Linters are now run through the SublimeLinter package/framework. To install Package Control and SublimeLinter follow the links below.

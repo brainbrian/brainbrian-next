@@ -1,10 +1,10 @@
 ---
-title: 'CocoRosie and Owning a Record Player'
+title: CocoRosie and Owning a Record Player
 date: '2010-06-26'
-categories:
-    - 'miscellaneous'
-    - 'music'
-    - 'personal'
+tags:
+  - miscellaneous
+  - music
+  - personal
 ---
 
 I went to the Showbox Market for the first time tonight. You would think living in Seattle for over 2 years and being someone who frequents on average about 1 show a week that I would have seen a show at the Showbox Market by now. This was my first time there. The venue and sound was great. The bartender serving me was kind of an ass and seemed to hate his job, but hey?

@@ -1,22 +1,20 @@
 ---
-title: 'Splitboarding The Slot Couloir on Snoqualmie Mountain'
+title: Splitboarding The Slot Couloir on Snoqualmie Mountain
 date: '2014-03-29'
-categories:
-    - 'personal'
-    - 'snowboarding'
-    - 'travel'
-    - 'video'
 tags:
-    - 'alpental'
-    - 'backcountry'
-    - 'gopro'
-    - 'hero-3'
-    - 'slot-couloir'
-    - 'snoqualmie'
-    - 'snowboarding'
-    - 'splitboarding'
-    - 'the-slot-couloir'
-    - 'washington'
+  - personal
+  - snowboarding
+  - travel
+  - video
+  - alpental
+  - backcountry
+  - gopro
+  - hero-3
+  - slot-couloir
+  - snoqualmie
+  - splitboarding
+  - the-slot-couloir
+  - washington
 ---
 
 https://www.youtube.com/watch?v=7HHHjXwJxwk

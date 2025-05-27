@@ -1,13 +1,12 @@
 ---
-title: 'A Follow-up to the Adobe Flex 3 Pre-release Presentation'
+title: A Follow-up to the Adobe Flex 3 Pre-release Presentation
 date: '2008-02-10'
-categories:
-    - 'actionscript3'
-    - 'adobe'
-    - 'technology'
 tags:
-    - 'flex'
-    - 'user-group'
+  - actionscript3
+  - adobe
+  - technology
+  - flex
+  - user-group
 ---
 
 The flex tour came to Milwaukee yesterday. It was a pretty amazing demonstration about all the great new features in being released in Adobe Flex 3. I was pretty amazed with all the new features Kevin Hoyt presented at the meeting.

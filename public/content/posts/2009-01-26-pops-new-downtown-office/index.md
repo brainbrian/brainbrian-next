@@ -1,10 +1,9 @@
 ---
-title: "POP's New Downtown Office"
+title: POP's New Downtown Office
 date: '2009-01-26'
-categories:
-    - 'work'
 tags:
-    - 'pop'
+  - work
+  - pop
 ---
 
 I've been working at POP for over 6 months now. It's been an exciting experience. POP had been planning a move from Interbay to downtown before I began employment here. 1 week ago it happened. The space has been a great inspiration to us all.
