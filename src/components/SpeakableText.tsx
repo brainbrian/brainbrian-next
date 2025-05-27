@@ -45,7 +45,49 @@ export const SpeakableText: React.FC<SpeakableTextProps> = ({
 }) => {
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
     const [voiceConfigs, setVoiceConfigs] = useState<VoiceConfig[]>([]);
-    const [lastVoiceName, setLastVoiceName] = useState<string | null>(null);
+
+    const handleClick = useCallback(() => {
+        if (
+            typeof window !== 'undefined' &&
+            'speechSynthesis' in window &&
+            voices.length > 0
+        ) {
+            window.speechSynthesis.cancel();
+
+            const utterance = new SpeechSynthesisUtterance(text);
+
+            // Select a random voice and its corresponding config
+            const randomIndex = Math.floor(Math.random() * voices.length);
+            const selectedVoice = voices[randomIndex];
+            const selectedConfig = voiceConfigs[randomIndex];
+
+            // Use voice-specific settings or defaults
+            utterance.rate =
+                selectedConfig.rate ?? speechConfig.defaultRate ?? 0.8;
+            utterance.pitch =
+                selectedConfig.pitch ?? speechConfig.defaultPitch ?? 0.7;
+            utterance.volume = 1.0;
+
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+    }, [voices, voiceConfigs, text, speechConfig]);
+
+    const handleKeyDown = useCallback(
+        (e: React.KeyboardEvent) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleClick();
+            }
+        },
+        [handleClick],
+    );
+
+    const focusClasses = showFocusOutline
+        ? 'hover:text-primary focus-visible:text-primary'
+        : '';
 
     useEffect(() => {
         if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
@@ -97,68 +139,17 @@ export const SpeakableText: React.FC<SpeakableTextProps> = ({
         }
     }, [speechConfig]);
 
-    const handleClick = useCallback(() => {
-        if (
-            typeof window !== 'undefined' &&
-            'speechSynthesis' in window &&
-            voices.length > 0
-        ) {
-            window.speechSynthesis.cancel();
-
-            const utterance = new SpeechSynthesisUtterance(text);
-
-            // Select a random voice and its corresponding config
-            const randomIndex = Math.floor(Math.random() * voices.length);
-            const selectedVoice = voices[randomIndex];
-            const selectedConfig = voiceConfigs[randomIndex];
-
-            // Use voice-specific settings or defaults
-            utterance.rate =
-                selectedConfig.rate ?? speechConfig.defaultRate ?? 0.8;
-            utterance.pitch =
-                selectedConfig.pitch ?? speechConfig.defaultPitch ?? 0.7;
-            utterance.volume = 1.0;
-
-            if (selectedVoice) {
-                utterance.voice = selectedVoice;
-                setLastVoiceName(
-                    `${selectedVoice.name} (${selectedVoice.lang}) - Rate: ${utterance.rate}, Pitch: ${utterance.pitch}`,
-                );
-                window.speechSynthesis.speak(utterance);
-            }
-        }
-    }, [voices, voiceConfigs, text, speechConfig]);
-
-    const handleKeyDown = useCallback(
-        (e: React.KeyboardEvent) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                handleClick();
-            }
-        },
-        [handleClick],
-    );
-
-    const focusClasses = showFocusOutline
-        ? 'hover:text-primary focus-visible:text-primary'
-        : '';
-
     return (
         <span
-            className={`${className} cursor-pointer outline-none ${focusClasses}`}
-            onClick={handleClick}
-            title={
-                lastVoiceName
-                    ? `Last voice: ${lastVoiceName}. Click to hear with a random voice`
-                    : 'Click to hear with a random voice'
-            }
-            tabIndex={tabIndex}
             aria-label={
                 ariaLabel ||
                 `Speakable heading: ${text}. Press Enter or Space to hear this text spoken aloud.`
             }
-            role="button"
+            className={`${className} cursor-pointer outline-none ${focusClasses}`}
+            onClick={handleClick}
             onKeyDown={handleKeyDown}
+            role="button"
+            tabIndex={tabIndex}
         >
             {text}
         </span>
