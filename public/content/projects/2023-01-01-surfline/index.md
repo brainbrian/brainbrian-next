@@ -5,21 +5,21 @@ image: './surfline.webp'
 url: 'https://www.surfline.com'
 tags:
     [
-        'auth0',
-        'aws',
-        'css',
-        'hapi',
         'html',
+        'css',
         'javascript',
-        'json',
-        'nodejs',
-        'postgres',
-        'react',
-        'responsive design',
-        'snowflake',
-        'technical lead',
         'typescript',
-        'webpack',
+        'react',
+        'nextjs',
+        'nodejs',
+        'aws',
+        'ai',
+        'responsive design',
+        'accessibility',
+        'mongo',
+        'postgres',
+        'python',
+        'technical lead',
     ]
 excerpt: "Since April 2021, I've been a Staff Software Engineer at Surfline, where I work across our web applications stack. My primary focus is on the UI layer, using technologies like TypeScript, React, and Next.js. I also contribute to building and maintaining our APIs and databases, and we frequently work with AWS."
 ---
