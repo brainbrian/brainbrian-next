@@ -2,6 +2,7 @@ export { BlueSkyFeed } from './BlueSkyFeed';
 export { BlueSkyProfile } from './BlueSkyProfile';
 export { Footer } from './Footer';
 export { Header } from './Header';
+export { HeaderSection } from './HeaderSection';
 export { Loader } from './Loader';
 export { Pagination } from './Pagination';
 export { Panel } from './Panel';

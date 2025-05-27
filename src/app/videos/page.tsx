@@ -8,7 +8,7 @@ const Page = async () => {
 
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_BASE_URL}/api/videos?size=20`,
+            `${process.env.NEXT_PUBLIC_BASE_URL}/api/videos?size=21`,
         );
         if (!response.ok) {
             throw new Error('Failed to fetch videos');

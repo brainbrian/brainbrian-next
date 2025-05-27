@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
+import { HeaderSection } from '@/components';
 
 interface BlueSkyAuthor {
     did: string;
@@ -133,7 +134,7 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = async ({
                             target="_blank"
                             rel="noopener noreferrer"
                             key={post.cid || `post-${postId}`}
-                            className="block bg-[#383838] p-3 rounded-lg hover:bg-[#404040] transition-colors no-underline group"
+                            className="block bg-[#383838] p-3 rounded-lg hover:bg-[#404040] focus-visible:bg-[#404040] focus-visible:outline-none transition-colors no-underline focus-visible:no-underline group"
                         >
                             <div>
                                 <p className="text-sm text-text mb-1 line-clamp-3">
@@ -274,16 +275,13 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = async ({
 
     return (
         <section className={className}>
-            <a
+            <HeaderSection
+                title="Social"
+                component="h2"
                 href={`https://bsky.app/profile/${actor}`}
-                className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase hover:no-underline hover:text-primary group rounded-lg"
                 target="_blank"
                 rel="noopener noreferrer"
-            >
-                <h2 className="text-text text-xl sm:text-2xl font-bold group-hover:text-primary">
-                    Social
-                </h2>
-            </a>
+            />
             <div className="mx-auto">
                 {error ? renderError() : renderFeed()}
             </div>

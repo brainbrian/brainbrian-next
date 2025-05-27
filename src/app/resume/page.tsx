@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NextPage, Metadata } from 'next';
 import Image from 'next/image';
-import { ProfileHeader } from '@/components';
+import { HeaderSection, ProfileHeader } from '@/components';
 
 const Page: NextPage = () => (
     <main className="content">
@@ -53,9 +53,7 @@ const Page: NextPage = () => (
                 </div>
             </div>
         </ProfileHeader>
-        <h2 className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase rounded-lg text-xl sm:text-2xl">
-            Experience
-        </h2>
+        <HeaderSection title="Experience" component="h2" />
         <ul className="nostyle-list limit-text-width">
             <li>
                 <h3>Senior Staff Software Engineer, Surfline</h3>
@@ -215,9 +213,7 @@ const Page: NextPage = () => (
                 </p>
             </li>
         </ul>
-        <h2 className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase rounded-lg text-xl sm:text-2xl">
-            Awards
-        </h2>
+        <HeaderSection title="Awards" component="h2" />
         <ul className="nostyle-list limit-text-width">
             <li>
                 <h3>Target – Best of the Bullseye: Collaboration</h3>
@@ -252,9 +248,7 @@ const Page: NextPage = () => (
                 </p>
             </li>
         </ul>
-        <h2 className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase rounded-lg text-xl sm:text-2xl">
-            Education
-        </h2>
+        <HeaderSection title="Education" component="h2" />
         <ul className="nostyle-list limit-text-width">
             <li>
                 <h3>Milwaukee Area Technical College</h3>
@@ -267,9 +261,7 @@ const Page: NextPage = () => (
                 <p>Associates Degree in Visual Communications</p>
             </li>
         </ul>
-        <h2 className="bg-background text-text block font-headline font-bold mb-4 p-4 uppercase rounded-lg text-xl sm:text-2xl">
-            Skills
-        </h2>
+        <HeaderSection title="Skills" component="h2" />
         <div className="limit-text-width">
             <p>
                 HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js,

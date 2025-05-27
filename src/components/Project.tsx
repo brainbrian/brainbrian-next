@@ -52,7 +52,12 @@ export const Project: React.FC<ProjectProps> = ({
 
                     {/* Title */}
                     <h3 className="text-2xl font-bold text-slate-800 mb-3 leading-tight">
-                        {title}
+                        <Link
+                            href={slug}
+                            className="text-slate-800 hover:text-[#23a1ff] focus-visible:text-[#23a1ff] focus:outline-none transition-colors duration-200 no-underline"
+                        >
+                            {title}
+                        </Link>
                     </h3>
 
                     {/* Description */}
@@ -91,7 +96,7 @@ export const Project: React.FC<ProjectProps> = ({
                     <div>
                         <Link
                             href={slug}
-                            className="inline-flex items-center gap-2 bg-[#262626] text-white px-5 py-2.5 rounded-lg hover:bg-[#23a1ff] transition-all duration-200 no-underline font-medium group"
+                            className="inline-flex items-center gap-2 bg-[#262626] text-white px-5 py-2.5 rounded-lg hover:bg-[#23a1ff] focus-visible:bg-[#23a1ff] focus:outline-none transition-all duration-200 no-underline font-medium group"
                         >
                             View Project
                             <svg
