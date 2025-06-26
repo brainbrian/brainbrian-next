@@ -66,7 +66,7 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = async ({
 
     try {
         const response = await fetch(
-            `https://api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${actor}&limit=${postsToShow}`,
+            `https://api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${actor}&limit=${postsToShow}&filter=posts`,
             {
                 next: { revalidate: 300 }, // Cache for 5 minutes
             },
