@@ -12,8 +12,22 @@ const nextConfig: NextConfig = {
                 hostname: 'cdn.bsky.app',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'video.bsky.app',
+                pathname: '/**',
+            },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'brainbrian.com',
+                pathname: '/**',
+            },
         ],
-        domains: ['localhost', 'brainbrian.com'],
     },
 };
 

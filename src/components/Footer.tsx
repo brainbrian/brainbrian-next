@@ -1,8 +1,7 @@
 'use server';
 
 import React from 'react';
-import { BlueSkyFeed } from '@/components/BlueSkyFeed';
-import { PostsFeed } from '@/components/PostsFeed';
+import { BlueSkyFeed, PostsFeed } from '@/components';
 import type { Post } from '@/types';
 import { getPosts } from '@/utils/posts';
 
@@ -22,7 +21,7 @@ export const Footer: React.FC = async () => {
             <div className="max-w-screen-2xl mx-auto">
                 <aside className="max-w-(--breakpoint-2xl) mx-auto px-4 py-8 sm:px-6 lg:px-8 sm:flex">
                     <PostsFeed posts={recentPosts} />
-                    <BlueSkyFeed actor="brainbrian.com" postsToShow={4} />
+                    <BlueSkyFeed actor="brainbrian.com" postsToShow={3} />
                 </aside>
                 <footer className="max-w-(--breakpoint-2xl) mx-auto px-4 py-6 sm:px-6 lg:px-8 text-center sm:text-left text-xs sm:text-sm border-t-2 border-primary">
                     &copy; {new Date().getFullYear()} Brain Brian (Brian

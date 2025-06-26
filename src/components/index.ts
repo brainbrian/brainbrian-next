@@ -1,4 +1,5 @@
 export { BlueSkyFeed } from './BlueSkyFeed';
+export { BlueSkyImage } from './BlueSkyImage';
 export { BlueSkyProfile } from './BlueSkyProfile';
 export { Footer } from './Footer';
 export { Header } from './Header';
@@ -7,6 +8,7 @@ export { Loader } from './Loader';
 export { Pagination } from './Pagination';
 export { Panel } from './Panel';
 export { PostLink } from './PostLink';
+export { PostsFeed } from './PostsFeed';
 export { ProfileHeader } from './ProfileHeader';
 export { Project } from './Project';
 export { ProjectsRecent } from './ProjectsRecent';
