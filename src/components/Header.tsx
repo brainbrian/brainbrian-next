@@ -36,6 +36,7 @@ const AnimatedText: React.FC<{ text: string }> = ({ text }) => {
                         style={{
                             transitionDelay: `${index * 30}ms`,
                         }}
+                        aria-hidden="true"
                     >
                         {letter}
                     </span>
