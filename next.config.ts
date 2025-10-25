@@ -2,6 +2,10 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
     /* config options here */
+    
+    // Enable React Compiler for automatic memoization (stable in Next.js 16)
+    reactCompiler: true,
+    
     sassOptions: {
         silenceDeprecations: ['legacy-js-api'],
     },
