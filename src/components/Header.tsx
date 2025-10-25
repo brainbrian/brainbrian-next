@@ -14,6 +14,37 @@ const navItems = [
     { name: 'Gallery', href: 'https://gallery.brainbrian.com' },
 ];
 
+const AnimatedText: React.FC<{ text: string }> = ({ text }) => {
+    return (
+        <>
+            {text.split('').map((letter, index) => (
+                <span
+                    key={index}
+                    className="inline-block overflow-hidden relative"
+                    style={{ lineHeight: '1em' }}
+                >
+                    <span
+                        className="letter-top inline-block transition-transform duration-300 ease-out"
+                        style={{
+                            transitionDelay: `${index * 30}ms`,
+                        }}
+                    >
+                        {letter}
+                    </span>
+                    <span
+                        className="letter-bottom inline-block transition-transform duration-300 ease-out absolute left-0 top-0 translate-y-full"
+                        style={{
+                            transitionDelay: `${index * 30}ms`,
+                        }}
+                    >
+                        {letter}
+                    </span>
+                </span>
+            ))}
+        </>
+    );
+};
+
 export const Header: React.FC = () => {
     const pathname = usePathname();
 
@@ -37,7 +68,7 @@ export const Header: React.FC = () => {
                             <li className="relative" key={index}>
                                 <Link
                                     className={cx(
-                                        "flex items-center justify-center flex-1 text-text font-headline font-semibold text-[0.7rem] h-[3rem] px-2 uppercase no-underline transition-colors duration-200 hover:bg-surface hover:no-underline focus-visible:bg-surface focus-visible:no-underline focus:outline-hidden relative after:content-[''] after:absolute after:bg-surface after:bottom-[-1rem] after:h-[1rem] after:left-0 after:w-full after:opacity-0 after:transition-opacity after:duration-200 after:z-2 sm:text-[0.75rem] sm:px-3 md:text-[1.125rem] md:h-[5rem] md:px-[1rem]",
+                                        "group flex items-center justify-center flex-1 text-text font-headline font-semibold text-[0.7rem] h-[3rem] px-2 uppercase no-underline transition-colors duration-200 hover:bg-surface hover:no-underline focus-visible:bg-surface focus-visible:no-underline focus:outline-hidden relative after:content-[''] after:absolute after:bg-surface after:bottom-[-1rem] after:h-[1rem] after:left-0 after:w-full after:opacity-0 after:transition-opacity after:duration-200 after:z-2 sm:text-[0.75rem] sm:px-3 md:text-[1.125rem] md:h-[5rem] md:px-[1rem] [&:hover_.letter-top]:translate-y-[-100%] [&:focus-visible_.letter-top]:translate-y-[-100%] [&:hover_.letter-bottom]:translate-y-0 [&:focus-visible_.letter-bottom]:translate-y-0",
                                         {
                                             'bg-surface after:opacity-100 after:animate-nav-animation':
                                                 pathname.includes(href),
@@ -45,7 +76,7 @@ export const Header: React.FC = () => {
                                     )}
                                     href={href}
                                 >
-                                    {name}
+                                    <AnimatedText text={name} />
                                 </Link>
                             </li>
                         ))}
