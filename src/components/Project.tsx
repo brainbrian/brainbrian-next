@@ -34,6 +34,7 @@ export const Project: React.FC<ProjectProps> = ({
                         src={imageUrl}
                         alt={`${title} project screenshot`}
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />

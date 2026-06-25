@@ -142,6 +142,7 @@ export const BlueSkyProfile: React.FC<BlueSkyProfileProps> = ({
                         src={profile.banner}
                         alt="Profile banner"
                         fill
+                        sizes="(min-width: 1024px) 272px, 100vw"
                         className="object-cover"
                     />
                 </div>
@@ -158,6 +159,7 @@ export const BlueSkyProfile: React.FC<BlueSkyProfileProps> = ({
                                     src={profile.avatar}
                                     alt={profile.displayName || profile.handle}
                                     fill
+                                    sizes="80px"
                                     className="object-cover"
                                 />
                             </div>

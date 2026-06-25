@@ -143,6 +143,7 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = async ({
                         src={embed.thumb}
                         alt=""
                         fill
+                        sizes="64px"
                         className="object-cover"
                     />
                 </div>
