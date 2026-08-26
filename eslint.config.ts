@@ -1,19 +1,21 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { FlatCompat } from '@eslint/eslintrc';
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
+import nextTypescript from 'eslint-config-next/typescript';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import type { Linter } from 'eslint';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-});
-
 const eslintConfig: Linter.FlatConfig[] = [
-    ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
+    ...(nextCoreWebVitals as Linter.FlatConfig[]),
+    ...(nextTypescript as Linter.FlatConfig[]),
+    {
+        // eslint-plugin-react's auto-detection crashes under ESLint 10's flat config
+        // context (no more context.getFilename()); pin the version to skip it.
+        settings: {
+            react: {
+                version: '19.2.8',
+            },
+        },
+    },
     {
         plugins: {
             prettier: eslintPluginPrettier,
