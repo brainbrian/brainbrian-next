@@ -1,4 +1,4 @@
 interface Window {
-    gapi?: any;
-    onGoogleLoad?: any;
+    gapi?: unknown;
+    onGoogleLoad?: () => void;
 }
