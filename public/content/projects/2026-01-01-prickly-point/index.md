@@ -22,7 +22,7 @@ tags:
 excerpt: "Prickly Point is my personal cacti and succulent log, launched in January 2026. I designed and built the entire site, and I am the sole grower, collector and photographer behind every plant on it. It is a Next.js and Supabase application with taxonomy records, habitat field data, an interactive map, NFC tags on my pots, and photo galleries tracking each plant's growth over time."
 ---
 
-[Prickly Point](https://pricklypoint.com) is the personal log for my cacti and succulent collection. I launched it in January of 2026 and I am the only person behind it — I designed and built the site, I grow and collect the plants, and every photo on it is mine.
+[Prickly Point](https://pricklypoint.com) is the personal log for my cacti and succulent collection. I launched it in January of 2026 and I am the only person behind it: I designed and built the site, I grow and collect the plants, and every photo on it is mine.
 
 ![Coastal cacti at dusk](./prickly-point.webp)
 
