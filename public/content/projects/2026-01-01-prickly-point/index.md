@@ -24,7 +24,7 @@ excerpt: "Prickly Point is my personal cacti and succulent log, launched in Janu
 
 [Prickly Point](https://pricklypoint.com) is the personal log for my cacti and succulent collection. I launched it in January of 2026 and I am the only person behind it: I designed and built the site, I grow and collect the plants, and every photo on it is mine.
 
-![Coastal cacti at dusk](./prickly-point.webp)
+![The Prickly Point homepage, showing the collection browsable by genus and growing season](./prickly-point.webp)
 
 My interest in these plants started back in 2022 when the owner of Venice Plants gifted me a few starter succulents. Curiosity turned into an obsession fairly quickly. As I got deeper into drought-tolerant landscaping the collection grew in both directions: in-ground plantings around the yard and an ever-expanding shelf of potted succulents. I picked up a love of custom pottery along the way and now make my own cement pots from time to time. Prickly Point is based in Los Angeles, California, in [USDA hardiness zone 10b](https://planthardiness.ars.usda.gov/).
 
