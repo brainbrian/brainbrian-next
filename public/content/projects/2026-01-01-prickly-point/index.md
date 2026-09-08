@@ -32,13 +32,13 @@ My interest in these plants started back in 2022 when the owner of Venice Plants
 
 The collection outgrew what I could keep in my head, and a spreadsheet was not going to cut it. I wanted a real record of what I own, where it came from, and how it has changed. Prickly Point is built with Next.js and React using TypeScript and Tailwind CSS, with Supabase handling the Postgres database, authentication and photo storage. It is deployed on Vercel.
 
-Each plant gets a record with full taxonomy — genus, species, and the affinis, subspecies, variety, cultivar and form qualifiers that actually matter when you are tracking a specific plant. Records also hold the vendor, potter, acquisition and sowing dates, whether the plant is variegated, and whether it is a winter, summer or opportunistic grower. The collection view lets me filter and search across all of it, which is genuinely useful when I am trying to remember whether I already own something before buying it again.
+Each plant gets a record with full taxonomy: genus, species, and the affinis, subspecies, variety, cultivar and form qualifiers that actually matter when you are tracking a specific plant. Records also hold the vendor, potter, acquisition and sowing dates, whether the plant is variegated, and whether it is a winter, summer or opportunistic grower. The collection view lets me filter and search across all of it, which is genuinely useful when I am trying to remember whether I already own something before buying it again.
 
 ## Field numbers and habitat data
 
 The part I am most happy with is the field number lookup. Many collected cacti carry a field number that identifies the original habitat collection, and I sync the [Cactus Field Number Database](https://rarecactus.com/field-numbers/) into Supabase with a script that rebuilds the table from its published CSV export. When a plant in my collection has a field number, its detail page automatically pulls in who collected it, the country and locality, the elevation and the collection date.
 
-That data includes habitat coordinates, so the site also has a map view built with Leaflet on a satellite basemap with marker clustering. I deliberately keep the map coarse — it shows a general region for educational purposes rather than precise locations. Cactus poaching is a real problem, and I would rather the map be less impressive than be a treasure map for someone.
+That data includes habitat coordinates, so the site also has a map view built with Leaflet on a satellite basemap with marker clustering. I deliberately keep the map coarse: it shows a general region for educational purposes rather than precise locations. Cactus poaching is a real problem, and I would rather the map be less impressive than be a treasure map for someone.
 
 ## Photos, tags and the greenhouse workflow
 
@@ -52,4 +52,4 @@ Prickly Point has a small shop page for the "Seed Grown. Never Grafted." embroid
 
 ![Prickly Point "Seed Grown. Never Grafted." embroidered t-shirt](./prickly-point-tee.webp)
 
-The site also collects the reference material I lean on — field number databases, taxonomy indexes, societies and seed sources — plus my current potting mix and the tools I actually use. You can follow the collection on [Instagram](https://www.instagram.com/pricklypointsucculents) or find me on [Palmstreet](https://palmstreet.app/u/pricklypoint).
+The site also collects the reference material I lean on (field number databases, taxonomy indexes, societies and seed sources), plus my current potting mix and the tools I actually use. You can follow the collection on [Instagram](https://www.instagram.com/pricklypointsucculents) or find me on [Palmstreet](https://palmstreet.app/u/pricklypoint).
