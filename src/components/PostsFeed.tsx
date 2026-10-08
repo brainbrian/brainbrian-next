@@ -16,12 +16,12 @@ export const PostsFeed: React.FC<PostsFeedProps> = ({ posts }) => {
                 component="h2"
                 href="/posts"
             />
-            <ul className="mt-4 space-y-2 list-none">
+            <ul className="m-0 p-0 space-y-3 list-none">
                 {posts?.map(({ date, slug, title }) => (
                     <li key={slug}>
                         <Link
                             href={`/posts/${slug}`}
-                            className="block bg-[#383838] hover:bg-[#404040] focus-visible:bg-[#404040] focus-visible:outline-none transition-colors hover:no-underline focus-visible:no-underline rounded-lg p-3 group no-underline"
+                            className="card card-sm card-interactive block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary hover:no-underline focus-visible:no-underline px-4 py-3.5 group no-underline"
                         >
                             <div className="flex items-start gap-3">
                                 <div
@@ -29,10 +29,10 @@ export const PostsFeed: React.FC<PostsFeedProps> = ({ posts }) => {
                                     aria-hidden="true"
                                 />
                                 <div className="flex-1 min-w-0">
-                                    <h3 className="text-text group-hover:text-primary group-focus-visible:text-primary transition-colors text-sm font-medium leading-tight mb-1">
+                                    <h3 className="text-text group-hover:text-primary group-focus-visible:text-primary transition-colors text-[0.9375rem] font-semibold leading-snug mb-1">
                                         {title}
                                     </h3>
-                                    <span className="text-xs text-gray-400">
+                                    <span className="text-xs text-[var(--text-subtle)]">
                                         {format(
                                             new Date(date),
                                             'MMMM dd, yyyy',

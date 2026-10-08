@@ -128,7 +128,7 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = async ({
     }
 
     const renderError = () => (
-        <div className="text-red-400 p-4 bg-[#383838] rounded-lg text-sm">
+        <div className="card card-sm text-red-400 p-4 text-sm">
             Failed to load BlueSky feed. {error}
         </div>
     );
@@ -193,7 +193,7 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = async ({
     );
 
     const renderQuotedPost = (embed: NonNullable<BlueSkyEmbed['record']>) => (
-        <div className="mt-3 mb-3 border border-gray-700 rounded-lg p-3 bg-[#2a2a2a]">
+        <div className="mt-3 mb-3 border border-gray-700 rounded-lg p-3 bg-black/20">
             <div className="text-xs text-gray-400 mb-1">
                 Quoted post by @{embed.author?.handle || 'unknown'}
             </div>
@@ -235,14 +235,14 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = async ({
     const renderFeed = () => {
         if (!feed || feed.length === 0) {
             return (
-                <div className="text-gray-400 p-3 bg-[#383838] rounded-lg text-xs">
+                <div className="card card-sm text-gray-400 p-4 text-xs">
                     No posts found.
                 </div>
             );
         }
 
         return (
-            <div className="space-y-2">
+            <div className="space-y-3">
                 {feed.map((item) => {
                     if (
                         !item?.post?.author ||
@@ -263,7 +263,7 @@ export const BlueSkyFeed: React.FC<BlueSkyFeedProps> = async ({
                             target="_blank"
                             rel="noopener noreferrer"
                             key={post.cid || `post-${postId}`}
-                            className="block bg-[#383838] p-3 rounded-lg hover:bg-[#404040] focus-visible:bg-[#404040] focus-visible:outline-none transition-colors no-underline group"
+                            className="card card-sm card-interactive block px-4 py-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary no-underline hover:no-underline group"
                         >
                             <div>
                                 <p className="text-sm text-text mb-1 line-clamp-3">

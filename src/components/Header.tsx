@@ -50,10 +50,10 @@ export const Header: React.FC = () => {
     const pathname = usePathname();
 
     return (
-        <header className="flex flex-row items-center bg-background border-0 border-solid border-primary border-b-[1rem] relative lg:fixed lg:left-0 lg:top-0 lg:w-full lg:z-10">
+        <header className="flex flex-row items-center bg-background/90 backdrop-blur-xl backdrop-saturate-150 shadow-[0_12px_32px_-12px_rgba(0,0,0,0.6)] border-0 border-solid border-primary border-b-[1rem] relative lg:fixed lg:left-0 lg:top-0 lg:w-full lg:z-10">
             <div className="flex flex-col items-left w-full mx-auto max-w-screen-2xl md:flex-row md:items-center md:h-[5rem]">
                 <Link
-                    className="group flex items-center justify-center flex-none bg-primary text-text font-headline font-bold text-medium h-[3rem] w-full uppercase transition-colors duration-200 hover:bg-surface hover:text-primary focus-visible:bg-surface focus-visible:text-primary focus:outline-none md:h-[5rem] md:w-[13rem] lg:text-[2rem] lg:w-[15rem] no-underline [&:hover_.letter-top]:translate-y-[-100%] [&:focus-visible_.letter-top]:translate-y-[-100%] [&:hover_.letter-bottom]:translate-y-0 [&:focus-visible_.letter-bottom]:translate-y-0"
+                    className="group flex items-center justify-center flex-none bg-gradient-to-br from-[#43b2ff] via-primary to-[#0b7fe0] shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] text-text font-headline font-bold text-medium h-[3rem] w-full uppercase transition-colors duration-200 hover:from-surface hover:via-surface hover:to-surface hover:text-primary focus-visible:from-surface focus-visible:via-surface focus-visible:to-surface focus-visible:text-primary focus:outline-none md:h-[5rem] md:w-[13rem] lg:text-[2rem] lg:w-[15rem] no-underline [&:hover_.letter-top]:translate-y-[-100%] [&:focus-visible_.letter-top]:translate-y-[-100%] [&:hover_.letter-bottom]:translate-y-0 [&:focus-visible_.letter-bottom]:translate-y-0"
                     href="/"
                 >
                     <AnimatedText text="Brain Brian" />
@@ -64,7 +64,7 @@ export const Header: React.FC = () => {
                     Los Angeles, California.
                 </p>
                 <nav className="w-full">
-                    <ul className="flex justify-center bg-background flex-1 list-none m-0 p-0 md:bg-transparent md:float-right">
+                    <ul className="flex justify-center bg-background/60 flex-1 list-none m-0 p-0 md:bg-transparent md:float-right">
                         {navItems.map(({ name, href }, index) => (
                             <li className="relative" key={index}>
                                 <Link

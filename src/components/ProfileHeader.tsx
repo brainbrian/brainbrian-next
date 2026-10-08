@@ -37,7 +37,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({ children }) => {
                 </p>
                 <div className="flex flex-col sm:flex-row sm:gap-6 lg:flex-col lg:gap-0 mb-8">
                     <div
-                        className="rounded-[0.7rem] overflow-hidden relative w-full max-w-[350px] mb-4 group"
+                        className="card rounded-2xl overflow-hidden relative w-full max-w-[350px] mb-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                         tabIndex={0}
                     >
                         <Image

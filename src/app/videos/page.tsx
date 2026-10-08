@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import React from 'react';
-import { VideoList } from '@/components';
+import { HeaderSection, VideoList } from '@/components';
 
 const Page = async () => {
     let videos = [];
@@ -22,7 +22,8 @@ const Page = async () => {
         return <main className="content">An error occurred: {error}</main>;
 
     return (
-        <main className="content">
+        <main className="content md:my-12">
+            <HeaderSection title="Videos" component="h1" />
             <VideoList isLoading={false} videos={videos} />
         </main>
     );

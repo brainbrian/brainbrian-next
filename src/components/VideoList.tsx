@@ -39,9 +39,9 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
                     >
                         <a
                             href={`https://www.youtube.com/watch?v=${video?.snippet?.resourceId?.videoId}`}
-                            className="flex flex-col hover:no-underline focus-visible:no-underline focus-visible:outline-none group rounded-lg overflow-hidden h-full"
+                            className="card card-interactive flex flex-col hover:no-underline focus-visible:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary group overflow-hidden h-full"
                         >
-                            <div className="overflow-hidden pb-[56.25%] relative w-full rounded-t-lg flex-shrink-0">
+                            <div className="overflow-hidden pb-[56.25%] relative w-full flex-shrink-0">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={
@@ -50,15 +50,15 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
                                         video?.snippet?.thumbnails?.high?.url
                                     }
                                     alt={`Thumbnail of video ${video.id}`}
-                                    className="absolute top-1/2 -translate-y-1/2 w-full"
+                                    className="absolute top-1/2 -translate-y-1/2 w-full transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                                 />
                             </div>
-                            <div className="bg-[#383838] group-hover:bg-[#404040] group-focus-visible:bg-[#404040] transition-colors p-4 rounded-b-lg flex-1">
-                                <h3 className="text-text group-hover:text-primary group-focus-visible:text-primary transition-colors text-sm font-medium leading-tight mb-1 m-0">
+                            <div className="p-4 sm:p-5 flex-1">
+                                <h3 className="text-text group-hover:text-primary group-focus-visible:text-primary transition-colors text-[0.9375rem] font-semibold leading-snug mb-1 m-0">
                                     {video?.snippet?.title}
                                 </h3>
                                 {video?.snippet?.publishedAt && (
-                                    <span className="text-xs text-gray-400">
+                                    <span className="text-xs text-[var(--text-subtle)]">
                                         {format(
                                             new Date(video.snippet.publishedAt),
                                             'MMMM dd, yyyy',
@@ -70,14 +70,15 @@ export const VideoList: React.FC<VideoListProps> = ({ videos, isLoading }) => {
                     </li>
                 ))}
             </ul>
-            <div className="text-center mt-8">
+            <div className="text-center mt-10 md:mt-12">
                 <a
                     href="https://www.youtube.com/c/BrianBehrens/videos"
-                    className="inline-flex items-center gap-2 bg-[#262626] text-white px-5 py-2.5 rounded-lg hover:bg-[#23a1ff] focus-visible:bg-[#23a1ff] focus-visible:outline-none transition-all duration-200 no-underline font-medium group"
+                    className="btn btn-primary"
                 >
                     View more on YouTube
                     <svg
-                        className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200"
+                        className="w-4 h-4"
+                        aria-hidden="true"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

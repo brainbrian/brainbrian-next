@@ -146,8 +146,8 @@ export default async function Page({ params }: PageProps) {
         <main className="content">
             <div className="post-container">
                 <article className="post">
-                    <header className="mb-8 md:mb-12 border-b border-gray-200/20 pb-6 md:pb-8">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-4 md:mb-6">
+                    <header className="mb-8 md:mb-12 border-b border-white/10 pb-6 md:pb-8">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-primary leading-tight mb-4 md:mb-6">
                             {title}
                         </h1>
                         {dateFormatted && (
@@ -168,7 +168,7 @@ export default async function Page({ params }: PageProps) {
                     <div className="post-content">
                         {processor.processSync(content).result as any}
                     </div>
-                    <footer className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-gray-200/20">
+                    <footer className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/10">
                         {/* Categories */}
                         {categories && categories.length > 0 && (
                             <div className="mb-4">
@@ -181,7 +181,7 @@ export default async function Page({ params }: PageProps) {
                                     {categories.map((category, index) => (
                                         <span
                                             key={index}
-                                            className="inline-block bg-blue-600/20 text-blue-300 text-xs font-medium px-3 py-1.5 rounded-full border border-blue-500/30"
+                                            className="chip chip-accent"
                                             title={category}
                                         >
                                             {category}
@@ -202,7 +202,7 @@ export default async function Page({ params }: PageProps) {
                                     {tags.map((tag, index) => (
                                         <span
                                             key={index}
-                                            className="inline-block bg-gray-600/80 text-gray-200 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-500/50"
+                                            className="chip"
                                             title={tag}
                                         >
                                             {tag}
@@ -216,9 +216,12 @@ export default async function Page({ params }: PageProps) {
                         <div className="flex justify-between items-center">
                             <Link
                                 href="/posts"
-                                className="inline-flex items-center text-gray-400 hover:text-primary transition-colors duration-200 text-sm font-medium"
+                                className="btn btn-ghost btn-sm btn-back"
                             >
-                                <ArrowLeft className="w-4 h-4 mr-2" />
+                                <ArrowLeft
+                                    className="w-4 h-4"
+                                    aria-hidden="true"
+                                />
                                 Back to Posts
                             </Link>
                         </div>

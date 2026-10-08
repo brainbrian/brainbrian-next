@@ -1,7 +1,7 @@
 import type { Metadata, NextPage } from 'next';
 import React from 'react';
 
-import { Pagination, Project } from '@/components';
+import { HeaderSection, Pagination, Project } from '@/components';
 import type { Project as ProjectType } from '@/types';
 import { getProjects } from '@/utils/projects';
 
@@ -49,7 +49,8 @@ const ProjectsPage: NextPage<ProjectsPageProps> = async ({ searchParams }) => {
     if (projectsError)
         return <p>An error occurred: {projectsError.toString()}</p>;
     return (
-        <main className="mx-auto my-8 max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+        <main className="mx-auto my-8 max-w-screen-2xl px-4 sm:px-6 md:my-12 lg:px-8">
+            <HeaderSection title="Projects" component="h1" />
             {projectsComponents}
             <Pagination
                 basePath={'/projects'}

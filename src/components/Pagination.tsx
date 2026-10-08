@@ -74,13 +74,13 @@ export const Pagination: React.FC<PaginationProps> = ({
             className="flex justify-center items-center my-12"
             aria-label="Pagination Navigation"
         >
-            <div className="flex items-center gap-1 bg-white dark:bg-[#262626] rounded-lg shadow-sm border border-gray-200 dark:border-[#262626] p-1">
+            <div className="glass flex items-center gap-1 rounded-full p-1.5">
                 {/* Previous Button */}
                 {!isFirst && (
                     <Link
                         href={prevPage}
                         rel="prev"
-                        className="flex items-center justify-center w-10 h-10 rounded-md text-[#262626] dark:text-gray-400 hover:bg-primary hover:text-white focus-visible:bg-primary focus-visible:text-white transition-all duration-200 ease-in-out group"
+                        className="flex items-center justify-center w-10 h-10 rounded-full text-[var(--text-muted)] hover:bg-primary hover:text-white focus-visible:bg-primary focus-visible:text-white focus-visible:outline-none transition-all duration-200 ease-in-out group"
                         aria-label="Go to previous page"
                     >
                         <ChevronLeft
@@ -96,7 +96,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                         return (
                             <span
                                 key={`ellipsis-${index}`}
-                                className="flex items-center justify-center w-10 h-10 text-gray-400 dark:text-gray-500"
+                                className="flex items-center justify-center w-10 h-10 text-[var(--text-subtle)]"
                                 aria-hidden="true"
                             >
                                 ...
@@ -116,11 +116,11 @@ export const Pagination: React.FC<PaginationProps> = ({
                                     : `${basePath}?page=${pageNumber}`
                             }
                             className={classNames(
-                                'flex items-center justify-center w-10 h-10 rounded-md font-medium text-sm transition-all duration-200 ease-in-out',
+                                'flex items-center justify-center w-10 h-10 rounded-full font-semibold text-sm no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all duration-200 ease-in-out',
                                 {
-                                    'bg-primary text-white shadow-sm':
+                                    'bg-gradient-to-br from-[#43b2ff] to-[#0b7fe0] text-white shadow-[0_4px_14px_-4px_rgba(35,161,255,0.8)]':
                                         isCurrentPage,
-                                    'text-[#262626] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#262626]/80 hover:text-[#262626] dark:hover:text-white':
+                                    'text-[var(--text-muted)] hover:bg-white/10 hover:text-white':
                                         !isCurrentPage,
                                 },
                             )}
@@ -141,7 +141,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                     <Link
                         href={nextPage}
                         rel="next"
-                        className="flex items-center justify-center w-10 h-10 rounded-md text-[#262626] dark:text-gray-400 hover:bg-primary hover:text-white focus-visible:bg-primary focus-visible:text-white transition-all duration-200 ease-in-out group"
+                        className="flex items-center justify-center w-10 h-10 rounded-full text-[var(--text-muted)] hover:bg-primary hover:text-white focus-visible:bg-primary focus-visible:text-white focus-visible:outline-none transition-all duration-200 ease-in-out group"
                         aria-label="Go to next page"
                     >
                         <ChevronRight
