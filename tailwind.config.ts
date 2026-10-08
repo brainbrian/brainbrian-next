@@ -13,7 +13,7 @@ export default {
             colors: {
                 primary: '#23a1ff',
                 text: '#fff',
-                surface: '#484848',
+                surface: '#3c3c3f',
                 background: '#262626',
             },
             fontFamily: {
@@ -118,6 +118,8 @@ export default {
                     color: theme('colors.primary'),
                     fontFamily: 'var(--font-headline)',
                     fontWeight: theme('fontWeight.bold'),
+                    letterSpacing: '-0.015em',
+                    lineHeight: '1.2',
                 },
                 'h3, h4, h5, h6': {
                     color: theme('colors.text'),
@@ -166,7 +168,7 @@ export default {
                     },
                 },
                 p: {
-                    color: theme('colors.text'),
+                    color: 'rgba(255, 255, 255, 0.88)',
                     fontSize: '1.125rem', // lg
                     lineHeight: theme('lineHeight.relaxed'),
                     marginBottom: '1rem',
@@ -282,16 +284,51 @@ export default {
                         },
                     },
                 },
+                // Vertical timeline used for resume sections
                 '.nostyle-list': {
                     padding: '0',
                     listStyle: 'none',
+                    marginBottom: '4rem',
                     '& li': {
-                        marginBottom: '3rem',
+                        position: 'relative',
+                        paddingLeft: '1.75rem',
+                        paddingBottom: '2.5rem',
+                        borderLeft: '2px solid rgba(255, 255, 255, 0.1)',
+                        '@media (min-width: 768px)': {
+                            paddingLeft: '2.5rem',
+                        },
+                        '&:last-child': {
+                            paddingBottom: '0.5rem',
+                            borderImage:
+                                'linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent) 1',
+                        },
+                        '&::before': {
+                            content: "''",
+                            position: 'absolute',
+                            left: '-7px',
+                            top: '0.45rem',
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '9999px',
+                            backgroundColor: theme('colors.primary'),
+                            boxShadow:
+                                '0 0 0 4px rgba(35, 161, 255, 0.18), 0 0 14px rgba(35, 161, 255, 0.6)',
+                        },
                         '& h3': {
-                            marginBottom: '0.5rem',
+                            marginBottom: '0.25rem',
+                            letterSpacing: '-0.01em',
                         },
                         '& h4': {
-                            marginTop: '0.5rem',
+                            marginTop: '0',
+                            marginBottom: '0.75rem',
+                            color: theme('colors.primary'),
+                            fontSize: '0.875rem',
+                            fontWeight: theme('fontWeight.semibold'),
+                            letterSpacing: '0.04em',
+                            textTransform: 'uppercase',
+                        },
+                        '& p': {
+                            color: 'rgba(255, 255, 255, 0.78)',
                         },
                     },
                 },

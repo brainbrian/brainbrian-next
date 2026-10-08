@@ -1,6 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import { TreePalm } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, TreePalm } from 'lucide-react';
 
 import { Panel, ProjectsRecent, SpeakableText } from '@/components';
 
@@ -37,12 +38,22 @@ const Page: NextPage = async () => (
                         music
                     </a>{' '}
                     and <a href="https://www.imdb.com/user/ur37273093/">film</a>
-                    . I enojy sharing my own stories through{' '}
+                    . I enjoy sharing my own stories through{' '}
                     <a href="https://gallery.brainbrian.com">photos</a>,{' '}
                     <a href="https://www.youtube.com/brianbehrens">videos</a>{' '}
                     and{' '}
                     <a href="https://bsky.app/profile/brainbrian.com">posts</a>.
                 </p>
+
+                <div className="hero-actions">
+                    <Link href="/projects" className="btn btn-primary">
+                        View my work
+                        <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    </Link>
+                    <Link href="/resume" className="btn btn-ghost">
+                        Read my resume
+                    </Link>
+                </div>
             </article>
         </Panel>
 

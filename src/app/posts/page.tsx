@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata, NextPage } from 'next';
 
-import { Pagination, PostLink } from '@/components';
+import { HeaderSection, Pagination, PostLink } from '@/components';
 import type { Post } from '@/types';
 import { getPosts } from '@/utils/posts';
 
@@ -49,7 +49,8 @@ const PostsPage: NextPage<PostsPageProps> = async ({ searchParams }) => {
     if (postsError) return <p>An error occurred</p>;
 
     return (
-        <main className="mx-auto my-8 max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+        <main className="mx-auto my-8 max-w-screen-2xl px-4 sm:px-6 md:my-12 lg:px-8">
+            <HeaderSection title="Posts" component="h1" />
             {postsComponents}
             <Pagination
                 basePath={'/posts'}

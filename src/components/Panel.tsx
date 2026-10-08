@@ -16,7 +16,7 @@ export const Panel: React.FC<PanelProps> = ({ children, videoUrl }) => (
 
         {/* Video Background */}
         {videoUrl && (
-            <div className="absolute inset-0 w-full h-full -z-1 overflow-hidden">
+            <div className="absolute inset-0 w-full h-full -z-1 overflow-hidden [mask-image:linear-gradient(to_bottom,black_75%,transparent)]">
                 <video
                     className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover panel-video-filter"
                     autoPlay
@@ -27,8 +27,8 @@ export const Panel: React.FC<PanelProps> = ({ children, videoUrl }) => (
                 >
                     <source src={videoUrl} type="video/mp4" />
                 </video>
-                {/* Gradient overlay for better text readability */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
+                {/* Brand glow + gradient overlay for readability and a soft fade into the page */}
+                <div className="panel-glow absolute inset-0"></div>
             </div>
         )}
     </section>

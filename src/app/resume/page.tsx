@@ -21,9 +21,9 @@ const Page: NextPage = () => (
                             height="1440"
                             src="/images/brian-behrens-first-computer.webp"
                             width="1920"
-                            className="block h-auto w-full object-fill rounded-lg"
+                            className="block h-auto w-full object-fill rounded-2xl shadow-[0_24px_48px_-20px_rgba(0,0,0,0.75)] ring-1 ring-white/10"
                         />
-                        <span className="block text-sm italic text-center mt-2 text-text-light">
+                        <span className="block text-sm italic text-center mt-2 text-[var(--text-subtle)]">
                             The first computer I ever used was our family&apos;s
                             Apple IIGS. It was the first computer our family
                             owned.
@@ -53,7 +53,11 @@ const Page: NextPage = () => (
                 </div>
             </div>
         </ProfileHeader>
-        <HeaderSection title="Experience" component="h2" />
+        <HeaderSection
+            title="Experience"
+            component="h2"
+            className="limit-text-width mt-12 md:mt-16"
+        />
         <ul className="nostyle-list limit-text-width">
             <li>
                 <h3>Senior Staff Software Engineer, Surfline</h3>
@@ -213,7 +217,11 @@ const Page: NextPage = () => (
                 </p>
             </li>
         </ul>
-        <HeaderSection title="Awards" component="h2" />
+        <HeaderSection
+            title="Awards"
+            component="h2"
+            className="limit-text-width mt-12 md:mt-16"
+        />
         <ul className="nostyle-list limit-text-width">
             <li>
                 <h3>Target – Best of the Bullseye: Collaboration</h3>
@@ -248,7 +256,11 @@ const Page: NextPage = () => (
                 </p>
             </li>
         </ul>
-        <HeaderSection title="Education" component="h2" />
+        <HeaderSection
+            title="Education"
+            component="h2"
+            className="limit-text-width mt-12 md:mt-16"
+        />
         <ul className="nostyle-list limit-text-width">
             <li>
                 <h3>Milwaukee Area Technical College</h3>
@@ -261,8 +273,12 @@ const Page: NextPage = () => (
                 <p>Associates Degree in Visual Communications</p>
             </li>
         </ul>
-        <HeaderSection title="Skills" component="h2" />
-        <div className="limit-text-width">
+        <HeaderSection
+            title="Skills"
+            component="h2"
+            className="limit-text-width mt-12 md:mt-16"
+        />
+        <div className="limit-text-width mt-12 md:mt-16">
             <p>
                 HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js,
                 webpack, GitHub Actions, Jenkins, Preprocessors, Babel, Vue.js,

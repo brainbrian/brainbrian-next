@@ -69,7 +69,7 @@ export const BlueSkyProfile: React.FC<BlueSkyProfileProps> = ({
 
     if (loading) {
         return (
-            <div className="rounded-lg bg-background overflow-hidden animate-pulse">
+            <div className="card overflow-hidden animate-pulse">
                 {/* Banner skeleton */}
                 {showBanner && <div className="w-full h-24 bg-gray-700"></div>}
                 <div className="px-4 pb-3 pt-1">
@@ -122,7 +122,7 @@ export const BlueSkyProfile: React.FC<BlueSkyProfileProps> = ({
 
     if (error || !profile) {
         return (
-            <div className="rounded-lg bg-background p-3 text-red-400 text-xs">
+            <div className="card card-sm p-3 text-red-400 text-xs">
                 Failed to load BlueSky profile
             </div>
         );
@@ -135,7 +135,7 @@ export const BlueSkyProfile: React.FC<BlueSkyProfileProps> = ({
             : null;
 
     return (
-        <div className="rounded-lg bg-background text-gray-200 overflow-hidden">
+        <div className="card text-gray-200 overflow-hidden">
             {showBanner && profile.banner && (
                 <div className="w-full h-24 relative">
                     <Image
