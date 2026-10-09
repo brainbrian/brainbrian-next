@@ -281,12 +281,14 @@ const Page: NextPage = () => (
         <div className="limit-text-width mt-12 md:mt-16">
             <p>
                 HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js,
-                webpack, GitHub Actions, Jenkins, Preprocessors, Babel, Vue.js,
-                Angular, MySQL, NoSQL, PHP, Source Control (Git &amp; SVN),
-                WordPress, JSON, XML, Social APIs, NPM, JS Libraries (Lodash,
-                MUI, GreenSock, Jest, React Testing Library, Cypress), Python,
-                Go, AWS, Agile Methodology, Adobe Creative Cloud, Project
-                Estimation/Planning, Managing Development Teams, Video
+                React Native &amp; Expo, Swift &amp; iOS Development,
+                AI-Assisted Development (Claude Code, Cursor, Cloud Agents &amp;
+                Agent Skills), webpack, GitHub Actions, Jenkins, Preprocessors,
+                Babel, Vue.js, Angular, MySQL, NoSQL, PHP, Source Control (Git
+                &amp; SVN), WordPress, JSON, XML, Social APIs, NPM, JS Libraries
+                (Lodash, MUI, GreenSock, Jest, React Testing Library, Cypress),
+                Python, Go, AWS, Agile Methodology, Adobe Creative Cloud,
+                Project Estimation/Planning, Managing Development Teams, Video
                 Production and Photography
             </p>
         </div>
