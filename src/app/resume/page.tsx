@@ -64,16 +64,20 @@ const Page: NextPage = () => (
                 <h4>Remote (Los Angeles, CA) | 2021 – Present</h4>
                 <p>
                     I joined Surfline as the lead of the newly formed Web
-                    Platform squad, where I was responsible for building and
-                    maintaining the company&apos;s design system, shared
-                    packages, services, and frontend architecture. Over time, as
-                    the organization underwent changes, including the arrival of
-                    a new CEO, my role evolved to focus as a Lead Engineer on
-                    the Forecast platform while continuing to lead the Frontend
-                    Guild. In this role, I maintain shared systems to ensure
-                    scalability and consistency across platforms while also
-                    planning and building new features to enhance the Forecast
-                    platform&apos;s user experience.
+                    Platform squad, owning the company&apos;s design system,
+                    shared packages, and frontend architecture, and leading its
+                    move to Next.js, a monorepo, and automated delivery
+                    pipelines. As the organization evolved, I broadened my focus
+                    to the Forecast platform, where I work across the full
+                    stack: web, native iOS, APIs, and AWS infrastructure.
+                    I&apos;ve led large modernization efforts, including
+                    migrating our editorial platform to a headless CMS,
+                    rebuilding our surf alert and push notification system, and
+                    retiring legacy services and infrastructure. I also lead the
+                    Frontend Guild and help drive our adoption of AI-assisted
+                    development by building and maintaining shared agent skills
+                    and workflows that encode our engineering standards for
+                    coding agents like Cursor and Claude.
                 </p>
             </li>
             <li>
