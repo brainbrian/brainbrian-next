@@ -1,19 +1,14 @@
 import type { Metadata } from 'next';
 import React from 'react';
 import { HeaderSection, VideoList } from '@/components';
+import { fetchVideosFromPlaylist } from '@/lib/youtube';
 
 const Page = async () => {
     let videos = [];
     let error = null;
 
     try {
-        const response = await fetch(
-            `${process.env.NEXT_PUBLIC_BASE_URL}/api/videos?size=21`,
-        );
-        if (!response.ok) {
-            throw new Error('Failed to fetch videos');
-        }
-        videos = await response.json();
+        videos = await fetchVideosFromPlaylist(21);
     } catch (err: unknown) {
         error = err instanceof Error ? err.message : true;
     }
