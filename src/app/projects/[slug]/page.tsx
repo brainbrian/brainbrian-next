@@ -21,6 +21,7 @@ import Link from 'next/link';
 import { Calendar, ArrowLeft, Tag } from 'lucide-react';
 
 import { config } from '@/config';
+import { getImageDimensions } from '@/utils/images';
 import { getPosts } from '@/utils/posts';
 import type { Post } from '@/types';
 
@@ -116,18 +117,19 @@ export default async function Page({ params }: PageProps) {
     }
 
     const ResponsiveImage = (props: any) => {
+        const src = props.src.replaceAll('./', `/content/projects/${slug}/`);
+        const { width, height } =
+            props.width && props.height ? props : getImageDimensions(src);
+
         return (
             <span className="my-4 w-full flex justify-center 2xl:my-8 2xl:max-w-[120%] 2xl:w-[120%] 2xl:-ml-[10%] block">
                 <Image
                     {...props}
-                    width={props.width || 1200}
-                    height={props.height || 800}
+                    width={width}
+                    height={height}
                     className="max-w-full h-auto object-contain rounded-md"
                     alt={props.alt}
-                    src={props.src.replaceAll(
-                        './',
-                        `/content/projects/${slug}/`,
-                    )}
+                    src={src}
                 />
             </span>
         );
