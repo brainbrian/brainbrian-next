@@ -260,3 +260,10 @@ Split EP with 52 Pick-Up
 ![Photo of the band outside the venue in St. Louis](./st-louis.webp)
 
 Out back of the of The Creepy Crawl in St. Louis 2023 with our friend who washed our van for a t-shirt.
+
+## The Autumn View Around the Web
+
+It's been fun to see that our music is still floating around out there, years after we stopped playing together.
+
+-   [The Autumn View on Discogs](https://www.discogs.com/artist/5678742-The-Autumn-View) - Our artist page on Discogs, the music database and marketplace, listing our releases.
+-   [The Autumn View (2003) on r/Emo](https://www.reddit.com/r/Emo/comments/ytcbnu/the_autumn_view_2003_i_found_this_album_at_half/) - A Reddit thread from someone who found our 2003 album at Half Price Books and shared it with the r/Emo community.
