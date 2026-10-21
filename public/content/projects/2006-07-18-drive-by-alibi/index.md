@@ -37,7 +37,9 @@ On December 30, 2005, we played Snapdragon Records' all-ages ["After Christmas P
 
 A week later, on January 7, 2006, we opened for fellow Milwaukee rockers the Sugar Skulls at Onopa Brewing Co. OnMilwaukee [previewed the show](https://onmilwaukee.com/articles/sugarskulls) as the Sugar Skulls got ready to debut material from their new five-song EP.
 
-On July 23, 2006, we played an all-ages show at the Shorewood Legion Hall with The Actual, Attention (ex-The Stereo), and fellow Milwaukee bands Molitor and Big Green Sofa.
+On July 8, 2006, we joined 15 other Milwaukee bands, including our friends the Sugar Skulls, for ["Rock Out Against Multiple Sclerosis"](https://onmilwaukee.com/articles/rockout), a noon-to-midnight benefit at Burnham Bowl Hall in West Allis with proceeds going to the MS Society.
+
+Later that month, on July 23, 2006, we played an all-ages show at the Shorewood Legion Hall with The Actual, Attention (ex-The Stereo), and fellow Milwaukee bands Molitor and Big Green Sofa.
 
 Punknews also listed some of our shows on [Somerset's tour with The Felix Culpa](https://www.punknews.org/article/16394/tours-somerset-tours-with-the-felix-culpa).
 
