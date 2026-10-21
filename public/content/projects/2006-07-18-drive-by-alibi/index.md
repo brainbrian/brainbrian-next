@@ -4,10 +4,10 @@ date: '2006-07-18'
 image: './drive-by-alibi.webp'
 url: 'https://onmilwaukee.com/articles/drivebyalibi'
 tags: ['band', 'bass', 'music']
-excerpt: 'After The Autumn View, I played bass in "Drive By Alibi," a fiercely poppy five-piece rock band from Milwaukee. In 2006, OnMilwaukee profiled the band, covering our decision to put our first EP on hold to spend more time writing, new songs like "Pressure" and "State of the Artist," and the state of the Milwaukee music scene.'
+excerpt: 'After The Autumn View, I played bass in "Drive By Alibi," a fiercely poppy five-piece rock band from Milwaukee. In 2006, OnMilwaukee profiled the band, covering our decision to put our first EP on hold to spend more time writing, new songs like "Pressure" and "State of the Artist," and the state of the Milwaukee music scene. We went on to release our album, "Under the Parachute."'
 ---
 
-After [The Autumn View](/projects/2003-07-17-the-autumn-view), I picked up the bass and started a new band in Milwaukee called "Drive By Alibi". The five-piece was made up of singer Kyle Anderson, guitarists Mike Esser and Kevin Lucas, drummer Ryan Bollis and me on bass. Musically we landed somewhere in the pop/emo/punk/alternative world, with plenty of power pop hooks.
+After [The Autumn View](/projects/2003-07-17-the-autumn-view), I picked up the bass and started a new band in Milwaukee called "Drive By Alibi". The five-piece was made up of singer Kyle Anderson, guitarists Mike Esser and Kevin Lucas, drummer Ryan Bollis and me on bass. Musically we landed somewhere in the pop/emo/punk/alternative world, with plenty of power pop hooks. We released an album called "Under the Parachute".
 
 ## Live
 
@@ -39,7 +39,7 @@ Punknews also listed some of our shows on [Somerset's tour with The Felix Culpa]
 
 ## Music
 
-Someone uploaded a few of our songs to YouTube. Here they are for your listening pleasure.
+Our album was called "Under the Parachute". Someone uploaded a few of our songs to YouTube. Here they are for your listening pleasure.
 
 https://www.youtube.com/watch?v=rbeVY4SWMgg
 
