@@ -47,7 +47,9 @@ Punknews also listed some of our shows on [Somerset's tour with The Felix Culpa]
 
 Here is some of the music we recorded as "Drive By Alibi" for your listening pleasure.
 
-### [Drive By Alibi - 2 Song Demo](https://soundcloud.com/brainbrian/sets/drive-by-alibi-2-song-demo)
+### [Drive By Alibi - 2 Song Demo (2005)](https://soundcloud.com/brainbrian/sets/drive-by-alibi-2-song-demo)
+
+Released in January 2005
 
 <iframe width="100%" height="560" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/brainbrian/sets/drive-by-alibi-2-song-demo&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="max-width: 640px; margin-bottom: 2rem; display: block;"></iframe>
 
