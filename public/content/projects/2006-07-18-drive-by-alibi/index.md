@@ -33,9 +33,11 @@ We also talked about the Milwaukee music scene. The fans here were great, but it
 
 ## Shows
 
-Around that time we played an all ages show at the Shorewood Legion Hall with The Actual, Attention (ex-The Stereo), and fellow Milwaukee bands Molitor and Big Green Sofa. We also played Snapdragon Records' "After Christmas Party" at the Mainstage in Waukesha with [Eighty-D](https://onmilwaukee.com/articles/eightyd) and I Voted For Kodos.
+On December 30, 2005, we played Snapdragon Records' all-ages ["After Christmas Party"](https://onmilwaukee.com/articles/eightyd) at the Mainstage in Waukesha. The packed bill included Eighty-D, I Voted For Kodos, The1985Bears, Until I Bleed Dry, Ceteri, Rainy Day Ollie, Headbox, Koala Taxi, The Gas Rats and Ayla Rae.
 
-On January 7, 2006, we opened for fellow Milwaukee rockers the Sugar Skulls at Onopa Brewing Co. OnMilwaukee [previewed the show](https://onmilwaukee.com/articles/sugarskulls) as the Sugar Skulls got ready to debut material from their new five-song EP.
+A week later, on January 7, 2006, we opened for fellow Milwaukee rockers the Sugar Skulls at Onopa Brewing Co. OnMilwaukee [previewed the show](https://onmilwaukee.com/articles/sugarskulls) as the Sugar Skulls got ready to debut material from their new five-song EP.
+
+On July 23, 2006, we played an all-ages show at the Shorewood Legion Hall with The Actual, Attention (ex-The Stereo), and fellow Milwaukee bands Molitor and Big Green Sofa.
 
 Punknews also listed some of our shows on [Somerset's tour with The Felix Culpa](https://www.punknews.org/article/16394/tours-somerset-tours-with-the-felix-culpa).
 
