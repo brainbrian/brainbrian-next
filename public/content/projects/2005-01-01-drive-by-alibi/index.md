@@ -9,7 +9,7 @@ excerpt: 'After The Autumn View, I played bass in "Drive By Alibi," a five-piece
 
 After [The Autumn View](/projects/2003-07-17-the-autumn-view), I picked up the bass and started a new band in Milwaukee called "Drive By Alibi". The five-piece was made up of singer Kyle Anderson, guitarists Mike Esser and Kevin Lucas, drummer Ryan Bollis and me on bass. Slipping into a genre that seemed to change its name weekly, our sound was simply rock. We pulled in elements from older metal and modern alternative, and each of us brought something different to the music, from metal to big band and back again. We released an album called "Under the Parachute".
 
-![Drive By Alibi in the balcony of a theater](./drive-by-alibi-theater-photo.webp)
+![Drive By Alibi against a blue sky](./drive-by-alibi-sky-photo.webp)
 
 ## Live
 
@@ -33,7 +33,7 @@ We also talked about the Milwaukee music scene. The fans here were great, but it
 
 [Read the full article on OnMilwaukee](https://onmilwaukee.com/articles/drivebyalibi)
 
-![Drive By Alibi against a blue sky](./drive-by-alibi-sky-photo.webp)
+![Drive By Alibi in the balcony of a theater](./drive-by-alibi-theater-photo.webp)
 
 ## Shows
 
