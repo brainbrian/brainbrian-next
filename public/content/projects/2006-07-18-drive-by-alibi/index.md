@@ -52,11 +52,3 @@ Here is some of the music we recorded as "Drive By Alibi" for your listening ple
 Released in January 2005
 
 <iframe width="100%" height="560" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/brainbrian/sets/drive-by-alibi-2-song-demo&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="max-width: 640px; margin-bottom: 2rem; display: block;"></iframe>
-
-### More Songs on YouTube
-
-We also released an album called "Under the Parachute". Someone uploaded a few of our songs to YouTube.
-
-https://www.youtube.com/watch?v=rbeVY4SWMgg
-
-https://www.youtube.com/watch?v=nFWEcoRqRnQ
