@@ -9,6 +9,8 @@ excerpt: 'After The Autumn View, I played bass in "Drive By Alibi," a five-piece
 
 After [The Autumn View](/projects/2003-07-17-the-autumn-view), I picked up the bass and started a new band in Milwaukee called "Drive By Alibi". The five-piece was made up of singer Kyle Anderson, guitarists Mike Esser and Kevin Lucas, drummer Ryan Bollis and me on bass. Slipping into a genre that seemed to change its name weekly, our sound was simply rock. We pulled in elements from older metal and modern alternative, and each of us brought something different to the music, from metal to big band and back again. We released an album called "Under the Parachute".
 
+![Drive By Alibi against a blue sky](./drive-by-alibi-sky-photo.webp)
+
 ## Live
 
 https://www.youtube.com/watch?v=jaNhqqiCyF8
@@ -31,6 +33,8 @@ We also talked about the Milwaukee music scene. The fans here were great, but it
 
 [Read the full article on OnMilwaukee](https://onmilwaukee.com/articles/drivebyalibi)
 
+![Drive By Alibi in the balcony of a theater](./drive-by-alibi-theater-photo.webp)
+
 ## Shows
 
 On December 30, 2005, we played Snapdragon Records' all-ages ["After Christmas Party"](https://onmilwaukee.com/articles/eightyd) at the Mainstage in Waukesha. The packed bill included Eighty-D, I Voted For Kodos, The1985Bears, Until I Bleed Dry, Ceteri, Rainy Day Ollie, Headbox, Koala Taxi, The Gas Rats and Ayla Rae.
@@ -42,6 +46,8 @@ On July 8, 2006, we joined 15 other Milwaukee bands, including our friends the S
 Later that month, on July 23, 2006, we played an all-ages show at the Shorewood Legion Hall with The Actual, Attention (ex-The Stereo), and fellow Milwaukee bands Molitor and [Big Green Sofa](https://onmilwaukee.com/articles/biggreensofa). Five bands for $7 at 5 p.m. on a Sunday.
 
 Punknews also listed some of our shows on [Somerset's tour with The Felix Culpa](https://www.punknews.org/article/16394/tours-somerset-tours-with-the-felix-culpa).
+
+![Drive By Alibi in an alley in Milwaukee](./drive-by-alibi-alley-photo.webp)
 
 ## Music
 
