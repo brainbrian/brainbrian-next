@@ -45,7 +45,15 @@ Punknews also listed some of our shows on [Somerset's tour with The Felix Culpa]
 
 ## Music
 
-Our album was called "Under the Parachute". Someone uploaded a few of our songs to YouTube. Here they are for your listening pleasure.
+Here is some of the music we recorded as "Drive By Alibi" for your listening pleasure.
+
+### [Drive By Alibi - 2 Song Demo](https://soundcloud.com/brainbrian/sets/drive-by-alibi-2-song-demo)
+
+<iframe width="100%" height="560" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/brainbrian/sets/drive-by-alibi-2-song-demo&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" style="max-width: 640px; margin-bottom: 2rem; display: block;"></iframe>
+
+### Under the Parachute
+
+Our album was called "Under the Parachute". Someone uploaded a few of our songs to YouTube.
 
 https://www.youtube.com/watch?v=rbeVY4SWMgg
 
