@@ -4,7 +4,7 @@ date: '2005-01-01'
 image: './drive-by-alibi.webp'
 url: 'https://onmilwaukee.com/articles/drivebyalibi'
 tags: ['band', 'bass', 'music']
-excerpt: 'After The Autumn View, I played bass in "Drive By Alibi," a fiercely poppy five-piece rock band from Milwaukee. In 2006, OnMilwaukee profiled the band, covering our decision to put our first EP on hold to spend more time writing, new songs like "Pressure" and "State of the Artist," and the state of the Milwaukee music scene. We went on to release our album, "Under the Parachute."'
+excerpt: 'After The Autumn View, I played bass in "Drive By Alibi," a five-piece rock band from Milwaukee. Our sound pulled from older metal, modern alternative and power pop. We released a 2 song demo in January 2005 and an album called "Under the Parachute," and played all-ages shows and benefits around Milwaukee alongside bands like the Sugar Skulls, Eighty-D and Big Green Sofa.'
 ---
 
 After [The Autumn View](/projects/2003-07-17-the-autumn-view), I picked up the bass and started a new band in Milwaukee called "Drive By Alibi". The five-piece was made up of singer Kyle Anderson, guitarists Mike Esser and Kevin Lucas, drummer Ryan Bollis and me on bass. Slipping into a genre that seemed to change its name weekly, our sound was simply rock. We pulled in elements from older metal and modern alternative, and each of us brought something different to the music, from metal to big band and back again. We released an album called "Under the Parachute".
