@@ -7,7 +7,7 @@ tags: ['band', 'bass', 'music']
 excerpt: 'After The Autumn View, I played bass in "Drive By Alibi," a five-piece rock band from Milwaukee. Our sound pulled from older metal, modern alternative and power pop. We released a 2 song demo in January 2005 and an album called "Under the Parachute," and played shows around Milwaukee.'
 ---
 
-After [The Autumn View](/projects/2003-07-17-the-autumn-view), I picked up the bass and started a new band in Milwaukee called "Drive By Alibi". The five-piece was made up of singer Kyle Anderson, guitarists Mike Esser and Kevin Lucas, drummer Ryan Bollis and me on bass. Slipping into a genre that seemed to change its name weekly, our sound was simply rock. We pulled in elements from older metal and modern alternative, and each of us brought something different to the music, from metal to big band and back again. We released an album called "Under the Parachute".
+After [The Autumn View](/projects/2003-07-17-the-autumn-view), I picked up the bass and started a new band in Milwaukee called "Drive By Alibi". The five-piece was made up of singer Kyle Anderson, guitarists Mike Esser and Kevin Lucas, drummer Nick Katarow and me on bass. Ryan Bollis later took over on drums. Slipping into a genre that seemed to change its name weekly, our sound was simply rock. We pulled in elements from older metal and modern alternative, and each of us brought something different to the music, from metal to big band and back again. We released an album called "Under the Parachute".
 
 ![Drive By Alibi against a blue sky](./drive-by-alibi-sky-photo.webp)
 
@@ -19,7 +19,7 @@ https://www.youtube.com/watch?v=jaNhqqiCyF8
 
 In July 2006, as the band was coming up on its first birthday, Julie Lawrence wrote [a profile on us for OnMilwaukee](https://onmilwaukee.com/articles/drivebyalibi). The article described us as a "fiercely poppy five-piece" that was "taking its sweet time polishing the details of its songs to a sonic sheen" in a genre obsessed with instant gratification.
 
-We had planned to record an EP, but after getting into the studio for a six-song demo we realized we just weren't ready. Postponing the recording gave us more time to spend on writing and to put out our best possible effort. Adding a new drummer gave us a chance to refine our sound, too. The article called out a couple of our new '06 tracks:
+We had planned to record an EP, but after getting into the studio for a six-song demo we realized we just weren't ready. Postponing the recording gave us more time to spend on writing and to put out our best possible effort. Adding Ryan as our new drummer gave us a chance to refine our sound, too. The article called out a couple of our new '06 tracks:
 
 > "Pressure" is a tightly executed powerpop anthem with melodic energy and attitude, while "State of the Artist" is a smooth charmer that is nothing if not an infectious sing-along.
 
